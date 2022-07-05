@@ -1,0 +1,2457 @@
+Delivered-To: josefkretz93@gmail.com
+Received: by 2002:ab0:2a0e:0:0:0:0:0 with SMTP id o14csp1857726uar;
+        Fri, 16 Jul 2021 14:23:09 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJwq7gPJ3ZVnns2ywkhWsjvEFcbsmVS3Q6u7VxCPdxB88R/fb12q596L9XF7H13+n/495zH/
+X-Received: by 2002:a05:622a:1a9f:: with SMTP id s31mr11195145qtc.151.1626470589263;
+        Fri, 16 Jul 2021 14:23:09 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1626470589; cv=none;
+        d=google.com; s=arc-20160816;
+        b=EohWhJOizb7FJZaw2MSyvlqarh4KqQlQJtbGLCsZSlqBV3cuc8AdICiguhlB8/VMro
+         3WTkVO++UyCGsbvASNJvc0ZnN5xbG85uNk1CxsXuiu+Oq4Dv77L6sVNxPLe+1HoA1oqr
+         Xu/V+x/3c+a1AN02Vzua5JlLssYTV7IXgAlP9t9FlOwQObC6YVWt2ZSk1fuNWGYi6eyX
+         GcrOAkAsH7akisrN2x+2LYmMPoPMvbEwKHd98c385emwQb3D00Ua5aN3N5eQcVUZrMlB
+         rbb6JiitsAT1HlwaM9HIDwjbh7u8WSLklvSzlVSSt55ly27WAaqpk3CtStTNV4GxA6ot
+         myyw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:feedback-id:message-id:list-id:reply-to
+         :mime-version:list-unsubscribe-post:list-unsubscribe:date:subject:to
+         :from:dkim-signature;
+        bh=7fM6VrTqlw1O3vD30F0X0lq8mtbbroF9svLRMNznImg=;
+        b=hYJP82Bn8RNfLRGrZQ1WpRmQPQfl9OQV87YgybF41JTv4co+ws0t4x9VE/bxvgca7M
+         2aNeKVTHZCBGCmGg42ChlzmbpaTusQuqJspusmhVDPSfN3qBLKep0XjPDD8I74XYlVLC
+         Kb0sNKDeeY9O/RotX0lsOpVL7lNPePZCcBsQ+DomfGdMweUPkPRK04Jt6v/IcG0SZ0Xm
+         LKHcKlmweKf6PiHZg94LnbO+YqIHuxryH2S+VljNJkMflvyqGXW+tuyTR7L8f7Ml4GLF
+         nEKucJJlsvfdJj84ct2Qh2gC2XvEcrfbzZn3SxkxbY1sXBw/+Nlvq7lkhq5loHqXlIGu
+         8eOw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.triangle.com header.s=200608 header.b=CBGwx+zo;
+       spf=pass (google.com: domain of bounce-1947247_html-256429090-37419189-10471766-6535@bounce.myctm.canadiantire.ca designates 66.231.82.70 as permitted sender) smtp.mailfrom=bounce-1947247_HTML-256429090-37419189-10471766-6535@bounce.myctm.canadiantire.ca
+Return-Path: <bounce-1947247_HTML-256429090-37419189-10471766-6535@bounce.myctm.canadiantire.ca>
+Received: from mta.myctm.canadiantire.ca (mta.myctm.canadiantire.ca. [66.231.82.70])
+        by mx.google.com with ESMTPS id dw19si8034115qvb.162.2021.07.16.14.23.08
+        for <josefkretz93@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 16 Jul 2021 14:23:09 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-1947247_html-256429090-37419189-10471766-6535@bounce.myctm.canadiantire.ca designates 66.231.82.70 as permitted sender) client-ip=66.231.82.70;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.triangle.com header.s=200608 header.b=CBGwx+zo;
+       spf=pass (google.com: domain of bounce-1947247_html-256429090-37419189-10471766-6535@bounce.myctm.canadiantire.ca designates 66.231.82.70 as permitted sender) smtp.mailfrom=bounce-1947247_HTML-256429090-37419189-10471766-6535@bounce.myctm.canadiantire.ca
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=email.triangle.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:List-ID:X-CSA-Complaints:Message-ID:Content-Type:
+ Content-Transfer-Encoding; i=triangle@email.triangle.com;
+ bh=7fM6VrTqlw1O3vD30F0X0lq8mtbbroF9svLRMNznImg=;
+ b=CBGwx+zoaogNx/7BJK12+8mwet8pv6saOX/wIbnNlb35A2rQ2O1sJS/EhS+TbiIPfCBe4AmT/Czx
+   eOtWRbQXXV4KkbjWl8OBcQYCYFk0/CZ4xjjjEh52tpgESdTo/m7Utq9yqYzqeltK7lFEFaKW+/p2
+   hw3hL1tEqBKqndAdwxY=
+Received: by mta.myctm.canadiantire.ca id hu7sbq2fmd4n for <josefkretz93@gmail.com>; Fri, 16 Jul 2021 21:23:07 +0000 (envelope-from <bounce-1947247_HTML-256429090-37419189-10471766-6535@bounce.myctm.canadiantire.ca>)
+From: "Triangle Rewards" <triangle@email.triangle.com>
+To: <josefkretz93@gmail.com>
+Subject: Collect $15 CT Money when you Spend $150
+Date: Fri, 16 Jul 2021 15:23:06 -0600
+List-Unsubscribe: <http://click.myctm.canadiantire.ca/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiIxMDQ3MTc2NiIsInMiOiIyNTY0MjkwOTAiLCJsaWQiOiIxOTQ3MjQ3IiwiaiI6IjM3NDE5MTg5IiwiamIiOiI2NTM1IiwiZCI6IjEwMTQ2In0.rlJX38z3wDwp98ErfcwDWM5IBgTqq1VzDWrQpAoCZ5c>, <mailto:leave-fc79157971630679727b28313958-fe2a167573600674751d70-fe55177771650d7c7d1d-fe5f15707163057a7312-ff2c12757661@leave.myctm.canadiantire.ca>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "Triangle Rewards" <reply-37419189-1947247_HTML-256429090-10471766-6535@myctm.canadiantire.ca>
+List-ID: <10471238.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 1
+x-job: 10471766_37419189
+Message-ID: <e2a3c991-acf5-4cce-aa73-e7cea597ab8b@ind1s01mta861.xt.local>
+Feedback-ID: 10471766:37419189:66.231.82.70:sfmktgcld
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html style="background-color: #fff; color: #000; font-family: Arial,Verdana,Helvetica,sans-serif; font-size: 10px;">
+<head>
+<title>Collect $15 CT Money when you Spend $150</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" alias="viewport" content="width=device-width, initial scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Source+Sans+Pro" rel="stylesheet">
+<style type="text/css">
+body[yahoo] .mobile-hidden {
+    display: none !important;
+}
+div.gmail {
+    font-size: 28px !important;
+    width: 600px !important;
+    min-width: 600px !important;
+    line-height: 1px !important;
+}
+#outlook a, #x_outlook a {
+    padding: 0
+}
+a:-webkit-any-link, a {
+color: inherit;
+text-decoration: none;
+}
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #fff;
+    color: #000;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 10px;
+}
+#preheader, #x_preheader {
+    background: #f2f2f2;
+    padding: 15px 43px;
+    font-size: 12px;
+    color: #c4c4c4;
+}
+#preheader a, #x_preheader a {
+    font-size: 10px;
+    color: #c4c4c4!important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: underline!important;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+}
+#header, #x_header {
+    background: #ffffff;
+    padding: 10px 35px;
+    font-size: 12px;
+    color: #443f3c;
+}
+#banner, #x_banner {
+    text-align: center;
+    padding: 35px;
+}
+#principal_offer, #x_principal_offer {
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 10px;
+    color: #333333;
+}
+#secondary_offer img, #x_secondary_offer img {
+    width: 100%;
+}
+#footer, #x_footer {
+    background: #262626;
+    color: #c1c1c1;
+
+
+
+
+    font-size: 12px;
+}
+#sub_footer, #x_sub_footer {
+    background: #ececec;
+    color: #515151;
+    font-size: 10px;
+    padding: 30px 45px;
+}
+#footer .links, #x_footer .x_links {
+    padding: 20px 0px 30px;
+}
+#footer .links a, #x_footer .x_links a, #footer .links a:link, #x_footer .x_links a:link, #footer .links a:visited, #x_footer .x_links a:visited {
+    color: #ffffff!important;
+    text-decoration: none!important;
+    font-size: 14px;
+}
+#footer .links .separator, #x_footer .x_links .x_separator {
+    height: 13px!important;
+}
+.right, .x_right {
+    text-align: right;
+}
+.left, .x_left {
+    text-align: left;
+}
+.small, .x_small {
+    font-size: 10px;
+}
+.mobile {
+    display: none;
+}
+img.outlook {
+    opacity: 0;
+}
+.upper, .x_upper {
+    text-transform: uppercase;
+}
+.red_title, .x_red_title {
+    text-align: center;
+    font-size: 20px;
+    color: #ce1c00;
+    border: 1px solid #ce1c00;
+    padding: 7px;
+    margin: 30px 0px 0px;
+}
+.offer_line_1, .offer_line_2, .x_offer_line_1, .x_offer_line_2 {
+    font-size: 16px;
+    color: #333333;
+    display: block;
+    
+}
+.bg_grey, .x_bg_grey {
+    background: #f0f0f0;
+    padding: 35px 0px;
+}
+.bg_grey .title, .x_bg_grey .x_title {
+    text-align: center;
+    font-size: 22px;
+    color: #333333;
+}
+#products .col.col-2, #x_products .x_col.x_col-2 {
+    background: #ffffff;
+    width: 50%;
+    vertical-align: top;
+}
+#products .col.col-2 table, #x_products .x_col.x_col-2 table {
+    height: 170px;
+}
+#products .col.col-2 .col, #x_products .x_col.x_col-2 .x_col {
+    text-align: center;
+    padding: 0px 5px;
+}
+#products .col.col-2 td, #x_products .x_col.x_col-2 td {
+    width: 50%;
+
+}
+#products .col.col-2 td img, #x_products .x_col.x_col-2 td img {
+    max-width: 100%;
+  
+}
+.product_save span, .x_product_save span {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    background: #ee1c25;
+    text-transform: uppercase;
+    padding: 3px;
+    display: inline-block;
+    font-weight: bold;
+}
+.product_price, .x_product_price {
+    margin: 5px 0px 14px;
+}
+.product_price span, .x_product_price span {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #333333;
+    font-weight: bold;
+}
+.product_sku span, .x_product_sku span {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #999999;
+}
+.product_sku, .x_product_sku {
+    margin-bottom: 3px;
+}
+.product_desc, .x_product_desc {
+    line-height: 12px;
+}
+.product_desc span, .x_product_desc span {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #333333;
+    mso-line-height-rule: exactly;
+    line-height: 12px;
+}
+.btn_red, .x_btn_red {
+    text-align: center;
+    color: #ffffff;
+}
+.separator, .x_separator {
+    color: #6e7070;
+    height: 12px;
+    width: 1px;
+}
+span.separator, span.x_separator {
+    display: inline-block;
+    margin: 0px 10px;
+}
+.ms-show {
+    display: none;
+}
+#products .col.col-2 td.product_image a, #x_products .x_col.x_col-2 td.x_product_image a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+@media only screen and (max-width:599px) {
+div.gmail {
+    display: none;
+}
+.em_hide {
+    display: none !important;
+}
+img.em_show {
+    display: block !important;
+}
+}
+
+@media only screen and (max-width: 480px) {
+#header .img_responsive {
+    width: 80%!important;
+}
+table {
+    width: 100%;
+}
+#preheader a, #x_preheader a {
+    font-size: 12px!important;
+}
+.mobile {
+    display: block!important;
+}
+.desktop {
+    display: none;
+}
+.col, .x_col {
+    width: 100% !important;
+    max-width: none!important;
+    display: block !important;
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+ padding-top:0px!important;
+}
+.left, .right, .x_left, .x_right {
+    text-align: center;
+}
+.imageResponsive, .x_imageResponsive {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+}
+table#preheader td, table#preheader table, table#x_preheader td, table#x_preheader table {
+    text-align: center;
+}
+#banner, #x_banner {
+    padding: 20px;
+}
+#principal_offer, #x_principal_offer {
+    font-size: 15px;
+    padding: 0px 15px 10px;
+}
+#principal_offer br, #x_principal_offer br {
+    display: none;
+}
+.red_title, .x_red_title {
+    font-size: 16px;
+}
+.red_title, .title, .x_red_title, .x_title {
+    margin: 0px 15px;
+}
+#secondary_offer, #x_secondary_offer {
+    padding: 15px;
+}
+#secondary_offer .col.col-2, #x_secondary_offer .x_col.x_col-2 {
+    padding: 0px 0px 15px 0px;
+}
+#secondary_offer img, #x_secondary_offer img {
+    margin-bottom: 5px;
+}
+.title span, .x_title span {
+    display: block;
+}
+#products, #x_products {
+    border-collapse: collapse;
+}
+#products .col.col-2, #x_products .x_col.x_col-2 {
+    margin-bottom: 15px;
+    max-height: 170px;
+}
+#products .col.col-2 td.col, #x_products .x_col.x_col-2 td.x_col {
+    height: 170px!important;
+}
+#products .col.col-2 td.product_image a, #x_products .x_col.x_col-2 td.x_product_image a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#products .col.col-2 td.product_image a div, #x_products .x_col.x_col-2 td.x_product_image a div {
+    background-size: auto 90%!important;
+    margin-right: 5px;
+}
+#products img, #x_products img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+.product_price, .x_product_price {
+    margin: 0px!important;
+}
+.product_save, .x_product_save {
+    margin: 5px 0px 14px;
+}
+.separator.ms-hidden, .x_separator.x_ms-hidden {
+    display: block;
+    max-height: 0px;
+    width: 0px;
+    visibility: hidden;
+}
+.bg_grey, .x_bg_grey {
+    padding: 35px 15px;
+}
+.ms-show {
+    display: block!important;
+}
+div.ms-hidden {
+    display: none!important;
+}
+.product_info, .x_product_info {
+    padding: 20px 15px 20px 0px!important;
+}
+#footer .links a, #x_footer .x_links a {
+    white-space: nowrap;
+    font-size: 13px;
+}
+#footer .links tr, #x_footer .x_links tr, .member_info tr, .x_member_info tr {
+    display: block!important;
+}
+#footer .links .ms-hidden, #x_footer .x_links .x_ms-hidden, .member_info .ms-hidden, .x_member_info .x_ms-hidden {
+    font-size: 0px;
+}
+.member_info span, .x_member_info span {
+    white-space: nowrap;
+}
+#account td, #x_account td {
+    width: 50%!important;
+    display: inline-block!important;
+    font-size: 11px!important;
+    min-height: 15px;
+}
+      .em_hidedummy {
+        display:none !important;
+    }
+}
+@media screen yahoo {
+.em_show {
+display:none!important;
+}
+}
+</style>
+<!--[if gte mso]>       <style type="text/css">       #principal_offer,#x_principal_offer{border-top:0px!important;border-color:#ffffff;}    img.oulook{opacity:1;}    body, table, td, span, div, a, li, h1, h2, p {font-family: 'Lato', Arial, Helvetica, sans-serif !important;}       </style>   <![endif]--> 
+<!--[if gte mso 9]>       
+<style>           /* Target Outlook 2007 and 2010 */                  html, body { font-family: Arial, sans-serif !important; }                 table { font-family: Arial, sans-serif !important; }                         td { font-family: Arial, sans-serif !important; }                            span{font-family: Arial, sans-serif !important; }                          a{font-family: Arial, sans-serif !important; }        }   .em_show {             display: none !important;             font-size: 0 !important;            /* line-height: 0 !important;*/             mso-hide: all !important;             visibility: hidden !important;             overflow: hidden !important;            
+ width: 0 !important;             height: 0 !important;         }       </style>       <![endif]--> 
+
+<!--[if gte mso 9]><xml>        <o:OfficeDocumentSettings>         <o:AllowPNG/>         <o:PixelsPerInch>96</o:PixelsPerInch>        </o:OfficeDocumentSettings>       </xml><![endif]-->
+<style type="text/css">
+    
+ 
+@media only screen and (max-width:599px) {
+  #header .img_responsive{width:80%!important;}
+  
+    div.gmail {
+        display: none;
+    }
+
+    .em_spacer, .em_spacer_2percent, td.em_h10, td.em_h15, td.em_h20, td.em_h25, td.em_h30 {
+        line-height: 1px !important;
+        font-size: 1px !important;
+    }
+
+ 
+    table.em_wrapper {
+        width:100% !important;
+    }
+
+    table.em_mobile_wrapper {
+        width:100% !important;
+        display:table !important;
+    }
+
+    .em_hide {
+        display:none !important;
+    }
+
+    td.em_side {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+
+    table.em_show {
+        display: table !important;
+    }
+
+    tr.em_show {
+        display: table-row !important;
+    }
+
+    td.em_show {
+        display: table-cell !important;
+        width: 15px !important;
+    }
+
+    td.em_show_10 {
+        display: table-cell !important;
+        width: 10px !important;
+    }
+
+    td.em_show_50 {
+        display: table-cell !important;
+        width: 50px !important;
+    }
+
+    table.em_center, td.em_center {
+        text-align:center !important;
+        width:100% !important;
+    }
+
+    table.em_center {
+        display: table !important;
+    }
+
+    td.em_center {
+        display: table-cell !important;
+    }
+
+    table.em_calendar, td.em_show_calendar {
+        width: auto !important;
+    }
+
+    td.em_show_calendar {
+        display: table-cell !important;
+    }
+
+    td.em_outlook_maxwidth {
+        text-align: center;
+    }
+
+    span.em_hide {
+        display: none;
+    }
+
+    br.em_show {
+
+        display: initial !important;
+    }
+
+    img.em_show {
+        display: block !important;
+    }
+
+
+    .em_left {
+        text-align: left !important;
+    }
+
+    .em_right {
+        text-align: right !important;
+    }
+
+}
+</style>
+
+<style> 
+@media screen yahoo {
+    .em_show {
+      display:none!important;
+    }
+}
+</style>
+</head>
+<body style="margin:0px; padding:0px;" bgcolor="#ffffff" class="body"><style type="text/css">
+div.preheader 
+{ display: none !important; } 
+</style>
+<div class="preheader" style="font-size: 1px; display: none !important;">Start the weekend off right with Triangle</div>
+ 
+<table id="container" width="640" bgcolor="#ffffff"  cellpadding="0" cellspacing="0" align="center" border="0" style="border-collapse: collapse; mso-table-lspace: 0; mso-table-rspace: 0; max-width:640px;">
+  <tr>
+    <td style="display:none !important;visibility:hidden;mso-hide:all;font-size:1px;color:#ffffff;line-height:1px;height:0px;width:0px;opacity:0;overflow:hidden;">
+      
+      <div style="display: none; max-height: 0px; overflow: hidden;"> &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp; </div></td>
+  </tr>
+  <tr>
+    <td id="container_preheader"><table id="preheader" cellspacing="0" cellpadding="0" width="640" style="width:100%; max-width:640px;">
+        <tr>
+          <td align="center"><table cellspacing="0" cellpadding="0" width="auto" align="center">
+              <tr>
+                <td align="center" style="padding-right:15px;"><a href="http://view.myctm.canadiantire.ca/?qs=6c51afa2dfd8eadd98138442f7c93d6c2ed2b2ff8b3d97b0264b1ba2cc31f07e034ba838add8ebaa521da60a04ef521a82f7f94d28b4911665a9213087f36af887c75118ec2ece6cb708dbe8fd21a7f2a69ba7e576196b67"  title="View oline" style="white-space:nowrap;font-size: 10px;color: #c4c4c4;text-transform: uppercase;letter-spacing: 1px;text-decoration: underline!important;font-family: 'Source Sans Pro',Arial, sans-serif;">View online</a>
+                </td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+  <!--header Logo : table une colonne-->
+  
+    
+    <tr>
+    <td id="container_header"><table id="header" cellspacing="0" cellpadding="0" width="600" style="width:100%;max-width:640px;">
+        <tr>
+          <td align="center" style="padding:15px 0px;">  <a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a30ca096b66a4b44c2131df5b1fb935b30cf6dca8ac52a94fea8c679be4b54b6e1233d1bd465412889b009689d3ce3cb9889755502522f71b8" name="home" title="home" style="display: block;">  <img src="https://s7d5.scene7.com/is/image/CanadianTire/190710_TriangleRewards_Logo_EN?scl=1&qlt=99" width="434" height="auto" style="width:434px;height:auto;margin:auto;" class="img_responsive"/>  </a></td>
+        </tr>
+      </table></td>
+  </tr>
+   
+  
+    
+  
+
+  <tr>
+    <td height="45">
+        <!--[if mso]>         <table height="45" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">                         <tr>         <td height="45" background:#e5e5e5;>         <![endif]-->
+      <table height="45" role="presentation" class="width100" width="320" align="left" border="0" cellspacing="0" cellpadding="0" style="background:#e5e5e5;">
+       <tr>
+          <td height="35" align="left" class="padding20" style="font-weight:600; background:#e5e5e5;width:50%;padding: 5px 10px;text-align:center;font-size: 12px;letter-spacing: 1px;font-family: 'Lato', Arial,sans-serif;mso-line-height-rule:exactly; line-height: 19px;"><span style="font-family: 'Lato', Arial,sans-serif;text-transform:uppercase;color:#000000;">Triangle Rewards<sup>TM</sup> account # 8270</td>
+       </tr>
+      </table>
+      <!--[if mso]>         </td>         <td height="45" bgcolor="#77ccc7">                      <![endif]-->
+      <table bgcolor="#77ccc7" height="45" role="presentation" class="width100" width="320" align="left" border="0" cellspacing="0" cellpadding="0">
+       <tr>
+          <td height="35" align="right" class="padding20" style="font-weight:600;background:#77ccc7;width:50%;padding: 5px 10px;text-align:center;font-size: 12px;letter-spacing: 1px;font-family: 'Lato', Arial,sans-serif; mso-line-height-rule:exactly; line-height: 19px;"><span style="font-family: 'Lato', Arial,sans-serif;text-transform:uppercase;color:#000000;">CT Money<sup>&reg;</sup> Balance^:
+           </span> <span class="balance"  style="font-family: 'Lato', Arial,sans-serif;vertical-align: middle;color:#000000;"> $6.19 </span></td>
+       </tr>
+      </table>
+        <!--[if mso]>         </td>         </tr>         </table>                      <![endif]-->
+    </td>
+  </tr>
+  
+ 
+  
+  <!--offre principal : table une colonne --> 
+  
+   <tr>
+    <td><table id="principal_offer" cellspacing="0" cellpadding="0" width="640" style="width:100%;min-width:100%; max-width:640px;" align="center">
+       
+        <tr>
+          <td valign="top" align="center" class="col" style="mso-table-lspace: 0pt !important;mso-table-rspace: 0pt !important;padding: 0;margin: 0;"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a31325be5afd8d89368db10485f326cb14a18ecef3784f536b92e77f6ca06f9ef300c58b038e7dd544270eb44bbcb6866740f4cc640d7edfb4"><img alt="Spend $150, Collect $15 CTM" class="imageResponsive" width="640" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin: 0;clear: both;" src="https://s7d5.scene7.com/is/image/CanadianTire/3240_CT_SP150C15_1280x960_EN?scl=1&qlt=100" align="left" border="0" style="margin:0"/></a></td>
+        </tr>
+        <tr>
+          <td style="padding: 15px 0px 0px;font-family:'Lato', Arial, sans-serif;text-align:center;mso-line-height-rule: exactly;line-height: 24px;"><div> <span style="font-family: 'Lato',Arial, sans-serif; font-weight:bold; ">Spend $150 (pre-tax), Collect $15 Bonus Canadian Tire Money®*</span> </div>
+            <div> <span style="font-family: 'Lato',Arial, sans-serif;"> Valid until July 22, 2021</span> </div></td>
+        </tr>
+      
+      </table></td>
+  </tr>
+    
+   
+  
+    
+  <!--offre secondaire : table deux colonnes --> 
+  
+    <tr>
+  
+    <td style="font-family:'Lato', Arial, sans-serif;">
+  
+  <!--   <div class="red_title" style="text-align: center;font-size: 20px;color: #ce1c00;border: 1px solid #ce1c00;padding: 7px;margin: 30px 0px 10px;">       <span class="upper"  style="font-family:'Lato', Arial, sans-serif;">Your member exclusive offers</span>      </div>    --> 
+   
+      
+      
+      
+      
+    <!--FWT--> 
+  
+  <table border="0" cellpadding="0" width="100%" bgcolor="#ffffff"  align="center" >
+      <tr>
+    <td align="center" valign="top"><table border="0" cellpadding="0" width="100%" bgcolor="#ffffff"  align="center" >
+        <tr>
+          <td align="center" valign="middle"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3d83b4169f60fc7e4ee8f154fa58e0fd0ba1e2bd7c104e83c300c3e621e479e8e7293f7fd03dc384a79991f669815e92fa81d219048bb65d1" target="_blank"  title="TRIANGLE APP"> <img aria="true" border="0" src="https://canadiantire.scene7.com/is/image/CanadianTire/3655_Swap_FWT_1280x406_EN?scl=1&qlt=100" style="display:block; width: 640px; height: auto;" class="em_hide" alt="TRIANGLE APP" width="640"> 
+            <!--[if !mso]><!-- --><img aria="true" border="0" src="https://canadiantire.scene7.com/is/image/CanadianTire/3655_Swap_FWT_Mobile_694x635_EN?scl=1&qlt=100" style="display:none; width: 100%; height: auto; overflow: hidden;" class="em_show" alt="TRIANGLE APP"><!--<![endif]--> 
+            </a><br/>
+            <br/></td>
+        </tr>
+      </table></td>
+  </tr>
+     </table>
+            
+  
+  
+
+  <!--END custom always on--> 
+     
+      
+      
+  
+  <!--ACTIVATE ALL FWT--> 
+  
+  <table border="0" cellpadding="0" width="100%" bgcolor="#ffffff"  align="center" >
+    <tr>
+      <td align="center" valign="middle" style="padding-top:0px;"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3c6fc8163dff0824f189186fe9d12f699570c719f59de2201c6cee2446e617df50d41ae677280fc6576f7526616f75afdcee6da0144491c8f" target="_blank"  title=""> <img aria="true" border="0" src="https://canadiantire.scene7.com/is/image/CanadianTire/3662_FWT_Desktop_1280x406_EN?scl=1&qlt=100" style="display:block; width: 640px; height: auto;" class="em_hide" alt="" width="640"> 
+        <!--[if !mso]><!-- --><img aria="true" border="0" src="https://canadiantire.scene7.com/is/image/CanadianTire/3662_FWT_Mobile_694x535_EN?scl=1&qlt=100" style="display:none; width: 100%; height: auto; overflow: hidden;" class="em_show" alt=""><!--<![endif]--> 
+        </a></td>
+    </tr>
+  </table>
+   
+  <!--END activate all--> 
+      
+   
+      
+  
+  <!--CTR BANNER-->
+  <table border="0" cellpadding="0" width="100%" bgcolor="#ffffff"  align="center" >
+   
+    <tr>
+      <td align="center" valign="middle"><img aria="true" border="0" src="https://s7d5.scene7.com/is/image/CanadianTire/200828_commandcenter_banner_ctr?scl=1&qlt=99" style="display:block; width: 640px; height: auto;" class="em_hide" alt="Canadian Tire" width="640"> 
+        <!--[if !mso]><!-- --><img aria="true" border="0" src="https://s7d5.scene7.com/is/image/CanadianTire/200828_commandcenter_banner_ctr_mobile?scl=1&qlt=99" style="display:none; width: 100%; height: auto; overflow: hidden;" class="em_show" alt="Canadian Tire"><!--<![endif]--></td>
+    </tr>
+  </table>
+  <table id="secondary_offer" cellspacing="0" cellpadding="0" width="640">
+    
+      <tr>
+    
+    
+          <th class="col col-2" style="padding-right: 5px; width:50%;" valign="top"> 
+   <table cellspacing="0" cellpadding="0" width="100%" style="width:100%;min-width:100%; border:1px solid #c5c5c5; max-height:270px; overflow:visible">
+        <tr>
+          <td class="col" style="padding:10px;"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3e739b16010723e0e93477db785c0cd0ff1f283585a7c0ced3334d73eb7dc644f0f51ec388d2a554e4de302f833704560f095c61afb2d15b9"><img alt="5x on Plants, Bulbs & Seeds" width="290" class="imageResponsive"  style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin: 0 auto; width:290px;" src="https://s7d5.scene7.com/is/image/CanadianTire/TR_SG_PlantsBulbsSeeds_TriApp_ENG?wid=300&qlt=100"/></a></td>
+        </tr>
+   
+        <tr>
+            <td style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%;padding:10px; padding-top:0;">
+            <tr>
+              <td style="max-width:60px;" width="60"><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td align="left" style="width:45px; max-width:45px;" width="45"><img src="https://s7d5.scene7.com/is/image/CanadianTire/cc_offer_logo_ctr?scl=1&qlt=99" style="width:45px" width="45"/></td>
+                  </tr>
+                </table></td>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif;font-size: 16px; font-weight:bold;line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span class="offer_line_1" style="font-size: 16px; font-weight:bold;text-align:left;font-family: 'Lato',Arial, sans-serif;"> 5x on Plants, Bulbs & Seeds</span></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </tr>
+
+    <tr>
+            <td style="padding-top:5px;"  style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%; border-top:1px solid #c5c5c5; padding:10px;">
+            <tr>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;min-width:100">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif; font-size: 13px;  font-size:10pt; line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span style="padding-top:5px; font-size: 13px;  text-align:left;"  style="font-family: 'Lato',Arial, sans-serif;"> Valid until July 22, 2021</span></td>
+                  </tr>
+                </table></td>
+              <td width="92"><table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100">
+                  <tr>
+                        <td align="right" style="width:92px; max-width:92px;" width="92"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3e739b16010723e0e93477db785c0cd0ff1f283585a7c0ced3334d73eb7dc644f0f51ec388d2a554e4de302f833704560f095c61afb2d15b9"><img src="https://canadiantire.scene7.com/is/image/CanadianTire/Activate_BTN_EN?scl=1&qlt=99" width="92" style="width:92px;"/></a></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </td>
+        
+          </tr>
+    
+     <!--ADJUST HEIGHT TO FIT GENERIC TILE [if (gte mso 9) | (IE)]><tr><td height="10" style="height:10px;"><![endif]-->
+        
+      </table>
+      </th>
+   
+ 
+
+    
+          <th class="col col-2" style="padding-left: 5px; width:50%;" valign="top"> 
+   <table cellspacing="0" cellpadding="0" width="100%" style="width:100%;min-width:100%; border:1px solid #c5c5c5; max-height:270px; overflow:visible">
+        <tr>
+          <td class="col" style="padding:10px;"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a30505ed293b98f5dc9904636fd7b3830e4c65ce1d69aff3e4cf0a0abac0be913ca558c5e6d237b6a29e0a79e2adef3b0258847eddbd4a4794"><img alt="25x on Household Cleaning Solutions" width="290" class="imageResponsive"  style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin: 0 auto; width:290px;" src="https://s7d5.scene7.com/is/image/CanadianTire/TR_SG_AirCareHouseholdCleaning_TriApp_ENG?wid=300&qlt=100"/></a></td>
+        </tr>
+   
+        <tr>
+            <td style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%;padding:10px; padding-top:0;">
+            <tr>
+              <td style="max-width:60px;" width="60"><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td align="left" style="width:45px; max-width:45px;" width="45"><img src="https://s7d5.scene7.com/is/image/CanadianTire/cc_offer_logo_ctr?scl=1&qlt=99" style="width:45px" width="45"/></td>
+                  </tr>
+                </table></td>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif;font-size: 16px; font-weight:bold;line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span class="offer_line_1" style="font-size: 16px; font-weight:bold;text-align:left;font-family: 'Lato',Arial, sans-serif;"> 25x on Household Cleaning Solutions</span></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </tr>
+
+    <tr>
+            <td style="padding-top:5px;"  style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%; border-top:1px solid #c5c5c5; padding:10px;">
+            <tr>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;min-width:100">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif; font-size: 13px;  font-size:10pt; line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span style="padding-top:5px; font-size: 13px;  text-align:left;"  style="font-family: 'Lato',Arial, sans-serif;"> Valid until July 22, 2021</span></td>
+                  </tr>
+                </table></td>
+              <td width="92"><table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100">
+                  <tr>
+                        <td align="right" style="width:92px; max-width:92px;" width="92"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a30505ed293b98f5dc9904636fd7b3830e4c65ce1d69aff3e4cf0a0abac0be913ca558c5e6d237b6a29e0a79e2adef3b0258847eddbd4a4794"><img src="https://canadiantire.scene7.com/is/image/CanadianTire/Activate_BTN_EN?scl=1&qlt=99" width="92" style="width:92px;"/></a></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </td>
+        
+          </tr>
+    
+     <!--ADJUST HEIGHT TO FIT GENERIC TILE [if (gte mso 9) | (IE)]><tr><td height="10" style="height:10px;"><![endif]-->
+        
+      </table>
+      </th>
+   
+ 
+
+    
+      </tr>
+    
+    
+    <tr>
+      <td><div style="width: 100%;height: 15px;">&nbsp;</div></td>
+    </tr>
+    
+      <tr>
+    
+    
+          <th class="col col-2" style="padding-right: 5px; width:50%;" valign="top"> 
+   <table cellspacing="0" cellpadding="0" width="100%" style="width:100%;min-width:100%; border:1px solid #c5c5c5; max-height:270px; overflow:visible">
+        <tr>
+          <td class="col" style="padding:10px;"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a39f935f6b9832445b63623ea0e3f3ce80f7078ccf55f708fb46431fae8b5eaf6861a787029e3f6ff7629c0f0f7b977bf825364a6b43c56f13"><img alt="10x on Bathroom Tissue, Facial Tissue, Paper Towel and Napkins" width="290" class="imageResponsive"  style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin: 0 auto; width:290px;" src="https://s7d5.scene7.com/is/image/CanadianTire/TR_L_BathroomAndFacialTissue_TriApp_ENG?wid=300&qlt=100"/></a></td>
+        </tr>
+   
+        <tr>
+            <td style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%;padding:10px; padding-top:0;">
+            <tr>
+              <td style="max-width:60px;" width="60"><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td align="left" style="width:45px; max-width:45px;" width="45"><img src="https://s7d5.scene7.com/is/image/CanadianTire/cc_offer_logo_ctr?scl=1&qlt=99" style="width:45px" width="45"/></td>
+                  </tr>
+                </table></td>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif;font-size: 16px; font-weight:bold;line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span class="offer_line_1" style="font-size: 16px; font-weight:bold;text-align:left;font-family: 'Lato',Arial, sans-serif;"> 10x on Bathroom Tissue, Facial Tissue, Paper Towel and Napkins</span></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </tr>
+
+    <tr>
+            <td style="padding-top:5px;"  style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%; border-top:1px solid #c5c5c5; padding:10px;">
+            <tr>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;min-width:100">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif; font-size: 13px;  font-size:10pt; line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span style="padding-top:5px; font-size: 13px;  text-align:left;"  style="font-family: 'Lato',Arial, sans-serif;"> Valid until July 22, 2021</span></td>
+                  </tr>
+                </table></td>
+              <td width="92"><table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100">
+                  <tr>
+                        <td align="right" style="width:92px; max-width:92px;" width="92"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a39f935f6b9832445b63623ea0e3f3ce80f7078ccf55f708fb46431fae8b5eaf6861a787029e3f6ff7629c0f0f7b977bf825364a6b43c56f13"><img src="https://canadiantire.scene7.com/is/image/CanadianTire/Activate_BTN_EN?scl=1&qlt=99" width="92" style="width:92px;"/></a></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </td>
+        
+          </tr>
+    
+     <!--ADJUST HEIGHT TO FIT GENERIC TILE [if (gte mso 9) | (IE)]><tr><td height="10" style="height:10px;"><![endif]-->
+        
+      </table>
+      </th>
+   
+ 
+
+    
+          <th class="col col-2" style="padding-left: 5px; width:50%;" valign="top"> 
+   <table cellspacing="0" cellpadding="0" width="100%" style="width:100%;min-width:100%; border:1px solid #c5c5c5; max-height:270px; overflow:visible">
+        <tr>
+          <td class="col" style="padding:10px;"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a35b93b9bd3aaf54c33c821f73796a2eb238025386a2f2cf1540190b229c55a33a933f642ccd1a2e18eb68e273c564be61241f164326f624fc"><img alt="5x on Gardening & Plant Accs" width="290" class="imageResponsive"  style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin: 0 auto; width:290px;" src="https://s7d5.scene7.com/is/image/CanadianTire/TR_SG_GardeningPlantAccs_TriApp_ENG?wid=300&qlt=100"/></a></td>
+        </tr>
+   
+        <tr>
+            <td style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%;padding:10px; padding-top:0;">
+            <tr>
+              <td style="max-width:60px;" width="60"><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td align="left" style="width:45px; max-width:45px;" width="45"><img src="https://s7d5.scene7.com/is/image/CanadianTire/cc_offer_logo_ctr?scl=1&qlt=99" style="width:45px" width="45"/></td>
+                  </tr>
+                </table></td>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif;font-size: 16px; font-weight:bold;line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span class="offer_line_1" style="font-size: 16px; font-weight:bold;text-align:left;font-family: 'Lato',Arial, sans-serif;"> 5x on Gardening & Plant Accs</span></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </tr>
+
+    <tr>
+            <td style="padding-top:5px;"  style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%; border-top:1px solid #c5c5c5; padding:10px;">
+            <tr>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;min-width:100">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif; font-size: 13px;  font-size:10pt; line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span style="padding-top:5px; font-size: 13px;  text-align:left;"  style="font-family: 'Lato',Arial, sans-serif;"> Valid until July 22, 2021</span></td>
+                  </tr>
+                </table></td>
+              <td width="92"><table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100">
+                  <tr>
+                        <td align="right" style="width:92px; max-width:92px;" width="92"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a35b93b9bd3aaf54c33c821f73796a2eb238025386a2f2cf1540190b229c55a33a933f642ccd1a2e18eb68e273c564be61241f164326f624fc"><img src="https://canadiantire.scene7.com/is/image/CanadianTire/Activate_BTN_EN?scl=1&qlt=99" width="92" style="width:92px;"/></a></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </td>
+        
+          </tr>
+    
+     <!--ADJUST HEIGHT TO FIT GENERIC TILE [if (gte mso 9) | (IE)]><tr><td height="10" style="height:10px;"><![endif]-->
+        
+      </table>
+      </th>
+   
+ 
+
+    
+      </tr>
+    
+    
+    <tr>
+      <td><div style="width: 100%;height: 15px;">&nbsp;</div></td>
+    </tr>
+    
+      <tr>
+    
+    
+          <th class="col col-2" style="padding-right: 5px; width:50%;" valign="top"> 
+   <table cellspacing="0" cellpadding="0" width="100%" style="width:100%;min-width:100%; border:1px solid #c5c5c5; max-height:270px; overflow:visible">
+        <tr>
+          <td class="col" style="padding:10px;"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a33b5da65913c85c05de79594edc4fe79bd43d05812ca7d5631a311f35b5fde30f23b72b4558018d7196cd6f896612a4c99d3e72350b4ac1f9"><img alt="25x on Weed, Insect & Rodent Ctrl" width="290" class="imageResponsive"  style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin: 0 auto; width:290px;" src="https://s7d5.scene7.com/is/image/CanadianTire/TR_SG_WeedInsectRodentCtrl_TriApp_ENG?wid=300&qlt=100"/></a></td>
+        </tr>
+   
+        <tr>
+            <td style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%;padding:10px; padding-top:0;">
+            <tr>
+              <td style="max-width:60px;" width="60"><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td align="left" style="width:45px; max-width:45px;" width="45"><img src="https://s7d5.scene7.com/is/image/CanadianTire/cc_offer_logo_ctr?scl=1&qlt=99" style="width:45px" width="45"/></td>
+                  </tr>
+                </table></td>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif;font-size: 16px; font-weight:bold;line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span class="offer_line_1" style="font-size: 16px; font-weight:bold;text-align:left;font-family: 'Lato',Arial, sans-serif;"> 25x on Weed, Insect & Rodent Ctrl</span></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </tr>
+
+    <tr>
+            <td style="padding-top:5px;"  style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%; border-top:1px solid #c5c5c5; padding:10px;">
+            <tr>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;min-width:100">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif; font-size: 13px;  font-size:10pt; line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span style="padding-top:5px; font-size: 13px;  text-align:left;"  style="font-family: 'Lato',Arial, sans-serif;"> Valid until July 22, 2021</span></td>
+                  </tr>
+                </table></td>
+              <td width="92"><table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100">
+                  <tr>
+                        <td align="right" style="width:92px; max-width:92px;" width="92"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a33b5da65913c85c05de79594edc4fe79bd43d05812ca7d5631a311f35b5fde30f23b72b4558018d7196cd6f896612a4c99d3e72350b4ac1f9"><img src="https://canadiantire.scene7.com/is/image/CanadianTire/Activate_BTN_EN?scl=1&qlt=99" width="92" style="width:92px;"/></a></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </td>
+        
+          </tr>
+    
+     <!--ADJUST HEIGHT TO FIT GENERIC TILE [if (gte mso 9) | (IE)]><tr><td height="10" style="height:10px;"><![endif]-->
+        
+      </table>
+      </th>
+   
+ 
+
+    
+          <th class="col col-2" style="padding-left: 5px; width:50%;" valign="top"> 
+   <table cellspacing="0" cellpadding="0" width="100%" style="width:100%;min-width:100%; border:1px solid #c5c5c5; max-height:270px; overflow:visible">
+        <tr>
+          <td class="col" style="padding:10px;"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a30fcdb6d01a2b1bbe81ea331e9b1e0134aab7e472b71149218184805768f3944ade37188e88860d4c612a4b6e079f1d944b9377cf80c0edf3"><img alt="10x on Outdoor Lighting" width="290" class="imageResponsive"  style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin: 0 auto; width:290px;" src="https://s7d5.scene7.com/is/image/CanadianTire/TR_L_LowVoltageLighting_TriApp_ENG?wid=300&qlt=100"/></a></td>
+        </tr>
+   
+        <tr>
+            <td style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%;padding:10px; padding-top:0;">
+            <tr>
+              <td style="max-width:60px;" width="60"><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td align="left" style="width:45px; max-width:45px;" width="45"><img src="https://s7d5.scene7.com/is/image/CanadianTire/cc_offer_logo_ctr?scl=1&qlt=99" style="width:45px" width="45"/></td>
+                  </tr>
+                </table></td>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif;font-size: 16px; font-weight:bold;line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span class="offer_line_1" style="font-size: 16px; font-weight:bold;text-align:left;font-family: 'Lato',Arial, sans-serif;"> 10x on Outdoor Lighting</span></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </tr>
+
+    <tr>
+            <td style="padding-top:5px;"  style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%; border-top:1px solid #c5c5c5; padding:10px;">
+            <tr>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;min-width:100">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif; font-size: 13px;  font-size:10pt; line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span style="padding-top:5px; font-size: 13px;  text-align:left;"  style="font-family: 'Lato',Arial, sans-serif;"> Valid until July 22, 2021</span></td>
+                  </tr>
+                </table></td>
+              <td width="92"><table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100">
+                  <tr>
+                        <td align="right" style="width:92px; max-width:92px;" width="92"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a30fcdb6d01a2b1bbe81ea331e9b1e0134aab7e472b71149218184805768f3944ade37188e88860d4c612a4b6e079f1d944b9377cf80c0edf3"><img src="https://canadiantire.scene7.com/is/image/CanadianTire/Activate_BTN_EN?scl=1&qlt=99" width="92" style="width:92px;"/></a></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </td>
+        
+          </tr>
+    
+     <!--ADJUST HEIGHT TO FIT GENERIC TILE [if (gte mso 9) | (IE)]><tr><td height="10" style="height:10px;"><![endif]-->
+        
+      </table>
+      </th>
+   
+ 
+
+    
+      </tr>
+    
+    
+    <tr>
+      <td><div style="width: 100%;height: 15px;">&nbsp;</div></td>
+    </tr>
+    
+      <tr>
+    
+    
+          <th class="col col-2" style="padding-right: 5px; width:50%;" valign="top"> 
+   <table cellspacing="0" cellpadding="0" width="100%" style="width:100%;min-width:100%; border:1px solid #c5c5c5; max-height:270px; overflow:visible">
+        <tr>
+          <td class="col" style="padding:10px;"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a393a9d2608fcc19e33de9e5716f5f5f97034185af57374928d8d2e8bbd46c600485176a04b858bd27bf98f45cf28e2f3778a3de5b7484d5bd"><img alt="5x on Kitchen Organization" width="290" class="imageResponsive"  style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin: 0 auto; width:290px;" src="https://s7d5.scene7.com/is/image/CanadianTire/TR_L_KitchenOrganization_TriApp_ENG?wid=300&qlt=100"/></a></td>
+        </tr>
+   
+        <tr>
+            <td style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%;padding:10px; padding-top:0;">
+            <tr>
+              <td style="max-width:60px;" width="60"><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td align="left" style="width:45px; max-width:45px;" width="45"><img src="https://s7d5.scene7.com/is/image/CanadianTire/cc_offer_logo_ctr?scl=1&qlt=99" style="width:45px" width="45"/></td>
+                  </tr>
+                </table></td>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif;font-size: 16px; font-weight:bold;line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span class="offer_line_1" style="font-size: 16px; font-weight:bold;text-align:left;font-family: 'Lato',Arial, sans-serif;"> 5x on Kitchen Organization</span></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </tr>
+
+    <tr>
+            <td style="padding-top:5px;"  style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%; border-top:1px solid #c5c5c5; padding:10px;">
+            <tr>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;min-width:100">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif; font-size: 13px;  font-size:10pt; line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span style="padding-top:5px; font-size: 13px;  text-align:left;"  style="font-family: 'Lato',Arial, sans-serif;"> Valid until July 22, 2021</span></td>
+                  </tr>
+                </table></td>
+              <td width="92"><table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100">
+                  <tr>
+                        <td align="right" style="width:92px; max-width:92px;" width="92"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a393a9d2608fcc19e33de9e5716f5f5f97034185af57374928d8d2e8bbd46c600485176a04b858bd27bf98f45cf28e2f3778a3de5b7484d5bd"><img src="https://canadiantire.scene7.com/is/image/CanadianTire/Activate_BTN_EN?scl=1&qlt=99" width="92" style="width:92px;"/></a></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </td>
+        
+          </tr>
+    
+     <!--ADJUST HEIGHT TO FIT GENERIC TILE [if (gte mso 9) | (IE)]><tr><td height="10" style="height:10px;"><![endif]-->
+        
+      </table>
+      </th>
+   
+ 
+
+    
+          <th class="col col-2" style="padding-left: 5px; width:50%;" valign="top"> 
+   <table cellspacing="0" cellpadding="0" width="100%" style="width:100%;min-width:100%; border:1px solid #c5c5c5; max-height:270px; overflow:visible">
+        <tr>
+          <td class="col" style="padding:10px;"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a30cf281127fe1c9ada2ae5141ed06ffffaf2c5d1da308d9a11f806f68bb3ac1b6127bf9a8573f00c4c95ef6cf46e2d43f7579f07b98699376"><img alt="25x on Dining & Entertaining" width="290" class="imageResponsive"  style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin: 0 auto; width:290px;" src="https://s7d5.scene7.com/is/image/CanadianTire/TR_L_Dinnerware_TriApp_ENG?wid=300&qlt=100"/></a></td>
+        </tr>
+   
+        <tr>
+            <td style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%;padding:10px; padding-top:0;">
+            <tr>
+              <td style="max-width:60px;" width="60"><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td align="left" style="width:45px; max-width:45px;" width="45"><img src="https://s7d5.scene7.com/is/image/CanadianTire/cc_offer_logo_ctr?scl=1&qlt=99" style="width:45px" width="45"/></td>
+                  </tr>
+                </table></td>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif;font-size: 16px; font-weight:bold;line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span class="offer_line_1" style="font-size: 16px; font-weight:bold;text-align:left;font-family: 'Lato',Arial, sans-serif;"> 25x on Dining & Entertaining</span></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </tr>
+
+    <tr>
+            <td style="padding-top:5px;"  style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%; border-top:1px solid #c5c5c5; padding:10px;">
+            <tr>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;min-width:100">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif; font-size: 13px;  font-size:10pt; line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span style="padding-top:5px; font-size: 13px;  text-align:left;"  style="font-family: 'Lato',Arial, sans-serif;"> Valid until July 22, 2021</span></td>
+                  </tr>
+                </table></td>
+              <td width="92"><table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100">
+                  <tr>
+                        <td align="right" style="width:92px; max-width:92px;" width="92"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a30cf281127fe1c9ada2ae5141ed06ffffaf2c5d1da308d9a11f806f68bb3ac1b6127bf9a8573f00c4c95ef6cf46e2d43f7579f07b98699376"><img src="https://canadiantire.scene7.com/is/image/CanadianTire/Activate_BTN_EN?scl=1&qlt=99" width="92" style="width:92px;"/></a></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </td>
+        
+          </tr>
+    
+     <!--ADJUST HEIGHT TO FIT GENERIC TILE [if (gte mso 9) | (IE)]><tr><td height="10" style="height:10px;"><![endif]-->
+        
+      </table>
+      </th>
+   
+ 
+
+    
+      </tr>
+    
+    
+    <tr>
+      <td><div style="width: 100%;height: 15px;">&nbsp;</div></td>
+    </tr>
+    
+      <tr>
+    
+    
+          <th class="col col-2" style="padding-right: 5px; width:50%;" valign="top"> 
+   <table cellspacing="0" cellpadding="0" width="100%" style="width:100%;min-width:100%; border:1px solid #c5c5c5; max-height:270px; overflow:visible">
+        <tr>
+          <td class="col" style="padding:10px;"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3b93ec782b35c6b0a1d3a48fe5ba7726bae91f9e18e4bea2718ed5c84925f75a3c2e99d15e2008753818bb26a4a8c1143aa802b644fb7f346"><img alt="10x on Cookware" width="290" class="imageResponsive"  style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin: 0 auto; width:290px;" src="https://s7d5.scene7.com/is/image/CanadianTire/TR_L_FrypansAndSaucepan_TriApp_ENG?wid=300&qlt=100"/></a></td>
+        </tr>
+   
+        <tr>
+            <td style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%;padding:10px; padding-top:0;">
+            <tr>
+              <td style="max-width:60px;" width="60"><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td align="left" style="width:45px; max-width:45px;" width="45"><img src="https://s7d5.scene7.com/is/image/CanadianTire/cc_offer_logo_ctr?scl=1&qlt=99" style="width:45px" width="45"/></td>
+                  </tr>
+                </table></td>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif;font-size: 16px; font-weight:bold;line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span class="offer_line_1" style="font-size: 16px; font-weight:bold;text-align:left;font-family: 'Lato',Arial, sans-serif;"> 10x on Cookware</span></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </tr>
+
+    <tr>
+            <td style="padding-top:5px;"  style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%; border-top:1px solid #c5c5c5; padding:10px;">
+            <tr>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;min-width:100">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif; font-size: 13px;  font-size:10pt; line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span style="padding-top:5px; font-size: 13px;  text-align:left;"  style="font-family: 'Lato',Arial, sans-serif;"> Valid until July 22, 2021</span></td>
+                  </tr>
+                </table></td>
+              <td width="92"><table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100">
+                  <tr>
+                        <td align="right" style="width:92px; max-width:92px;" width="92"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3b93ec782b35c6b0a1d3a48fe5ba7726bae91f9e18e4bea2718ed5c84925f75a3c2e99d15e2008753818bb26a4a8c1143aa802b644fb7f346"><img src="https://canadiantire.scene7.com/is/image/CanadianTire/Activate_BTN_EN?scl=1&qlt=99" width="92" style="width:92px;"/></a></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </td>
+        
+          </tr>
+    
+     <!--ADJUST HEIGHT TO FIT GENERIC TILE [if (gte mso 9) | (IE)]><tr><td height="10" style="height:10px;"><![endif]-->
+        
+      </table>
+      </th>
+   
+ 
+
+    
+           
+     <th class="col col-2" style="padding-left: 5px; width:50%;" valign="top"> <table cellspacing="0" cellpadding="0" width="100%" style="width:100%;min-width:100%;">
+          <tr>
+          <td class="col"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a342ca77825dbc12dbbdd53564ff2505d78f70f8e6c2c8144bf5c6938fc12ca388d7eb01603e970cc0324b0d7bc2d6a0ea87acbac5a8da73bf"><img alt="" width="315" class="em_hidedummy" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin: 0 auto;" src="https://canadiantire.scene7.com/is/image/CanadianTire/2021_CC_FWT_CT_SC_MRK_PC_EN?scl=1&qlt=100"/></a></td>
+        </tr>
+         
+        </table>
+   </th>
+    
+ 
+
+    
+      </tr>
+    
+    
+  </table>
+    </td>
+  
+    </tr>
+  
+  <tr>
+    <td><div style="width: 100%; height: 30px;">&nbsp;</div></td>
+  </tr>
+   
+  
+  
+<!-- Tracking Pixel -->
+ <img src="http://click.myctm.canadiantire.ca/open.aspx?ffcb10-fe55177771650d7c7d1d-fdf91c747061057c74107975-fe5f15707163057a7312-fe8d15797163067972-fe2a167573600674751d70-ff2c12757661&d=10146&bmt=0" width="1" height="1" alt="">
+<!-- Tracking Pixel -->
+  
+  
+   <!--FWT--> 
+   
+  <!--END custom always on-->   
+      
+  
+    
+ <!--FWT--> 
+  
+  <tr>
+    <td align="center" valign="top"><table border="0" cellpadding="0" width="100%" bgcolor="#ffffff"  align="center" >
+        <tr>
+          <td align="center" valign="middle"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a31b7845f77053b197609a0b4ead81d958e4b3c4734c830a2a7d996121410665b415c8a2acab716eaa8258be6d32d502c8449dd4c38e8af190" target="_blank"  title="ACTIVATE NOW"> <img aria="true" border="0" src="https://s7d5.scene7.com/is/image/CanadianTire/5052_ChildrensBikes_DESKTOP_1280x406_EN?scl=1&qlt=100" style="display:block; width: 640px; height: auto;" class="em_hide" alt="ACTIVATE NOW" width="640"> 
+            <!--[if !mso]><!-- --><img aria="true" border="0" src="https://s7d5.scene7.com/is/image/CanadianTire/5052_ChildrensBikes_Mobile_FWT_640x600_EN?scl=1&qlt=100" style="display:none; width: 100%; height: auto; overflow: hidden;" class="em_show" alt="ACTIVATE NOW"><!--<![endif]--> 
+            </a><br/>
+            <br/></td>
+        </tr>
+      </table></td>
+  </tr>
+   
+  <!--END custom always on-->  
+  
+      <!--FWT--> 
+  
+  <tr>
+    <td align="center" valign="top"><table border="0" cellpadding="0" width="100%" bgcolor="#ffffff"  align="center" >
+        <tr>
+          <td align="center" valign="middle"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3e805cca137f9d5dd23b2dd797e4c08af927e5cdd42f55d24cbf102667015df38bf9acaaa0aa308d6aea07d4e65f898a9a717d6e05b70badf" target="_blank"  title="ACTIVATE NOW"> <img aria="true" border="0" src="https://s7d5.scene7.com/is/image/CanadianTire/5052_Swings_DESKTOP_1280x406_EN?scl=1&qlt=100" style="display:block; width: 640px; height: auto;" class="em_hide" alt="ACTIVATE NOW" width="640"> 
+            <!--[if !mso]><!-- --><img aria="true" border="0" src="https://s7d5.scene7.com/is/image/CanadianTire/5052_Swings_Mobile_FWT_640x600_FR?scl=1&qlt=100" style="display:none; width: 100%; height: auto; overflow: hidden;" class="em_show" alt="ACTIVATE NOW"><!--<![endif]--> 
+            </a><br/>
+            <br/></td>
+        </tr>
+      </table></td>
+  </tr>
+   
+  <!--END custom always on--> 
+
+  <!--FWT--> 
+  
+ <tr>
+    <td align="center" valign="top"><table border="0" cellpadding="0" width="100%" bgcolor="#ffffff"  align="center" >
+        <tr>
+          <td align="center" valign="middle"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3f6ab62cbe4e1563fa4a84ef034f34a9c89c857e786028464eb4778f3359dda7b04c4a2a1579fb45c813a633494607d184af0e1b5063564c5" target="_blank"  title="ACTIVATE NOW"> <img aria="true" border="0" src="https://s7d5.scene7.com/is/image/CanadianTire/5052_Tents_DESKTOP_1280x406_EN?scl=1&qlt=100" style="display:block; width: 640px; height: auto;" class="em_hide" alt="ACTIVATE NOW" width="640"> 
+            <!--[if !mso]><!-- --><img aria="true" border="0" src="https://s7d5.scene7.com/is/image/CanadianTire/5052_Tents_Mobile_FWT_640x600_EN?scl=1&qlt=100" style="display:none; width: 100%; height: auto; overflow: hidden;" class="em_show" alt="ACTIVATE NOW"><!--<![endif]--> 
+            </a><br/>
+            <br/></td>
+        </tr>
+      </table></td>
+  </tr>
+   
+            
+
+
+  <!--END custom always on--> 
+  
+  <!--offre secondaire : SPORT CHEK--> 
+  
+    <tr>
+  
+    <td style="font-family:'Lato', Arial, sans-serif;">
+      
+      
+     
+  
+  
+  <!--SPORT CHEK BANNER-->
+  <table border="0" cellpadding="0" width="100%" bgcolor="#ffffff"  align="center" >
+    <tr>
+      <td align="center" valign="middle">
+
+          <img aria="true" border="0" src="https://s7d5.scene7.com/is/image/CanadianTire/200828_commandcenter_banner_spc?scl=1&qlt=99" style="display:block; width: 640px; height: auto;" class="em_hide" alt="Sport Chek" width="640"> 
+        <!--[if !mso]><!-- --><img aria="true" border="0" src="https://s7d5.scene7.com/is/image/CanadianTire/200828_commandcenter_banner_spc_mobile?scl=1&qlt=99" style="display:none; width: 100%; height: auto; overflow: hidden;" class="em_show" alt="Sport Chek"><!--<![endif]-->
+
+        
+      </td>
+    </tr>
+  </table>
+  <table id="secondary_offer" cellspacing="0" cellpadding="0" width="640">
+    
+      <tr>
+    
+    
+         
+  <th class="col col-2" style="padding-right: 5px; width:50%;" valign="top"> 
+   <table cellspacing="0" cellpadding="0" width="100%" style="width:100%;min-width:100%; border:1px solid #c5c5c5; max-height:270px; overflow:visible">
+        <tr>
+          <td class="col" style="padding:10px;"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3dc5eba070f5909143a52876db69f4a343626f0374385482373ba38bdd078bb7f06fc142daeb9e4a347c1d013e03263933eead2299ccd4861"><img alt="Spend $125, Collect $25 Bonus CT Money®" width="290" class="imageResponsive"  style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin: 0 auto; width:290px;" src="https://s7d5.scene7.com/is/image/CanadianTire/3240_SC_web?wid=300&qlt=100"/></a></td>
+        </tr>
+   
+        <tr>
+            <td style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%;padding:10px; padding-top:0;">
+            <tr>
+              <td style="max-width:60px;" width="60"><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td align="left" style="width:45px; max-width:45px;" width="45">
+    
+     <img src="https://s7d5.scene7.com/is/image/CanadianTire/cc_offer_logo_spc?scl=1&qlt=99" style="width:45px" width="45"/>
+
+    </td>
+                  </tr>
+                </table></td>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif;font-size: 16px; font-weight:bold;line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span class="offer_line_1" style="font-size: 16px; font-weight:bold;text-align:left;font-family: 'Lato',Arial, sans-serif;"> Spend $125, Collect $25 Bonus CT Money®</span></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </tr>
+
+  <tr>
+            <td style="padding-top:5px;"  style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%; border-top:1px solid #c5c5c5; padding:10px;">
+            <tr>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;min-width:100">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif; font-size: 13px;  font-size:10pt; line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span style="padding-top:5px; font-size: 13px; text-align:left;"  style="font-family: 'Lato',Arial, sans-serif;"> Valid until July 22, 2021</span></td>
+                  </tr>
+                </table></td>
+              <td width="92"><table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100">
+                  <tr>
+                        <td align="right" style="width:92px; max-width:92px;" width="92"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3dc5eba070f5909143a52876db69f4a343626f0374385482373ba38bdd078bb7f06fc142daeb9e4a347c1d013e03263933eead2299ccd4861"><img src="https://canadiantire.scene7.com/is/image/CanadianTire/Activate_BTN_EN?scl=1&qlt=99" width="92" style="width:92px;"/></a></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </td>
+        
+          </tr>
+    
+     <!--ADJUST HEIGHT TO FIT GENERIC TILE [if (gte mso 9) | (IE)]><tr><td height="10" style="height:10px;"><![endif]-->
+        
+      </table>
+      </th>
+   
+    
+         
+  <th class="col col-2" style="padding-left: 5px; width:50%;" valign="top"> 
+   <table cellspacing="0" cellpadding="0" width="100%" style="width:100%;min-width:100%; border:1px solid #c5c5c5; max-height:270px; overflow:visible">
+        <tr>
+          <td class="col" style="padding:10px;"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3d3a07e355f7d174bb6f44dba13df5b22e9ad9e803e907e443af4de02fc96d923858ca2117370f2089ea17cf35265b5ba1a59136c963816e1"><img alt="25x on Bags & Packs" width="290" class="imageResponsive"  style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin: 0 auto; width:290px;" src="https://s7d5.scene7.com/is/image/CanadianTire/TR_SC_BagsandPacks_TriApp_EN?wid=300&qlt=100"/></a></td>
+        </tr>
+   
+        <tr>
+            <td style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%;padding:10px; padding-top:0;">
+            <tr>
+              <td style="max-width:60px;" width="60"><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td align="left" style="width:45px; max-width:45px;" width="45">
+    
+     <img src="https://s7d5.scene7.com/is/image/CanadianTire/cc_offer_logo_spc?scl=1&qlt=99" style="width:45px" width="45"/>
+
+    </td>
+                  </tr>
+                </table></td>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif;font-size: 16px; font-weight:bold;line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span class="offer_line_1" style="font-size: 16px; font-weight:bold;text-align:left;font-family: 'Lato',Arial, sans-serif;"> 25x on Bags & Packs</span></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </tr>
+
+  <tr>
+            <td style="padding-top:5px;"  style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%; border-top:1px solid #c5c5c5; padding:10px;">
+            <tr>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;min-width:100">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif; font-size: 13px;  font-size:10pt; line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span style="padding-top:5px; font-size: 13px; text-align:left;"  style="font-family: 'Lato',Arial, sans-serif;"> Valid until July 22, 2021</span></td>
+                  </tr>
+                </table></td>
+              <td width="92"><table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100">
+                  <tr>
+                        <td align="right" style="width:92px; max-width:92px;" width="92"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3d3a07e355f7d174bb6f44dba13df5b22e9ad9e803e907e443af4de02fc96d923858ca2117370f2089ea17cf35265b5ba1a59136c963816e1"><img src="https://canadiantire.scene7.com/is/image/CanadianTire/Activate_BTN_EN?scl=1&qlt=99" width="92" style="width:92px;"/></a></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </td>
+        
+          </tr>
+    
+     <!--ADJUST HEIGHT TO FIT GENERIC TILE [if (gte mso 9) | (IE)]><tr><td height="10" style="height:10px;"><![endif]-->
+        
+      </table>
+      </th>
+   
+    
+      </tr>
+    
+    
+    <tr>
+      <td><div style="width: 100%;height: 15px;">&nbsp;</div></td>
+    </tr>
+    
+      <tr>
+    
+    
+         
+  <th class="col col-2" style="padding-right: 5px; width:50%;" valign="top"> 
+   <table cellspacing="0" cellpadding="0" width="100%" style="width:100%;min-width:100%; border:1px solid #c5c5c5; max-height:270px; overflow:visible">
+        <tr>
+          <td class="col" style="padding:10px;"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a33b3a09dd0c8591ca9c354c1908788f76c420cde3f56a82f203b3f884cb56629405f9a136932de2fa04e434704e40f06a1fab6362b22e1775"><img alt="25x on Outerwear" width="290" class="imageResponsive"  style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin: 0 auto; width:290px;" src="https://s7d5.scene7.com/is/image/CanadianTire/TR_SC_Outerwear_TriApp_EN?wid=300&qlt=100"/></a></td>
+        </tr>
+   
+        <tr>
+            <td style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%;padding:10px; padding-top:0;">
+            <tr>
+              <td style="max-width:60px;" width="60"><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td align="left" style="width:45px; max-width:45px;" width="45">
+    
+     <img src="https://s7d5.scene7.com/is/image/CanadianTire/cc_offer_logo_spc?scl=1&qlt=99" style="width:45px" width="45"/>
+
+    </td>
+                  </tr>
+                </table></td>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif;font-size: 16px; font-weight:bold;line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span class="offer_line_1" style="font-size: 16px; font-weight:bold;text-align:left;font-family: 'Lato',Arial, sans-serif;"> 25x on Outerwear</span></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </tr>
+
+  <tr>
+            <td style="padding-top:5px;"  style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%; border-top:1px solid #c5c5c5; padding:10px;">
+            <tr>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;min-width:100">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif; font-size: 13px;  font-size:10pt; line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span style="padding-top:5px; font-size: 13px; text-align:left;"  style="font-family: 'Lato',Arial, sans-serif;"> Valid until July 22, 2021</span></td>
+                  </tr>
+                </table></td>
+              <td width="92"><table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100">
+                  <tr>
+                        <td align="right" style="width:92px; max-width:92px;" width="92"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a33b3a09dd0c8591ca9c354c1908788f76c420cde3f56a82f203b3f884cb56629405f9a136932de2fa04e434704e40f06a1fab6362b22e1775"><img src="https://canadiantire.scene7.com/is/image/CanadianTire/Activate_BTN_EN?scl=1&qlt=99" width="92" style="width:92px;"/></a></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </td>
+        
+          </tr>
+    
+     <!--ADJUST HEIGHT TO FIT GENERIC TILE [if (gte mso 9) | (IE)]><tr><td height="10" style="height:10px;"><![endif]-->
+        
+      </table>
+      </th>
+   
+    
+         
+   
+     <th class="col col-2" style="padding-left: 5px; width:50%;" valign="top"> <table cellspacing="0" cellpadding="0" width="100%" style="width:100%;min-width:100%;">
+          <tr>
+          <td class="col"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3129f960c4776fae58d58d3ac496ae541c2d2d64d364c901fb7f6ddfece0e204764878b585b37de8447a9ad1cdb91a00b51e794701ccefed9"><img alt="" width="315" class="em_hidedummy" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin: 0 auto;" src="https://canadiantire.scene7.com/is/image/CanadianTire/2021_CC_FWT_CT_SC_MRK_PC_EN?scl=1&qlt=100"/></a></td>
+        </tr>
+         
+        </table>
+   </th>
+    
+    
+      </tr>
+    
+    
+  </table>
+    </td>
+  
+    </tr>
+
+  
+  
+  <tr>
+    <td><div style="width: 100%; height: 30px;">&nbsp;</div></td>
+  </tr>
+   
+
+
+  
+  
+   <!--offre secondaire : SPORTS EXPERTS--> 
+   
+ 
+  
+  <!--offre secondaire : MARK'S--> 
+  
+    <tr>
+  
+    <td style="font-family:'Lato', Arial, sans-serif;">
+  
+  
+  <!--MARK'S BANNER-->
+  <table border="0" cellpadding="0" width="100%" bgcolor="#ffffff"  align="center" >
+   
+    <tr>
+      <td align="center" valign="middle"><img aria="true" border="0" src="https://s7d5.scene7.com/is/image/CanadianTire/200828_commandcenter_banner_marks?scl=1&qlt=99" style="display:block; width: 640px; height: auto;" class="em_hide" alt="Mark's" width="640"> 
+        <!--[if !mso]><!-- --><img aria="true" border="0" src="https://s7d5.scene7.com/is/image/CanadianTire/200828_commandcenter_banner_marks_mobile?scl=1&qlt=99" style="display:none; width: 100%; height: auto; overflow: hidden;" class="em_show" alt="Mark's"><!--<![endif]--></td>
+    </tr>
+  </table>
+  <table id="secondary_offer" cellspacing="0" cellpadding="0" width="640">
+    
+      <tr>
+    
+    
+          <th class="col col-2" style="padding-right: 5px; width:50%;" valign="top"> 
+   <table cellspacing="0" cellpadding="0" width="100%" style="width:100%;min-width:100%; border:1px solid #c5c5c5; max-height:270px; overflow:visible">
+        <tr>
+          <td class="col" style="padding:10px;"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a36c7e41089da0c16da85697057aab6f4981d4b6d5dc2f4364808e3cb9f25e0236177dff75e564299a085bd8e72bec5a5e73dd83b5a9ceac62"><img alt="Spend $100, Collect $20 Bonus CT Money®" width="290" class="imageResponsive"  style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin: 0 auto; width:290px;" src="https://s7d5.scene7.com/is/image/CanadianTire/3240_Marks_web?wid=300&qlt=100"/></a></td>
+        </tr>
+   
+        <tr>
+            <td style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%;padding:10px; padding-top:0;">
+            <tr>
+              <td style="max-width:60px;" width="60"><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td align="left" style="width:45px; max-width:45px;" width="45"><img src="https://s7d5.scene7.com/is/image/CanadianTire/cc_offer_logo_marks?scl=1&qlt=99" style="width:45px" width="45"/></td>
+                  </tr>
+                </table></td>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif;font-size: 16px; font-weight:bold;line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span class="offer_line_1" style="font-size: 16px; font-weight:bold;text-align:left;font-family: 'Lato',Arial, sans-serif;"> Spend $100, Collect $20 Bonus CT Money®</span></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </tr>
+
+    <tr>
+            <td style="padding-top:5px;"  style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%; border-top:1px solid #c5c5c5; padding:10px;">
+            <tr>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;min-width:100">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif; font-size: 13px;  font-size:10pt; line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span style="padding-top:5px; font-size: 13px; text-align:left;"  style="font-family: 'Lato',Arial, sans-serif;"> Valid until July 22, 2021</span></td>
+                  </tr>
+                </table></td>
+              <td width="92"><table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100">
+                  <tr>
+                        <td align="right" style="width:92px; max-width:92px;" width="92"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a36c7e41089da0c16da85697057aab6f4981d4b6d5dc2f4364808e3cb9f25e0236177dff75e564299a085bd8e72bec5a5e73dd83b5a9ceac62"><img src="https://canadiantire.scene7.com/is/image/CanadianTire/Activate_BTN_EN?scl=1&qlt=99" width="92" style="width:92px;"/></a></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </td>
+        
+          </tr>
+    
+     <!--ADJUST HEIGHT TO FIT GENERIC TILE [if (gte mso 9) | (IE)]><tr><td height="10" style="height:10px;"><![endif]-->
+        
+      </table>
+      </th>
+   
+ 
+    
+          <th class="col col-2" style="padding-left: 5px; width:50%;" valign="top"> 
+   <table cellspacing="0" cellpadding="0" width="100%" style="width:100%;min-width:100%; border:1px solid #c5c5c5; max-height:270px; overflow:visible">
+        <tr>
+          <td class="col" style="padding:10px;"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3f21c67b18b8f1693d7cd580c437d2eb9e1253213e05d13c88bb6a10fca8bfc8a663909f86320d6af5aae9ccda2792a8e53da6001f3701625"><img alt="25x on Men’s Socks & Underwear" width="290" class="imageResponsive"  style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin: 0 auto; width:290px;" src="https://s7d5.scene7.com/is/image/CanadianTire/TR_Marks_MensSocksUnderwear_TriApp_EN?wid=300&qlt=100"/></a></td>
+        </tr>
+   
+        <tr>
+            <td style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%;padding:10px; padding-top:0;">
+            <tr>
+              <td style="max-width:60px;" width="60"><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td align="left" style="width:45px; max-width:45px;" width="45"><img src="https://s7d5.scene7.com/is/image/CanadianTire/cc_offer_logo_marks?scl=1&qlt=99" style="width:45px" width="45"/></td>
+                  </tr>
+                </table></td>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif;font-size: 16px; font-weight:bold;line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span class="offer_line_1" style="font-size: 16px; font-weight:bold;text-align:left;font-family: 'Lato',Arial, sans-serif;"> 25x on Men’s Socks & Underwear</span></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </tr>
+
+    <tr>
+            <td style="padding-top:5px;"  style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%; border-top:1px solid #c5c5c5; padding:10px;">
+            <tr>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;min-width:100">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif; font-size: 13px;  font-size:10pt; line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span style="padding-top:5px; font-size: 13px; text-align:left;"  style="font-family: 'Lato',Arial, sans-serif;"> Valid until July 22, 2021</span></td>
+                  </tr>
+                </table></td>
+              <td width="92"><table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100">
+                  <tr>
+                        <td align="right" style="width:92px; max-width:92px;" width="92"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3f21c67b18b8f1693d7cd580c437d2eb9e1253213e05d13c88bb6a10fca8bfc8a663909f86320d6af5aae9ccda2792a8e53da6001f3701625"><img src="https://canadiantire.scene7.com/is/image/CanadianTire/Activate_BTN_EN?scl=1&qlt=99" width="92" style="width:92px;"/></a></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </td>
+        
+          </tr>
+    
+     <!--ADJUST HEIGHT TO FIT GENERIC TILE [if (gte mso 9) | (IE)]><tr><td height="10" style="height:10px;"><![endif]-->
+        
+      </table>
+      </th>
+   
+ 
+    
+      </tr>
+    
+    
+    <tr>
+      <td><div style="width: 100%;height: 15px;">&nbsp;</div></td>
+    </tr>
+    
+      <tr>
+    
+    
+          <th class="col col-2" style="padding-right: 5px; width:50%;" valign="top"> 
+   <table cellspacing="0" cellpadding="0" width="100%" style="width:100%;min-width:100%; border:1px solid #c5c5c5; max-height:270px; overflow:visible">
+        <tr>
+          <td class="col" style="padding:10px;"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3413a46ccfc38b85282cd0095585aac48c3f2e4312080d851f178f3693e0ca550d393f8f5eb72dd3d2b8b8714d3c90d6b5cf942dbad04a08b"><img alt="25x on Women's Denim" width="290" class="imageResponsive"  style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin: 0 auto; width:290px;" src="https://s7d5.scene7.com/is/image/CanadianTire/TR_Marks_LadiesDenim_TriApp_EN?wid=300&qlt=100"/></a></td>
+        </tr>
+   
+        <tr>
+            <td style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%;padding:10px; padding-top:0;">
+            <tr>
+              <td style="max-width:60px;" width="60"><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td align="left" style="width:45px; max-width:45px;" width="45"><img src="https://s7d5.scene7.com/is/image/CanadianTire/cc_offer_logo_marks?scl=1&qlt=99" style="width:45px" width="45"/></td>
+                  </tr>
+                </table></td>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif;font-size: 16px; font-weight:bold;line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span class="offer_line_1" style="font-size: 16px; font-weight:bold;text-align:left;font-family: 'Lato',Arial, sans-serif;"> 25x on Women's Denim</span></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </tr>
+
+    <tr>
+            <td style="padding-top:5px;"  style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%; border-top:1px solid #c5c5c5; padding:10px;">
+            <tr>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;min-width:100">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif; font-size: 13px;  font-size:10pt; line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span style="padding-top:5px; font-size: 13px; text-align:left;"  style="font-family: 'Lato',Arial, sans-serif;"> Valid until July 22, 2021</span></td>
+                  </tr>
+                </table></td>
+              <td width="92"><table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100">
+                  <tr>
+                        <td align="right" style="width:92px; max-width:92px;" width="92"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3413a46ccfc38b85282cd0095585aac48c3f2e4312080d851f178f3693e0ca550d393f8f5eb72dd3d2b8b8714d3c90d6b5cf942dbad04a08b"><img src="https://canadiantire.scene7.com/is/image/CanadianTire/Activate_BTN_EN?scl=1&qlt=99" width="92" style="width:92px;"/></a></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </td>
+        
+          </tr>
+    
+     <!--ADJUST HEIGHT TO FIT GENERIC TILE [if (gte mso 9) | (IE)]><tr><td height="10" style="height:10px;"><![endif]-->
+        
+      </table>
+      </th>
+   
+ 
+    
+           
+     <th class="col col-2" style="padding-left: 5px; width:50%;" valign="top"> <table cellspacing="0" cellpadding="0" width="100%" style="width:100%;min-width:100%;">
+          <tr>
+          <td class="col"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a38597eb53d42a482f76d26fbccd5992aa4eaf6e91c0cedd52308f2adc628e70a7b14b0c6c72f1baa323a9689c8ca7bed48e1aa32b0423c07d"><img alt="" width="315" class="em_hidedummy"  style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin: 0 auto;" src="https://canadiantire.scene7.com/is/image/CanadianTire/2021_CC_FWT_CT_SC_MRK_PC_EN?scl=1&qlt=100"/></a></td>
+        </tr>
+         
+        </table>
+   </th>
+    
+ 
+    
+      </tr>
+    
+    
+  </table>
+    </td>
+  
+    </tr>
+
+  
+  <tr>
+    <td><div style="width: 100%; height: 30px;">&nbsp;</div></td>
+  </tr>
+   
+  
+
+ <!--FWT--> 
+          
+
+
+  <!--END custom always on--> 
+  
+    <tr>
+    <td><div style="width: 100%; height: 30px;">&nbsp;</div></td>
+  </tr>
+   
+  
+  
+
+  
+    
+  <!--offre secondaire : PARTY CITY--> 
+  
+    <tr>
+  
+    <td style="font-family:'Lato', Arial, sans-serif;">
+  
+  
+    <!--PARTY CITY-BANNER-->
+  <table border="0" cellpadding="0" width="100%" bgcolor="#ffffff"  align="center" >
+    <tr>
+      <td align="center" valign="middle">
+          
+        <img aria="true" border="0" src="https://s7d5.scene7.com/is/image/CanadianTire/2021_3352_CC_PartyCityLogo_EN?scl=1&qlt=99" style="display:block; width: 640px; height: auto;" class="em_hide" alt="Party City" width="640"> 
+        <!--[if !mso]><!-- --><img aria="true" border="0" src="https://s7d5.scene7.com/is/image/CanadianTire/2021_3352_CC_PartyCityLogo_MBL_EN?scl=1&qlt=99" style="display:none; width: 100%; height: auto; overflow: hidden;" class="em_show" alt="Party City"><!--<![endif]-->
+        
+      </td>
+    </tr>
+  </table>
+  <table id="secondary_offer" cellspacing="0" cellpadding="0" width="640">
+    
+      <tr>
+    
+    
+          <th class="col col-2" style="padding-right: 5px; width:50%;" valign="top"> 
+   <table cellspacing="0" cellpadding="0" width="100%" style="width:100%;min-width:100%; border:1px solid #c5c5c5; max-height:270px; overflow:visible">
+        <tr>
+          <td class="col" style="padding:10px;"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3f31ca1e3d873f0b63ff7450ecb23c9d153978826a3a9cafc312a0f5c75705cc11ee0a8cdbffa04f25ae402639ca9e30025cecd9b965ad387"><img alt="Spend $80, Collect $20 Bonus CT Money*" width="290" class="imageResponsive"  style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin: 0 auto; width:290px;" src="https://s7d5.scene7.com/is/image/CanadianTire/3240_PartyCity_TriApp?wid=300&qlt=100"/></a></td>
+        </tr>
+   
+        <tr>
+            <td style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%;padding:10px; padding-top:0;">
+            <tr>
+              <td style="max-width:60px;" width="60"><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td align="left" style="width:45px; max-width:45px;" width="45">
+    
+     <img src="https://s7d5.scene7.com/is/image/CanadianTire/2021_CC_PartyCity2?scl=1&qlt=99" style="width:45px" width="45"/>
+    
+     </td>
+                  </tr>
+                </table></td>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif;font-size: 16px; font-weight:bold;line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span class="offer_line_1" style="font-size: 16px; font-weight:bold;text-align:left;font-family: 'Lato',Arial, sans-serif;"> Spend $80, Collect $20 Bonus CT Money*</span></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </tr>
+
+    <tr>
+            <td style="padding-top:5px;"  style="font-family:'Lato', Arial, sans-serif;">
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100%; border-top:1px solid #c5c5c5; padding:10px;">
+            <tr>
+              <td><table cellspacing="0" cellpadding="0" width="100%" align="left" style="width:100%;min-width:100">
+                  <tr>
+                    <td class="col" align="left" valign="middle" style="font-family:'Lato', Arial, sans-serif; font-size: 13px;  font-size:10pt; line-height:20px;mso-line-height-rule: exactly;vertical-align:middle;" height="38"><span style="padding-top:5px; font-size: 13px; text-align:left;"  style="font-family: 'Lato',Arial, sans-serif;"> Valid until July 22, 2021</span></td>
+                  </tr>
+                </table></td>
+              <td width="92"><table cellspacing="0" cellpadding="0" width="100%" align="center" style="width:100%;min-width:100">
+                  <tr>
+                        <td align="right" style="width:92px; max-width:92px;" width="92"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3f31ca1e3d873f0b63ff7450ecb23c9d153978826a3a9cafc312a0f5c75705cc11ee0a8cdbffa04f25ae402639ca9e30025cecd9b965ad387"><img src="https://canadiantire.scene7.com/is/image/CanadianTire/Activate_BTN_EN?scl=1&qlt=99" width="92" style="width:92px;"/></a></td>
+                  </tr>
+                 
+                </table></td>
+            </tr>
+          </table>
+          </td>
+        
+          </tr>
+    
+     <!--ADJUST HEIGHT TO FIT GENERIC TILE [if (gte mso 9) | (IE)]><tr><td height="10" style="height:10px;"><![endif]-->
+        
+      </table>
+      </th>
+   
+    
+           
+     <th class="col col-2" style="padding-left: 5px; width:50%;" valign="top"> <table cellspacing="0" cellpadding="0" width="100%" style="width:100%;min-width:100%;">
+          <tr>
+          <td class="col"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a318a600ad867376bf6b88796476d7689692c09c9a900cc2238539ecf8733f56f32398242583a930ed09bda155bc8f4da13493567f335cd11e"><img alt="" width="315" class="em_hidedummy" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin: 0 auto;" src="https://canadiantire.scene7.com/is/image/CanadianTire/2021_CC_FWT_CT_SC_MRK_PC_EN?scl=1&qlt=100"/></a></td>
+        </tr>
+         
+        </table>
+   </th>
+    
+    
+      </tr>
+    
+    
+  </table>
+    </td>
+  
+    </tr>
+
+  
+  
+  <tr>
+    <td><div style="width: 100%; height: 30px;">&nbsp;</div></td>
+  </tr>
+   
+
+
+      
+    
+
+  
+<!-- produits : titre + une table 2 colonnes --> 
+   
+<tr> 
+<td class="bg_grey" style="font-family:'Lato', Arial, sans-serif;background: #f0f0f0;padding: 30px 0px;">
+     <div class="title" style="text-align: center;font-size: 22px;color: #333333;">
+      <span class="upper" style="font-family: 'Lato',Arial, sans-serif;">This week's deals, </span><span class="upper" style="font-family: 'Lato',Arial, sans-serif;">picked just for Josef</span><br/>
+        <span style="font-family: 'Lato',Arial, sans-serif; font-size:16px">Offers valid until July 21, 2021</span><br/>
+        <span style="font-family: 'Lato',Arial, sans-serif; font-size:12px">Prices are subject to change based on product specifications and/or region.</span>
+      
+     </div>
+      
+     
+     <table id="products" cellspacing="15" cellpadding="0" width="600" style="margin:15px 0px;width:100%;min-width:100%;">      
+     
+      <tr>
+        
+      <td valign="top" class="col col-2 ms-left" width="50%" style="background: #ffffff;">      
+       <table valign="top" cellspacing="0" cellpadding="0" width="100%" style="min-height:160px;margin:5px 0px;width:100%;min-width:100%;">      
+        <tr>
+         <td valign="center" align="center" class="col product_image" width="50%" style="min-height: 160px;">
+          <!--[if !mso]><!-- -->
+          <a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb4573bbbe7dd44d51c9ca2b3767a378fe815d0456530b9974894e5027fef76cde0c90488fed28e4b77dded9f4d4dda393d12ce01478b645894513" style="width: 142px;min-height: 142px;display: block;padding-top:15px;"><img src="http://s7d5.scene7.com/is/image/CanadianTire/0396697_1?wid=142&hei=142&qlt=90&resMode=sharp2" style="width: 142px;min-height: 142px;"></a>
+          <!--<![endif]--><!-- -->
+          <!--[if gte mso]>           <a href="https://www.canadiantire.ca/en/pdp/simoniz-microfibre-towels-36-pk-0396697p.html?"><img src="http://s7d5.scene7.com/is/image/CanadianTire/0396697_1?wid=142&hei=142&qlt=90&resMode=sharp2" width="129" style="outline: none; padding-top:0; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin:auto;max-width:100%;"/></a>           <!--<![endif]-->
+         </td> 
+         <td valign="top" style="padding: 25px 5px 0px;" width="50%" class="product_info">
+         <!-- <div class="product_save"><span style="font-family: Arial, sans-serif;font-size: 14px;color: #ffffff;background: #ee1c25;text-transform: uppercase;padding: 3px;font-weight: bold;">Save 35%</span></div>-->
+          <div class="product_price"><span style="font-family: Arial, sans-serif;font-size: 18px;color: #333333;font-weight: bold;">$14.89</span></div>
+          <!--[if !mso]>           <div class="product_save ms-show" style="display:none;"><span style="font-family: arial;font-size: 14px;color: #ffffff;background: #ee1c25;text-transform: uppercase;padding: 3px;font-weight: bold;">Save 35%</span></div>                     <![endif]-->
+          <div class="product_sku"><span style="font-family: Arial, sans-serif;font-size: 12px;color: #999999;">0396697P</span></div>
+          
+          <div class="product_desc"><a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb4573bbbe7dd44d51c9ca2b3767a378fe815d0456530b9974894e5027fef76cde0c90488fed28e4b77dded9f4d4dda393d12ce01478b645894513" style="text-decoration: none;color: #333333;"><span style="font-family: Arial, sans-serif;font-size: 12px;color: #333333;mso-line-height-rule: exactly;line-height: 12px;"><span title="SIMONIZ Microfibre Towels, 36-pk"><span>SIMONIZ Microfibre </span><span>Towels, 36-pk</span></span></span></a></div>
+         </td>      
+        </tr>
+       </table>
+      </td>
+       
+      <td valign="top" class="col col-2 ms-rigth" width="50%" style="background: #ffffff;">      
+       <table valign="top" cellspacing="0" cellpadding="0" width="100%" style="min-height:160px;margin:5px 0px;width:100%;min-width:100%;">      
+        <tr>
+         <td valign="center" align="center" class="col product_image" width="50%" style="min-height: 160px;">
+          <!--[if !mso]><!-- -->
+          <a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb45733f7eb82d38a4e06387f716418dd0e987e3462a951c1f3e1befad16ecb1df147c61e1c00f62f65f632e7841e51e98e9729e90f374f5fae92f" style="width: 142px;min-height: 142px;display: block;padding-top:15px;"><img src="http://s7d5.scene7.com/is/image/CanadianTire/0534093_1?wid=142&hei=142&qlt=90&resMode=sharp2" style="width: 142px;min-height: 142px;"></a>
+          <!--<![endif]--><!-- -->
+          <!--[if gte mso]>           <a href="https://www.canadiantire.ca/en/pdp/eco-max-natural-lavender-laundry-wash-210-load-0534093p.html?"><img src="http://s7d5.scene7.com/is/image/CanadianTire/0534093_1?wid=142&hei=142&qlt=90&resMode=sharp2" width="129" style="outline: none; padding-top:0; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin:auto;max-width:100%;"/></a>           <!--<![endif]-->
+         </td> 
+         <td valign="top" style="padding: 25px 5px 0px;" width="50%" class="product_info">
+         <!-- <div class="product_save"><span style="font-family: Arial, sans-serif;font-size: 14px;color: #ffffff;background: #ee1c25;text-transform: uppercase;padding: 3px;font-weight: bold;">Save 20%</span></div>-->
+          <div class="product_price"><span style="font-family: Arial, sans-serif;font-size: 18px;color: #333333;font-weight: bold;">$15.99</span></div>
+          <!--[if !mso]>           <div class="product_save ms-show" style="display:none;"><span style="font-family: arial;font-size: 14px;color: #ffffff;background: #ee1c25;text-transform: uppercase;padding: 3px;font-weight: bold;">Save 20%</span></div>                     <![endif]-->
+          <div class="product_sku"><span style="font-family: Arial, sans-serif;font-size: 12px;color: #999999;">0534093P</span></div>
+          
+          <div class="product_desc"><a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb45733f7eb82d38a4e06387f716418dd0e987e3462a951c1f3e1befad16ecb1df147c61e1c00f62f65f632e7841e51e98e9729e90f374f5fae92f" style="text-decoration: none;color: #333333;"><span style="font-family: Arial, sans-serif;font-size: 12px;color: #333333;mso-line-height-rule: exactly;line-height: 12px;"><span title="Eco-Max Natural Lavender Laundry Wash, 210-Load"><span>Eco-Max Natural </span><span>Lavender Laundry Wash, </span><span>210-Load</span></span></span></a></div>
+         </td>      
+        </tr>
+       </table>
+      </td>
+      
+      </tr>
+       
+      <tr>
+        
+      <td valign="top" class="col col-2 ms-left" width="50%" style="background: #ffffff;">      
+       <table valign="top" cellspacing="0" cellpadding="0" width="100%" style="min-height:160px;margin:5px 0px;width:100%;min-width:100%;">      
+        <tr>
+         <td valign="center" align="center" class="col product_image" width="50%" style="min-height: 160px;">
+          <!--[if !mso]><!-- -->
+          <a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb45733290437b399f312e6058c83ab7feec506da59049b1868f6465ad67420958fe3cc10cde2532226c3eb93ce9f1778ab2c133e44a4aa6ef07b5" style="width: 142px;min-height: 142px;display: block;padding-top:15px;"><img src="http://s7d5.scene7.com/is/image/CanadianTire/1590833_1?wid=142&hei=142&qlt=90&resMode=sharp2" style="width: 142px;min-height: 142px;"></a>
+          <!--<![endif]--><!-- -->
+          <!--[if gte mso]>           <a href="https://www.canadiantire.ca/en/pdp/muskol-backcountry-mosquito-repellent-aerosol-230-g-1590833p.html?"><img src="http://s7d5.scene7.com/is/image/CanadianTire/1590833_1?wid=142&hei=142&qlt=90&resMode=sharp2" width="129" style="outline: none; padding-top:0; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin:auto;max-width:100%;"/></a>           <!--<![endif]-->
+         </td> 
+         <td valign="top" style="padding: 25px 5px 0px;" width="50%" class="product_info">
+         <!-- <div class="product_save"><span style="font-family: Arial, sans-serif;font-size: 14px;color: #ffffff;background: #ee1c25;text-transform: uppercase;padding: 3px;font-weight: bold;">Great Buy</span></div>-->
+          <div class="product_price"><span style="font-family: Arial, sans-serif;font-size: 18px;color: #333333;font-weight: bold;">$9.99</span></div>
+          <!--[if !mso]>           <div class="product_save ms-show" style="display:none;"><span style="font-family: arial;font-size: 14px;color: #ffffff;background: #ee1c25;text-transform: uppercase;padding: 3px;font-weight: bold;">Great Buy</span></div>                     <![endif]-->
+          <div class="product_sku"><span style="font-family: Arial, sans-serif;font-size: 12px;color: #999999;">1590833P</span></div>
+          
+          <div class="product_desc"><a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb45733290437b399f312e6058c83ab7feec506da59049b1868f6465ad67420958fe3cc10cde2532226c3eb93ce9f1778ab2c133e44a4aa6ef07b5" style="text-decoration: none;color: #333333;"><span style="font-family: Arial, sans-serif;font-size: 12px;color: #333333;mso-line-height-rule: exactly;line-height: 12px;"><span title="Muskol Backcountry Mosquito Repellent Aerosol, 230-g"><span>Muskol Backcountry </span><span>Mosquito Repellent </span><span>Aerosol, 230-g</span></span></span></a></div>
+         </td>      
+        </tr>
+       </table>
+      </td>
+       
+      <td valign="top" class="col col-2 ms-rigth" width="50%" style="background: #ffffff;">      
+       <table valign="top" cellspacing="0" cellpadding="0" width="100%" style="min-height:160px;margin:5px 0px;width:100%;min-width:100%;">      
+        <tr>
+         <td valign="center" align="center" class="col product_image" width="50%" style="min-height: 160px;">
+          <!--[if !mso]><!-- -->
+          <a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb457372df91a38c0572a9bfed8384ef4f6aa505bc928980131b84fd4dfae68041e410833b6a396ea817f6d0933401845fb04194cbc492d795b060" style="width: 142px;min-height: 142px;display: block;padding-top:15px;"><img src="http://s7d5.scene7.com/is/image/CanadianTire/0532721_1?wid=142&hei=142&qlt=90&resMode=sharp2" style="width: 142px;min-height: 142px;"></a>
+          <!--<![endif]--><!-- -->
+          <!--[if gte mso]>           <a href="https://www.canadiantire.ca/en/pdp/febreze-noticeables-refill-2-pk-0532721p.html?"><img src="http://s7d5.scene7.com/is/image/CanadianTire/0532721_1?wid=142&hei=142&qlt=90&resMode=sharp2" width="129" style="outline: none; padding-top:0; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin:auto;max-width:100%;"/></a>           <!--<![endif]-->
+         </td> 
+         <td valign="top" style="padding: 25px 5px 0px;" width="50%" class="product_info">
+         <!-- <div class="product_save"><span style="font-family: Arial, sans-serif;font-size: 14px;color: #ffffff;background: #ee1c25;text-transform: uppercase;padding: 3px;font-weight: bold;">Save 10%</span></div>-->
+          <div class="product_price"><span style="font-family: Arial, sans-serif;font-size: 18px;color: #333333;font-weight: bold;">$8.99</span></div>
+          <!--[if !mso]>           <div class="product_save ms-show" style="display:none;"><span style="font-family: arial;font-size: 14px;color: #ffffff;background: #ee1c25;text-transform: uppercase;padding: 3px;font-weight: bold;">Save 10%</span></div>                     <![endif]-->
+          <div class="product_sku"><span style="font-family: Arial, sans-serif;font-size: 12px;color: #999999;">0532721P</span></div>
+          
+          <div class="product_desc"><a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb457372df91a38c0572a9bfed8384ef4f6aa505bc928980131b84fd4dfae68041e410833b6a396ea817f6d0933401845fb04194cbc492d795b060" style="text-decoration: none;color: #333333;"><span style="font-family: Arial, sans-serif;font-size: 12px;color: #333333;mso-line-height-rule: exactly;line-height: 12px;"><span title="Febreze NOTICEables Refill, 2-pk"><span>Febreze NOTICEables </span><span>Refill, 2-pk</span></span></span></a></div>
+         </td>      
+        </tr>
+       </table>
+      </td>
+      
+      </tr>
+       
+      <tr>
+        
+      <td valign="top" class="col col-2 ms-left" width="50%" style="background: #ffffff;">      
+       <table valign="top" cellspacing="0" cellpadding="0" width="100%" style="min-height:160px;margin:5px 0px;width:100%;min-width:100%;">      
+        <tr>
+         <td valign="center" align="center" class="col product_image" width="50%" style="min-height: 160px;">
+          <!--[if !mso]><!-- -->
+          <a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb4573997a9b1b98fc524185a4876fbf4571b92585e2df5ed47f32f50f3035da96f989a4982611ca9e55ad2c9f8094bac4093c3c377bd6ad90d8e4" style="width: 142px;min-height: 142px;display: block;padding-top:15px;"><img src="http://s7d5.scene7.com/is/image/CanadianTire/0854055_1?wid=142&hei=142&qlt=90&resMode=sharp2" style="width: 142px;min-height: 142px;"></a>
+          <!--<![endif]--><!-- -->
+          <!--[if gte mso]>           <a href="https://www.canadiantire.ca/en/pdp/reliance-desert-patrol-water-container-23-l-0854055p.html?"><img src="http://s7d5.scene7.com/is/image/CanadianTire/0854055_1?wid=142&hei=142&qlt=90&resMode=sharp2" width="129" style="outline: none; padding-top:0; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin:auto;max-width:100%;"/></a>           <!--<![endif]-->
+         </td> 
+         <td valign="top" style="padding: 25px 5px 0px;" width="50%" class="product_info">
+         <!-- <div class="product_save"><span style="font-family: Arial, sans-serif;font-size: 14px;color: #ffffff;background: #ee1c25;text-transform: uppercase;padding: 3px;font-weight: bold;">Great Buy</span></div>-->
+          <div class="product_price"><span style="font-family: Arial, sans-serif;font-size: 18px;color: #333333;font-weight: bold;">$20.99</span></div>
+          <!--[if !mso]>           <div class="product_save ms-show" style="display:none;"><span style="font-family: arial;font-size: 14px;color: #ffffff;background: #ee1c25;text-transform: uppercase;padding: 3px;font-weight: bold;">Great Buy</span></div>                     <![endif]-->
+          <div class="product_sku"><span style="font-family: Arial, sans-serif;font-size: 12px;color: #999999;">0854055P</span></div>
+          
+          <div class="product_desc"><a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb4573997a9b1b98fc524185a4876fbf4571b92585e2df5ed47f32f50f3035da96f989a4982611ca9e55ad2c9f8094bac4093c3c377bd6ad90d8e4" style="text-decoration: none;color: #333333;"><span style="font-family: Arial, sans-serif;font-size: 12px;color: #333333;mso-line-height-rule: exactly;line-height: 12px;"><span title="Reliance Desert Patrol Water Container, 23-L"><span>Reliance Desert Patrol </span><span>Water Container, 23-L</span></span></span></a></div>
+         </td>      
+        </tr>
+       </table>
+      </td>
+       
+      <td valign="top" class="col col-2 ms-rigth" width="50%" style="background: #ffffff;">      
+       <table valign="top" cellspacing="0" cellpadding="0" width="100%" style="min-height:160px;margin:5px 0px;width:100%;min-width:100%;">      
+        <tr>
+         <td valign="center" align="center" class="col product_image" width="50%" style="min-height: 160px;">
+          <!--[if !mso]><!-- -->
+          <a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb45732a802bbe2f90e220112c33e4cd523fa31b070df87bbb00c65b930b1dd420f179e95a8058f4d78ecbc9544b0ea04b0f92d427be6ec9300590" style="width: 142px;min-height: 142px;display: block;padding-top:15px;"><img src="http://s7d5.scene7.com/is/image/CanadianTire/0429807_1?wid=142&hei=142&qlt=90&resMode=sharp2" style="width: 142px;min-height: 142px;"></a>
+          <!--<![endif]--><!-- -->
+          <!--[if gte mso]>           <a href="https://www.canadiantire.ca/en/pdp/oskar-angle-broom-0429807p.html?"><img src="http://s7d5.scene7.com/is/image/CanadianTire/0429807_1?wid=142&hei=142&qlt=90&resMode=sharp2" width="129" style="outline: none; padding-top:0; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin:auto;max-width:100%;"/></a>           <!--<![endif]-->
+         </td> 
+         <td valign="top" style="padding: 25px 5px 0px;" width="50%" class="product_info">
+         <!-- <div class="product_save"><span style="font-family: Arial, sans-serif;font-size: 14px;color: #ffffff;background: #ee1c25;text-transform: uppercase;padding: 3px;font-weight: bold;">Save 10%</span></div>-->
+          <div class="product_price"><span style="font-family: Arial, sans-serif;font-size: 18px;color: #333333;font-weight: bold;">$10.79</span></div>
+          <!--[if !mso]>           <div class="product_save ms-show" style="display:none;"><span style="font-family: arial;font-size: 14px;color: #ffffff;background: #ee1c25;text-transform: uppercase;padding: 3px;font-weight: bold;">Save 10%</span></div>                     <![endif]-->
+          <div class="product_sku"><span style="font-family: Arial, sans-serif;font-size: 12px;color: #999999;">0429807P</span></div>
+          
+          <div class="product_desc"><a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb45732a802bbe2f90e220112c33e4cd523fa31b070df87bbb00c65b930b1dd420f179e95a8058f4d78ecbc9544b0ea04b0f92d427be6ec9300590" style="text-decoration: none;color: #333333;"><span style="font-family: Arial, sans-serif;font-size: 12px;color: #333333;mso-line-height-rule: exactly;line-height: 12px;"><span title="Oskar Angle Broom"><span>Oskar Angle Broom</span></span></span></a></div>
+         </td>      
+        </tr>
+       </table>
+      </td>
+      
+      </tr>
+       
+      <tr>
+        
+      <td valign="top" class="col col-2 ms-left" width="50%" style="background: #ffffff;">      
+       <table valign="top" cellspacing="0" cellpadding="0" width="100%" style="min-height:160px;margin:5px 0px;width:100%;min-width:100%;">      
+        <tr>
+         <td valign="center" align="center" class="col product_image" width="50%" style="min-height: 160px;">
+          <!--[if !mso]><!-- -->
+          <a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb4573ca85643b5c7ba61d11c9e4a7f7e5c2d344d0944300f7e5971aa2b6cb7da950a0be4fbfc2ec5881320f5f971e8bc262474720242747f09359" style="width: 142px;min-height: 142px;display: block;padding-top:15px;"><img src="http://s7d5.scene7.com/is/image/CanadianTire/1530751_1?wid=142&hei=142&qlt=90&resMode=sharp2" style="width: 142px;min-height: 142px;"></a>
+          <!--<![endif]--><!-- -->
+          <!--[if gte mso]>           <a href="https://www.canadiantire.ca/en/pdp/charmin-ultra-soft-toilet-paper-20-roll-1530751p.html?"><img src="http://s7d5.scene7.com/is/image/CanadianTire/1530751_1?wid=142&hei=142&qlt=90&resMode=sharp2" width="129" style="outline: none; padding-top:0; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin:auto;max-width:100%;"/></a>           <!--<![endif]-->
+         </td> 
+         <td valign="top" style="padding: 25px 5px 0px;" width="50%" class="product_info">
+         <!-- <div class="product_save"><span style="font-family: Arial, sans-serif;font-size: 14px;color: #ffffff;background: #ee1c25;text-transform: uppercase;padding: 3px;font-weight: bold;">1/3 Off</span></div>-->
+          <div class="product_price"><span style="font-family: Arial, sans-serif;font-size: 18px;color: #333333;font-weight: bold;">$13.99</span></div>
+          <!--[if !mso]>           <div class="product_save ms-show" style="display:none;"><span style="font-family: arial;font-size: 14px;color: #ffffff;background: #ee1c25;text-transform: uppercase;padding: 3px;font-weight: bold;">1/3 Off</span></div>                     <![endif]-->
+          <div class="product_sku"><span style="font-family: Arial, sans-serif;font-size: 12px;color: #999999;">1530751P</span></div>
+          
+          <div class="product_desc"><a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb4573ca85643b5c7ba61d11c9e4a7f7e5c2d344d0944300f7e5971aa2b6cb7da950a0be4fbfc2ec5881320f5f971e8bc262474720242747f09359" style="text-decoration: none;color: #333333;"><span style="font-family: Arial, sans-serif;font-size: 12px;color: #333333;mso-line-height-rule: exactly;line-height: 12px;"><span title="Charmin Ultra-Soft Toilet Paper, 20-Roll"><span>Charmin Ultra-Soft </span><span>Toilet Paper, 20-Roll</span></span></span></a></div>
+         </td>      
+        </tr>
+       </table>
+      </td>
+       
+      <td valign="top" class="col col-2 ms-rigth" width="50%" style="background: #ffffff;">      
+       <table valign="top" cellspacing="0" cellpadding="0" width="100%" style="min-height:160px;margin:5px 0px;width:100%;min-width:100%;">      
+        <tr>
+         <td valign="center" align="center" class="col product_image" width="50%" style="min-height: 160px;">
+          <!--[if !mso]><!-- -->
+          <a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb4573c6773669837a1e026c89d9ece6568a78506219b44cfee3d611cd050b34f3c14251ea1fcedd8117f8cfc13aafc5a028b773e82cfdc7fb6598" style="width: 142px;min-height: 142px;display: block;padding-top:15px;"><img src="http://s7d5.scene7.com/is/image/CanadianTire/3999520_1?wid=142&hei=142&qlt=90&resMode=sharp2" style="width: 142px;min-height: 142px;"></a>
+          <!--<![endif]--><!-- -->
+          <!--[if gte mso]>           <a href="https://www.canadiantire.ca/en/pdp/heritage-the-rock-diamond-cookset-with-bonus-frypan-10-pc-3999520p.html?"><img src="http://s7d5.scene7.com/is/image/CanadianTire/3999520_1?wid=142&hei=142&qlt=90&resMode=sharp2" width="129" style="outline: none; padding-top:0; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin:auto;max-width:100%;"/></a>           <!--<![endif]-->
+         </td> 
+         <td valign="top" style="padding: 25px 5px 0px;" width="50%" class="product_info">
+         <!-- <div class="product_save"><span style="font-family: Arial, sans-serif;font-size: 14px;color: #ffffff;background: #ee1c25;text-transform: uppercase;padding: 3px;font-weight: bold;">Save 75%</span></div>-->
+          <div class="product_price"><span style="font-family: Arial, sans-serif;font-size: 18px;color: #333333;font-weight: bold;">$199.99</span></div>
+          <!--[if !mso]>           <div class="product_save ms-show" style="display:none;"><span style="font-family: arial;font-size: 14px;color: #ffffff;background: #ee1c25;text-transform: uppercase;padding: 3px;font-weight: bold;">Save 75%</span></div>                     <![endif]-->
+          <div class="product_sku"><span style="font-family: Arial, sans-serif;font-size: 12px;color: #999999;">3999520P</span></div>
+          
+          <div class="product_desc"><a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb4573c6773669837a1e026c89d9ece6568a78506219b44cfee3d611cd050b34f3c14251ea1fcedd8117f8cfc13aafc5a028b773e82cfdc7fb6598" style="text-decoration: none;color: #333333;"><span style="font-family: Arial, sans-serif;font-size: 12px;color: #333333;mso-line-height-rule: exactly;line-height: 12px;"><span title="Heritage The Rock Diamond Cookset with Bonus Frypan, 10-pc"><span>Heritage The Rock </span><span>Diamond Cookset with </span><span>Bonus Frypan, 10-pc</span></span></span></a></div>
+         </td>      
+        </tr>
+       </table>
+      </td>
+      
+      </tr>
+       
+      <tr>
+        
+      <td valign="top" class="col col-2 ms-left" width="50%" style="background: #ffffff;">      
+       <table valign="top" cellspacing="0" cellpadding="0" width="100%" style="min-height:160px;margin:5px 0px;width:100%;min-width:100%;">      
+        <tr>
+         <td valign="center" align="center" class="col product_image" width="50%" style="min-height: 160px;">
+          <!--[if !mso]><!-- -->
+          <a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb45739831e2448c5a45320f4eb2c9f470f65a9cb2a82d7c575b097419b7490975a665260d25cec28a4615d5a129b0a3f7d774a0dfb0efb3151708" style="width: 142px;min-height: 142px;display: block;padding-top:15px;"><img src="http://s7d5.scene7.com/is/image/CanadianTire/1423059_1?wid=142&hei=142&qlt=90&resMode=sharp2" style="width: 142px;min-height: 142px;"></a>
+          <!--<![endif]--><!-- -->
+          <!--[if gte mso]>           <a href="https://www.canadiantire.ca/en/pdp/madesmart-large-silverware-tray-grey-1423059p.html?"><img src="http://s7d5.scene7.com/is/image/CanadianTire/1423059_1?wid=142&hei=142&qlt=90&resMode=sharp2" width="129" style="outline: none; padding-top:0; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin:auto;max-width:100%;"/></a>           <!--<![endif]-->
+         </td> 
+         <td valign="top" style="padding: 25px 5px 0px;" width="50%" class="product_info">
+         <!-- <div class="product_save"><span style="font-family: Arial, sans-serif;font-size: 14px;color: #ffffff;background: #ee1c25;text-transform: uppercase;padding: 3px;font-weight: bold;">Save 20%</span></div>-->
+          <div class="product_price"><span style="font-family: Arial, sans-serif;font-size: 18px;color: #333333;font-weight: bold;">$10.39</span></div>
+          <!--[if !mso]>           <div class="product_save ms-show" style="display:none;"><span style="font-family: arial;font-size: 14px;color: #ffffff;background: #ee1c25;text-transform: uppercase;padding: 3px;font-weight: bold;">Save 20%</span></div>                     <![endif]-->
+          <div class="product_sku"><span style="font-family: Arial, sans-serif;font-size: 12px;color: #999999;">1423059P</span></div>
+          
+          <div class="product_desc"><a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb45739831e2448c5a45320f4eb2c9f470f65a9cb2a82d7c575b097419b7490975a665260d25cec28a4615d5a129b0a3f7d774a0dfb0efb3151708" style="text-decoration: none;color: #333333;"><span style="font-family: Arial, sans-serif;font-size: 12px;color: #333333;mso-line-height-rule: exactly;line-height: 12px;"><span title="madesmart Large Silverware Tray, Grey"><span>madesmart Large </span><span>Silverware Tray, Grey</span></span></span></a></div>
+         </td>      
+        </tr>
+       </table>
+      </td>
+       
+      <td valign="top" class="col col-2 ms-rigth" width="50%" style="background: #ffffff;">      
+       <table valign="top" cellspacing="0" cellpadding="0" width="100%" style="min-height:160px;margin:5px 0px;width:100%;min-width:100%;">      
+        <tr>
+         <td valign="center" align="center" class="col product_image" width="50%" style="min-height: 160px;">
+          <!--[if !mso]><!-- -->
+          <a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb457362d3564f63feb314d08971ddf14d2e5937cc562f99c326ffb4e8df7aa15dda7037ed8f5f6b07286760fec587c8ca22fc699df6af03a23afc" style="width: 142px;min-height: 142px;display: block;padding-top:15px;"><img src="http://s7d5.scene7.com/is/image/CanadianTire/0435693_1?wid=142&hei=142&qlt=90&resMode=sharp2" style="width: 142px;min-height: 142px;"></a>
+          <!--<![endif]--><!-- -->
+          <!--[if gte mso]>           <a href="https://www.canadiantire.ca/en/pdp/for-living-oscillating-desk-fan-12-in-0435693p.html?"><img src="http://s7d5.scene7.com/is/image/CanadianTire/0435693_1?wid=142&hei=142&qlt=90&resMode=sharp2" width="129" style="outline: none; padding-top:0; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; border: none;margin:auto;max-width:100%;"/></a>           <!--<![endif]-->
+         </td> 
+         <td valign="top" style="padding: 25px 5px 0px;" width="50%" class="product_info">
+         <!-- <div class="product_save"><span style="font-family: Arial, sans-serif;font-size: 14px;color: #ffffff;background: #ee1c25;text-transform: uppercase;padding: 3px;font-weight: bold;">Great Buy</span></div>-->
+          <div class="product_price"><span style="font-family: Arial, sans-serif;font-size: 18px;color: #333333;font-weight: bold;">$24.99</span></div>
+          <!--[if !mso]>           <div class="product_save ms-show" style="display:none;"><span style="font-family: arial;font-size: 14px;color: #ffffff;background: #ee1c25;text-transform: uppercase;padding: 3px;font-weight: bold;">Great Buy</span></div>                     <![endif]-->
+          <div class="product_sku"><span style="font-family: Arial, sans-serif;font-size: 12px;color: #999999;">0435693P</span></div>
+          
+          <div class="product_desc"><a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb457362d3564f63feb314d08971ddf14d2e5937cc562f99c326ffb4e8df7aa15dda7037ed8f5f6b07286760fec587c8ca22fc699df6af03a23afc" style="text-decoration: none;color: #333333;"><span style="font-family: Arial, sans-serif;font-size: 12px;color: #333333;mso-line-height-rule: exactly;line-height: 12px;"><span title="For Living Oscillating Desk Fan, 12-in"><span>For Living Oscillating </span><span>Desk Fan, 12-in</span></span></span></a></div>
+         </td>      
+        </tr>
+       </table>
+      </td>
+      
+      </tr>
+        
+     </table>
+     <div class="btn_red">      
+      <table width="180" align="center" style="max-width: 180px;">
+                          <tbody><tr>
+                            <td valign="center" align="center" bgcolor="#ce1c00"style="background: #ce1c00;padding: 10px 25px;"  style="font-family: 'Lato',Arial, sans-serif;">                
+                              
+                              <a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb4573eb7564f976f6c5f8fac297d6859b59fcc0f3ec0f2a274c450d0e7b54cd2bc5ae49b272d800aeb00e5c6efe16b32fe410a6717d7f9fd11423" target="PreviewIframe" style="display:block;text-align: center;white-space:nowrap;font-family: Arial, sans-serif;font-weight:500;font-size: 14px;line-height: 14px;text-transform:uppercase;text-decoration: none;color: #ffffff;">
+                                See more deals
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody></table>
+     </div>
+    </td>
+   </tr>
+  
+
+  
+
+  
+  <!-- always on : table une colonne--> 
+   
+  
+  <!-- APP TILE--> 
+  
+    <tr>
+  
+    <td align="center" valign="top">
+  
+  <table border="0" cellpadding="0" width="100%" bgcolor="#ffffff">
+    <tr>
+        <td aria="true" class="em_hide" class="desktop" align="center" valign="top" style="padding-left:15px; padding-right:15px;">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding-top:20px; padding-bottom:20px; ">
+        <tr>
+          <td align="left" valign="middle" style="font-family: Lato, 'Myriad Pro', 'Trebuchet MS', Arial, sans-serif; color:#333333; font-size:14px; line-height:20px; mso-line-height-rule:exactly; font-weight:bold; padding-left:20px;">See your offers on the Triangle App!</td>
+          <td align="left" style="padding-right:15px"><img src="https://canadiantire.scene7.com/is/image/CanadianTire/2021_CC_triangle" height="40"/></td>
+          <td align="left"><a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb45732a533e23b630cb55e0c5861fea61280ceb9853407a328a09ee758944f40f587a2f9ae2fcd2c111b6b824be5238cedebf3b79cbc6b5eae659" target="_blank"><img src="https://canadiantire.scene7.com/is/image/CanadianTire/191x56_AppButton_en" alt="ios" height="28"/></a></td>
+          <td align="left" style="padding-right:8px;"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a312548eb0badd46ad026f3c4de746bb6b38247002abf003c4e29ea36d4796672bba48764eecbe4fe1e93005fa72c4edbd9cdaae81154448a8" target="_blank" ><img src="https://canadiantire.scene7.com/is/image/CanadianTire/191x56_GooglePlayButton_en" alt="android" height="28"/></a></td>
+        </tr>
+      </table>
+      </td>
+    
+    <!--[if !mso]><!-- -->
+  <td aria="true" style="display:none; width: 100%; height: auto; overflow: hidden;" class="em_show" class="mobile" align="center" bgcolor="#ffffff" valign="top"> 
+                   <div align="left" style="font-size:0%; max-height: 130px;">
+                     <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+                       <tr>
+                   <td align="center" colspan="3" valign="middle" style="font-family: Lato, 'Myriad Pro', 'Trebuchet MS', Arial, sans-serif; color:#333333; font-size:14px; line-height:20px; mso-line-height-rule:exactly; font-weight:bold; padding-top:10px; padding-left:30px; padding-right:30px; ">See your offers on the Triangle App!</td>
+                  </tr>
+                  <tr>
+                   <td align="center">
+                    <table border="0" style="padding-left 20px;  padding-right:20px; padding-top:10px; padding-bottom:10px;">
+                     <tr>
+                      <td colspan="1" align="center" style="padding-right:15px"><img src="https://canadiantire.scene7.com/is/image/CanadianTire/2021_CC_triangle" height="40"/></td>
+                      <td colspan="1" align="center" style="padding-right:10px;"><a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb45732a533e23b630cb55e0c5861fea61280ceb9853407a328a09ee758944f40f587a2f9ae2fcd2c111b6b824be5238cedebf3b79cbc6b5eae659" target="_blank"><img src="https://canadiantire.scene7.com/is/image/CanadianTire/191x56_AppButton_en" alt="ios" height="32"/></a></td>
+                      <td colspan="1" align="center" ><a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb4573050c4b73870b53fed9e8e4e8ebe1c5f916b2c80e5e2065576617663abda11d876ec88ba87e282b574e06f8c5bc754ff0e1f168c15d82c31b" target="_blank"><img src="https://canadiantire.scene7.com/is/image/CanadianTire/191x56_GooglePlayButton_en" alt="android" height="32"/></a></td>
+                   </tr>
+               </table>
+           </td>
+                </tr>
+                     </table>
+                   </div>
+                 </td>  <!--<![endif]-->
+    
+      </tr>
+    
+  </table>
+    </td>
+  
+    </tr>
+  
+  <!-- app tile ends--> 
+  
+  <!--TRIANGLE CUSTOM ALWAYS ON--> 
+  
+  <tr>
+    <td align="center" valign="top"><table border="0" cellpadding="0" width="100%" bgcolor="#ffffff"  align="center" >
+        <tr>
+          <td align="center" valign="middle"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3cee63b67adb5e575b88ab3d655be6a73bd406f828017d73bb3bd948001f17b732db5a82ced20bb66773ce2de89454961ae8a55b39f4cee7e" target="_blank"  title="Triangle"> <img aria="true" border="0" src="http://canadiantire.scene7.com/is/image/CanadianTire/180823_memberbanner_en_desktop?wid=1280&qlt=97" style="display:block; width: 640px; height: auto;" class="em_hide" alt="Triangle" width="640"> 
+            <!--[if !mso]><!-- --><img aria="true" border="0" src="http://canadiantire.scene7.com/is/image/CanadianTire/180823_memberbanner_en_mobile?wid=640&qlt=97" style="display:none; width: 100%; height: auto; overflow: hidden;" class="em_show" alt="Triangle"><!--<![endif]--> 
+            </a></td>
+        </tr>
+      </table></td>
+  </tr>
+  <!--END TRIANGLE custom always on--> 
+  
+  <!-- footer -->
+  <!--  FOOTER STARTS -->
+    <tr>
+   <td aria="true" class="em_hide" width="100%" align="center" style="display:block; width: 640px; height: auto; margin:0 auto;" >
+     <table id="footer" class="desktop" cellspacing="0" border="0" cellpadding="0" width="640"  align="center" style="background-color:#303030;" bgcolor="#303030">
+        <tr>
+          <td align="center"> 
+            <table cellspacing="0" cellpadding="0" width="270" border="0" style="border-bottom:1px solid #ffffff;">
+              <tr>
+                <td style="padding:30px 0px 10px 0px;"  align="center"><table  cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td align="center" style="padding:10px"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3173abd10042745d263c7d5ca1088f08531656424de25e26e7b1b51bb3a64cb5d72e0b3d081781b4738c9243e4e766126"  title="Instagram"><img src="http://canadiantire.scene7.com/is/image/CanadianTire/triangleemail_instagram_final?$TransparentPNG$" width="18" height="auto"/></a></td>
+                      <td align="center" style="padding:10px"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3e09dd9d0802e23ab1ba6f967ccdd4d22d9509cb573741d428f6f71f8d394d548839d33726339611f678b1683ee55a62c"  title="Youtube"><img src="http://canadiantire.scene7.com/is/image/CanadianTire/triangleemail%5Fyoutube%5Ffinal?$TransparentPNG$" width="22" height="auto"/></a></td>
+                      <td align="center" style="padding:10px"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a348ad0534377610efab03c452286dbd2247b8c458f4f70e2ae0f04e019171ed2dc01a63e12b70e29d0dacdbc4509bf506"  title="Facebook"><img src="http://canadiantire.scene7.com/is/image/CanadianTire/triangleemail%5Ffacebook%5Ffinal?$TransparentPNG$" width="10" height="auto"/></a></td>
+                      <td align="center" style="padding:10px"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a39a6c31a652a43eb1f129e4af1c08dba6b6cda73d164bb7ab6358efb0df42c8549dae1b3df33d8c2464195d811189cf9b"  title="twitter"><img src="http://canadiantire.scene7.com/is/image/CanadianTire/triangleemail%5Ftwitter%5Ffinal2?$TransparentPNG$"   width="18" height="auto"/></a></td>
+                      
+                      <td align="center" style="padding:10px"><a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3fd89eabb3a591d70b26cc511db3fe28e1b9b6617812e9ba693650625b8c24e808c41aabd4d3af5d42db41996c10ad89134d713e02e9419cb"  title="Triangle App"><img src="http://canadiantire.scene7.com/is/image/CanadianTire/triangleemail%5Fmobile?$TransparentPNG$" width="13" height="auto"/></a></td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td align="center"><table cellspacing="0" cellpadding="0" width="450" border="0" >
+              <tr>
+                <td style="padding:15px 0px 40px 0px;"  align="center"><table  cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td align="center" style="padding:0 10px">  <a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3c69bc97feb2474e5f40e3af3c760e328cfbeac5dc24374606e059bd9976968d74f5ef113221842e498beeadfb32e9138df70d65fc8e467be"  title="Privacy & Security" style="color:#ffffff;text-decoration:none;font-size: 12px;font-family: 'Lato',Arial, sans-serif;">Privacy & Security</a></td>
+                      <td align="center" style="padding:0 10px">  <a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3ebed270e2d373e090d9600783a91bfe9d4eeacaf96e936ac3f9a8d48a6cd8fbc95681cb6513b4c77e2820930b3b6de0483d2f8e8dcaf6614"  title="Contact us" style="color:#ffffff;text-decoration:none;font-size: 12px;font-family: 'Lato',Arial, sans-serif;">Contact us</a></td>
+                      <td align="center" style="padding:0 10px"> 
+                        
+                        <a href="http://click.myctm.canadiantire.ca/unsub_center.aspx?qs=7499ae001a44e6965162434a521b359e0d90653b90456857e1b89f28a68380d1457787218c42dcd9f041335c885d2c30c2131d01ec76bdfb51cdb2428cee4905cd3ac592e7e7bb22a59185b8fce93a5c"  title="Unsubscribe" style="color:#ffffff;text-decoration:none;font-size: 12px;font-family: 'Lato',Arial, sans-serif;">Unsubscribe</a>  </td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+    <!--[if !mso]><!-- -->
+     <tr><td aria="true" style="display:none; width: 100%; height: auto; overflow: hidden;" class="em_show"> 
+     <div id="footer" class="mobile" style="width:100%;text-align: center;font-size: 16px;background-color:#303030;" bgcolor="#303030">     
+      
+     <div style="padding: 25px;">
+  <div style="padding: 20px 10px 30px;font-family: 'Lato',Arial, sans-serif;">
+           <table  cellspacing="0" cellpadding="0" width="225" style="width:225px!important;margin:auto;font-family: 'Lato',Arial, sans-serif;">
+            <tr>
+             <td align="center" style="padding-right:5px;font-family: 'Lato',Arial, sans-serif;" style="line-height:1em;">
+              <a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3173abd10042745d263c7d5ca1088f08531656424de25e26e7b1b51bb3a64cb5d72e0b3d081781b4738c9243e4e766126"  title="Instagram"><img src="http://canadiantire.scene7.com/is/image/CanadianTire/triangleemail_instagram_final?$TransparentPNG$" width="25" height="auto"/></a>
+             </td>            
+             <td align="center" style="line-height:1em;" >
+              <a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3e09dd9d0802e23ab1ba6f967ccdd4d22d9509cb573741d428f6f71f8d394d548839d33726339611f678b1683ee55a62c"  title="Youtube"><img src="http://canadiantire.scene7.com/is/image/CanadianTire/triangleemail%5Fyoutube%5Ffinal?$TransparentPNG$" width="30" height="auto"/></a>
+             </td>            
+             <td align="center" style="padding:0px 8px;" style="line-height:1em;">
+              <a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a348ad0534377610efab03c452286dbd2247b8c458f4f70e2ae0f04e019171ed2dc01a63e12b70e29d0dacdbc4509bf506"  title="Facebook"><img src="http://canadiantire.scene7.com/is/image/CanadianTire/triangleemail%5Ffacebook%5Ffinal?$TransparentPNG$" width="11" height="auto"/></a>
+             </td> 
+              <td align="center"  style="line-height:1em;" style="padding-right:5px;">
+              <a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a39a6c31a652a43eb1f129e4af1c08dba6b6cda73d164bb7ab6358efb0df42c8549dae1b3df33d8c2464195d811189cf9b"  title="twitter"><img src="http://canadiantire.scene7.com/is/image/CanadianTire/triangleemail%5Ftwitter%5Ffinal2?$TransparentPNG$" width="25" height="auto"/></a>
+             </td>    
+                   
+             <td align="center"  style="line-height:1em; padding:0 8px;">
+              <a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3fd89eabb3a591d70b26cc511db3fe28e1b9b6617812e9ba693650625b8c24e808c41aabd4d3af5d42db41996c10ad89134d713e02e9419cb"  title="Triangle App"><img src="http://canadiantire.scene7.com/is/image/CanadianTire/triangleemail%5Fmobile?$TransparentPNG$" width="16" height="auto"/></a>
+             </td>
+            </tr>
+           </table>
+          </div>
+   
+
+         <div style="padding: 10px;font-family: 'Lato',Arial, sans-serif;">
+          
+           <a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3c69bc97feb2474e5f40e3af3c760e328cfbeac5dc24374606e059bd9976968d74f5ef113221842e498beeadfb32e9138df70d65fc8e467be"  title="Privacy & Security" style="color:#ffffff;text-decoration:none;font-size: 14px;font-family: 'Lato',Arial, sans-serif;">Privacy & Security</a>              
+          </div>
+         <div style="padding: 10px;font-family: 'Lato',Arial, sans-serif;">
+          
+          <a href="http://click.myctm.canadiantire.ca/?qs=3615b806b3c1f2a3ebed270e2d373e090d9600783a91bfe9d4eeacaf96e936ac3f9a8d48a6cd8fbc95681cb6513b4c77e2820930b3b6de0483d2f8e8dcaf6614"  title="Contact us" style="color:#ffffff;text-decoration:none;font-size: 14px;font-family: 'Lato',Arial, sans-serif;">Contact us</a>              
+          </div>
+         <div style="padding: 10px;font-family: 'Lato',Arial, sans-serif; padding-bottom:20px;">
+          
+          
+          <a href="http://click.myctm.canadiantire.ca/unsub_center.aspx?qs=7499ae001a44e6965162434a521b359e0d90653b90456857e1b89f28a68380d1457787218c42dcd9f041335c885d2c30c2131d01ec76bdfb51cdb2428cee4905cd3ac592e7e7bb22a59185b8fce93a5c"  title="Unsubscribe" style="color:#ffffff;text-decoration:none;font-size: 14px;font-family: 'Lato',Arial, sans-serif;">Unsubscribe</a>
+           
+          </div>           
+         
+       </div></div>
+     </td>
+   </tr>
+     <!--<![endif]--><!-- -->
+  <tr>
+    <td><table id="sub_footer" cellspacing="0" cellpadding="0" width="640" style="background: #ececec;color: #515151;font-size: 10px;padding: 30px 45px;width:100%;min-width:100%;max-width:600px;" align="center">
+        <tr>
+          <td class="col legal"><span  style="font-family: 'Lato', sans-serif;"> *In the form of electronic Canadian Tire Money (CT Money). Minimum $150 spend is calculated on the total pre-tax amount of a single transaction. This offer has no cash value, must be activated by the Member to be valid and is for one-time use only, unless otherwise specified. Only accounts selected for this promotion are eligible. Proof of membership must be presented at time of purchase. No rainchecks. You must make a purchase in-store at Canadian Tire or online at canadiantire.ca of items eligible to earn CT Money to qualify. Not all items sold at Canadian Tire are eligible to earn CT Money. Please see program terms & conditions for full details. Items purchased must qualify to earn CT Money in order to count towards the $150 spend. Valid until July 22, 2021 </span> <br/>
+            <br/>
+            <span> 
+    
+<div>5x Bonus Canadian Tire Money on Plants, Bulbs & Seeds offer is valid on: Annual Grasses, Cell-packs, Fall Plants, Hanging Annuals, Herbs, Planters, Potted Annuals, Vegetables, Cacti & Succulents, Flowering Plants, Fresh Cut Flowers, Novelty Gift Plants, Poinsettias, Tropical Plants, Broadleaf Evergreens, Clematis, Container Fruits, Deciduous Shrubs, Dormant Plants, Evergreen Shrubs, Fruit Trees, Ornamental Trees, Roses, Shade Trees, Topiaries and Standards, Upright Evergreens, Vines/Creepers, Perennial Grasses, Perennials, Sod, Water Plants, Christmas Greens, Christmas Trees, Fresh Fall Harvest, Chia Pets, Gardening Books, Indoor Bulbs, Outdoor Bulbs, Fall, Outdoor Bulbs, Spring
+ Summer, Seed Potatoes and Onions, Seeds at Canadian Tire, online and in-store. Online transactions must be fulfilled by the store during the offer period to qualify. Valid until July 22, 2021<br/>
+      <br/>
+    </div>
+    
+    <div>25x Bonus Canadian Tire Money on Household Cleaners offer is valid on: Abrasive Cleaners, Glass Cleaners, Outdoor Glass Cleaners, Surface Cleaners, Bathroom Cleaners, Toilet Cleaners, Oven and Metal Cleaners, Carpet Cleaners, Drain Cleaners, Floor Care, Furniture Care, Candles Air Care, Electric Continuous Air Care, Mothballs, Non-electric Continuous Air Care, Non-electric Instant Air Care at Canadian Tire, online and in-store. Online transactions must be fulfilled by the store during the offer period to qualify. Valid until July 22, 2021<br/>
+      <br/>
+    </div>
+    
+    <div>10x Bonus Canadian Tire Money on Paper Products offer is valid on: Bathroom Tissue, Facial Tissue, Napkins, Paper Towel at Canadian Tire, online and in-store. Online transactions must be fulfilled by the store during the offer period to qualify. Valid until July 22, 2021<br/>
+      <br/>
+    </div>
+    
+    <div>5x Bonus Canadian Tire Money on Gardening Plant Accs. offer is valid on: Grow Pots, Indoor Planters, Outdoor Planters, Indoor Gardening Accessories, Indoor Watering Cans, Outdoor Watering Cans, Plant Stands & Accessories, Shepherd Hooks, Trellises and Arbours at Canadian Tire, online and in-store. Online transactions must be fulfilled by the store during the offer period to qualify. Valid until July 22, 2021<br/>
+      <br/>
+    </div>
+    
+    <div>25x Bonus Canadian Tire Money on Weed,Insect&Rodent Ctrl offer is valid on: Insect Control, Ant, Bed Bugs, Fly, Wasp & Hornet, Lawn & Garden Sprayers, Live Catch & Repellents, Rodent Traps, Rodenticides, Non- Selective Weed Control, Selective Weed Control at Canadian Tire, online and in-store. Online transactions must be fulfilled by the store during the offer period to qualify. Valid until July 22, 2021<br/>
+      <br/>
+    </div>
+    
+    <div>10x Bonus Canadian Tire Money on Outdoor Lighting offer is valid on: Lighting Accessories, Low Voltage Lighting, String Lighting, Deck & Fence, Dining & Gazebo, Garden & Pathway, Spotlights at Canadian Tire, online and in-store. Online transactions must be fulfilled by the store during the offer period to qualify. Valid until July 22, 2021<br/>
+      <br/>
+    </div>
+    
+    <div>5x Bonus Canadian Tire Money on Kitchen Organization offer is valid on: Countertop Organization, Drawer & Cupboard Organization, Shelfliners, Sink Organization, Stepstools at Canadian Tire, online and in-store. Online transactions must be fulfilled by the store during the offer period to qualify. Valid until July 22, 2021<br/>
+      <br/>
+    </div>
+    
+    <div>25x Bonus Canadian Tire Money on Dining & Entertaining offer is valid on: Dinnerware Sets, Dinnerware Open Stock, Kids Tableware, Mugs, Stemware, Tumbler Open Stock, Tumbler Sets, Barware and Wine Racks, Novelty, Serveware, Tabletop Coordinates, Flatware Open Stock, Flatware Sets, Coffee Prep, Non-electric Kettles, Tea Prep, Ove Gloves, Oven Mitts and Pot Holders, Placemats & Aprons, Table Cloths, Tea Towels & Dish Cloths, Kitchen Accs, Kitchen Storage, Salt and Pepper, Spice Racks at Canadian Tire, online and in-store. Online transactions must be fulfilled by the store during the offer period to qualify. Valid until July 22, 2021<br/>
+      <br/>
+    </div>
+    
+    <div>10x Bonus Canadian Tire Money on Cookware offer is valid on: Frypans, Jumbo Cookers, Saucepans, Specialty Frypans, Stockpots, Non-electric, Non-stick Cooksets, Stainless Steel Cooksets, Cast-iron Casseroles, Fondue, Pressure Cookers, Roasters at Canadian Tire, online and in-store. Online transactions must be fulfilled by the store during the offer period to qualify. Valid until July 22, 2021<br/>
+      <br/>
+    </div>
+    
+    <div> <br/>
+      <br/>
+    </div>
+    
+    
+<div>*In the form of electronic Canadian Tire Money (CT Money®). Minimum $125 spend is calculated on the total pre-tax amount of a single transaction. This offer has no cash value, must be activated by the Member to be valid and is for one-time use only, unless otherwise specified. Only accounts selected for this promotion are eligible. Proof of membership must be presented at time of purchase. No rainchecks. You must make a purchase in-store at Sport Chek  or online at sportchek.ca of items eligible to earn CT Money to qualify. Not all items sold at Sport Chek are eligible to earn CT Money. Please see program terms & conditions for full details. Items purchased must qualify to earn CT
+ Money in order to count towards the $125 spend. Valid until July 22, 2021<br/>
+      <br/>
+    </div>
+    
+    <div>25x Bonus Canadian Tire Money on Daypacks, Backpacks, Duffels, Waist Packs and Shoulder Bags at Sport Chek, online and in-store. Online transactions must be fulfilled by the store during the offer period to qualify. Valid until July 22, 2021<br/>
+      <br/>
+    </div>
+    
+    <div>25x Bonus Canadian Tire Money on Jackets, Coats and Vests, Insulated Pants and Snowsuits at Sport Chek, online and in-store. Online transactions must be fulfilled by the store during the offer period to qualify. Valid until July 22, 2021<br/>
+      <br/>
+    </div>
+    
+    <div> <br/>
+      <br/>
+    </div>
+    
+    
+<div>*In the form of electronic Canadian Tire Money (CT Money®). Minimum $100 spend is calculated on the total pre-tax amount of a single transaction. This offer has no cash value, must be activated by the Member to be valid and is for one-time use only, unless otherwise specified. Only accounts selected for this promotion are eligible. Proof of membership must be presented at time of purchase. No rainchecks. You must make a purchase in-store at Mark's or online at marks.com of items eligible to earn CT Money to qualify. Not all items sold at Mark's are eligible to earn CT Money. Please see program terms & conditions for full details. Items purchased must qualify to earn CT Money in order
+ to count towards the $100 spend. Valid until July 22, 2021<br/>
+      <br/>
+    </div>
+    
+    <div>25x Bonus Canadian Tire Money on all Men's Socks, Briefs, Boxers, Loungewear and Robes at Mark's, online and in-store. Online transactions must be fulfilled by the store during the offer period to qualify. Valid until July 22, 2021<br/>
+      <br/>
+    </div>
+    
+    <div>25x Bonus Canadian Tire Money on Women's Denim Shorts, Denim Pants, and Denim Jackets at Mark's, online and in-store. Online transactions must be fulfilled by the store during the offer period to qualify. Valid until July 22, 2021<br/>
+      <br/>
+    </div>
+    
+    <div> <br/>
+      <br/>
+    </div>
+    
+    
+<div>*In the form of electronic Canadian Tire Money (CT Money®). Minimum $80 spend is calculated on the total pre-tax amount of a single transaction. This offer has no cash value, must be activated by the Member to be valid and is for one-time use only, unless otherwise specified. Only accounts selected for this promotion are eligible. Proof of membership must be presented at time of purchase. No rainchecks. You must make a purchase in-store at Party City or online at partycity.ca of items eligible to earn CT Money to qualify. Not all items sold at party City are eligible to earn CT Money. Please see program terms & conditions for full details. Items purchased must qualify to earn CT Money
+ in order to count towards the $80 spend. Valid until July 22, 2021<br/>
+      <br/>
+    </div>
+    
+    <div> <br/>
+      <br/>
+    </div>
+     </span>
+            <div style="width: 100%;min-width:100%;height: 15px;">&nbsp;</div>
+            <span> This email was sent to josefkretz93@gmail.com. You are able to <a href="http://click.myctm.canadiantire.ca/unsub_center.aspx?qs=7499ae001a44e6965162434a521b359e0d90653b90456857e1b89f28a68380d1457787218c42dcd9f041335c885d2c30c2131d01ec76bdfb51cdb2428cee4905cd3ac592e7e7bb22a59185b8fce93a5c" style="color:inherit;text-decoration: underline;" > unsubscribe</a> or <a href="http://click.myctm.canadiantire.ca/profile_center.aspx?qs=7499ae001a44e696c0c9f7d80a7e62e1c9862f4db09a3eab38fe8af12701f94d73ba743273b760eab4336fccb6849fb8b014e5205f02c096b9faa34287c094f0465812b1d1150dd80ef5bd327107ea6e"  style="color:inherit;text-decoration: underline;">update your profile</a> for receiving Triangle Rewards emails at any time. </span>
+            <div style="width: 100%;min-width:100%;height: 15px;">&nbsp;</div>
+            <span>^ This information is provided by Canadian Tire Corporation, Limited. This indicates your CT Money balance as of 14 July, 2021. Log in to your Triangle Rewards account to view your current balance. </span>
+            <div style="width: 100%;min-width:100%;height: 15px;">&nbsp;</div>
+            <span>Visit <a href="http://click.myctm.canadiantire.ca/?qs=c93b42f395eb4573271db2e668f392b1491b133f60038964ab136bccfe01b51a14bce8948c70fa55c4e690bd3ab59d59e5fddb9b74a57427" target="_blank" style="color:inherit;text-decoration: underline;">https://triangle.canadiantire.ca/content/triangle-site/en/program-rules.html</a> for full program rules.<br/>
+            <br/>
+         
+Product availability, pricing, selection, and promotional offers may vary by store. Please check your local store for availability. Regular prices shown are Canadian Tire’s suggested regular prices and are the prices at which the products will be offered by Canadian Tire as of June 24, 2021. Some Canadian Tire market conditions may cause prices to change without notice. Certain items may be subject to additional fees or charges, including environmental handling or disposal fees, which may vary by Province. For certain promotional items such as but not limited to special buys, clearance and seasonal, shop early for best selection, no rainchecks or substitutes will be given. We reserve the
+ right to limit quantities, to correct typographical, illustrative or pricing errors, and unless otherwise indicated, to offer rainchecks or substitute equivalent products where advertised products are unavailable or in the event of advertising&nbsp;errors.               <br/><br/>
+              
+              The Triangle Rewards Program is owned and operated by Canadian Tire Corporation, Limited. The Triangle credit cards are issued by Canadian Tire Bank. Rewards are in the form of electronic Canadian Tire Money® (CT Money®). Not all items sold at Mark’s/ L’Équipeur are eligible to earn CT Money or to be redeemed for. Conditions apply. Visit triangle.com for full program rules and Partner location information. The offered rate is exclusive of any bonus or promotional offers or redemption transactions. CT Money is collected on the pre-tax amount of the purchase. No rainchecks.<br/><br/>
+
+
+®/™ Canadian Tire Money and CT Money are registered trademarks and Triangle, Triangle Rewards and the Triangle design are trademarks owned by Canadian Tire Corporation, Limited, and are used under licence.<br/><br/>
+
+®/™ Mastercard, World Mastercard and World Elite Mastercard are registered trademarks, and the circles design is a trademark of Mastercard International Incorporated.
+            <br/><br/>
+                
+          
+            </span>
+            <div style="width: 100%;min-width:100%;height: 15px;">&nbsp;</div>
+            <span> ®/™ Unless otherwise noted, all trademarks are owned by Canadian Tire Corporation, Limited and are used under licence.<br/>
+            <br/>
+            </span>
+            <div style="width: 100%;min-width:100%;height: 15px;">&nbsp;</div>
+            
+            <div style="width: 100%;min-width:100%;height: 15px;">&nbsp;</div>
+            <table class="member_info" cellspacing="0" cellpadding="0" width="80%" border="0" style="width:80%;min-width:80%;background:#ececec;border-color:#ececec;border-collapse:collapse;color: #515151;font-size: 10px;">
+              <tr style="display:inline-block;">
+                <td><span>Canadian Tire</span></td>
+                <td style="width: 21px;text-align: center;"><span class="separator">│</span></td>
+                <td><span>2190 Yonge St. 6th Floor</span></td>
+                <td style="width: 21px;text-align: center;" class="ms-hidden"><span class="separator">│</span></td>
+                <!--[if !mso]><!-- -->
+         </tr>
+         <tr style="display:inline-block;">
+         <!--<![endif]--><!-- -->
+                <td><span>Toronto, Ontario, M6J 1R5</span></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+              
+            </table>
+            <span> © Canadian Tire Corporation, Limited 2021 </span>
+            <div style="width: 100%;min-width:100%;height: 15px;">&nbsp;</div></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+ customer Bethany
+{ 44 Downing st, St Louis, Louisiana 71074 }
+( Visa 234567654 09/22 101 )
+[ @ apple $0.67 #25 ]
+[ @laptop $1200 #1 ]
+[ @earphones $22.97 #3 ]
+
+ customer Dave
+{ 28320 E Co 11th St
+Wellton, Arizona(AZ), 85356 }
+( CTCredit Card 8763467854 )
+[ @ juice $3.49 #12 ]
+[ @salami $12.00 #1333 ]
+[ @juggeranaut swimsuit $22.97 #555 ]
+
+ customer Anthony
+{ 6526 Ridge Rd
+Hiram, Georgia(GA), 30141 }
+( ChaseYoDreams 567434567 )
+[ @ apple $0.67 #25 ]
+[ @laptop $1200 #1 ]
+[ @earphones $22.97 #3 ]
+[ @ juice $3.49 #12 ]
+[ @salami $12.00 #1333 ]
+[ @juggeranaut swimsuit $22.97 #555 ]
+[ @ xs t-shirt $0.67 #25 ]
+[ @xl track pants $1200 #1 ]
+[ @very fine armani suit $22.97 #3 ]
+[ @ apple $0.67 #25 ]
+[ @laptop $1200 #1 ]
+[ @earphones $22.97 #3 ]
+
+ customer Matt
+{ 460 Jennileah Ln
+San Marcos, California(CA), 92069  }
+( Mastercard 7654356786 )
+[ @ xs t-shirt $0.67 #25 ]
+[ @xl track pants $1200 #1 ]
+[ @very fine armani suit $22.97 #3 ]

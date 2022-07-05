@@ -1,0 +1,2036 @@
+Delivered-To: josefkretz93@gmail.com
+Received: by 2002:ab0:2a0e:0:0:0:0:0 with SMTP id o14csp2560975uar;
+        Sat, 17 Jul 2021 09:05:38 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJxNoImHq8PuD9DuOtfjESh0RY6Oh+lBdhGdY7s/h4NLBQ0uzRVgNITrlbX61zabt5i2ffFI
+X-Received: by 2002:a17:907:2079:: with SMTP id qp25mr17979473ejb.207.1626537937963;
+        Sat, 17 Jul 2021 09:05:37 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1626537937; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ixPoJpHeo+SIGtguGePMdjM4g2FsQA3FKAkwb7FHkuae3sUS3vyDshfCAr9RBRQnj2
+         NYXyjGRDjneWXulu/E+A44s836qjIf1QaEumSVwV9cU6PIDGMZLLjMNPcT610uzWCV3h
+         jDl6WRNJsnulpXVcWwhG4HbjMLNq3w8b89TilpG/3Njp8C4EKgaJ5FPizfAhvqXiTG2V
+         HbKRwEP6jEQ2q6zF7bINxxCUf53EoGOC5sQPmt8zMTWEHzYUYgjXJpFlKQx8StswA2q0
+         tAUFr4t+0Y5+scXuEm4p9oHkgCYNPgRMOovTrvaLx9TM5eiGUg57qHLhoG9gVglNDYSV
+         nwUg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=/28VZhp9JuyayY8T+Z16Ov+19CsFGq1ZQhVDT1C4RhE=;
+        b=onklbXLUOLoClGHSkH5eg3/EY0NR//xbe2+0HKHiJwMr7mc1TsPgW8ppGigEZSrCmT
+         49J5foBq2TRLjK/STTgarlhY51SpU2MO7Mnoi0SRYLEc07PWbqA6WlmL0h5I0qNDhI4y
+         1hPHZNRpAznCRIlvBW+KXh9CWtTAXZOM8F3R3MKptHw0KpMPn1aJZGCm0Balcs6EuHUU
+         bhGGTqPLSuXXljPVodAGkRI3bKHT9xJG7+gW3+LzhcF6ZFRme1jhDAxSGKhjn+scKgYz
+         r1odCHpEBKTtmPS1C7epCYvWwJ88JyOUIo6FUb/Tck8w9p+XgnfT5A81bIJ/87akmQpS
+         d/bA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@kmstools.com header.s=s2 header.b=1qv8AhK6;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="lYmm/q3/";
+       spf=pass (google.com: domain of bounces+9428389-40e2-josefkretz93=gmail.com@em3412.kmstools.com designates 168.245.51.169 as permitted sender) smtp.mailfrom="bounces+9428389-40e2-josefkretz93=gmail.com@em3412.kmstools.com"
+Return-Path: <bounces+9428389-40e2-josefkretz93=gmail.com@em3412.kmstools.com>
+Received: from xvfrppxw.outbound-mail.sendgrid.net (xvfrppxw.outbound-mail.sendgrid.net. [168.245.51.169])
+        by mx.google.com with ESMTPS id s17si15470598edu.428.2021.07.17.09.05.36
+        for <josefkretz93@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 17 Jul 2021 09:05:37 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+9428389-40e2-josefkretz93=gmail.com@em3412.kmstools.com designates 168.245.51.169 as permitted sender) client-ip=168.245.51.169;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@kmstools.com header.s=s2 header.b=1qv8AhK6;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="lYmm/q3/";
+       spf=pass (google.com: domain of bounces+9428389-40e2-josefkretz93=gmail.com@em3412.kmstools.com designates 168.245.51.169 as permitted sender) smtp.mailfrom="bounces+9428389-40e2-josefkretz93=gmail.com@em3412.kmstools.com"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kmstools.com;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe;
+	s=s2; bh=/28VZhp9JuyayY8T+Z16Ov+19CsFGq1ZQhVDT1C4RhE=;
+	b=1qv8AhK6MRmTAW1ROFx9mdp9FkQg6Vl5iqh9KyugqPeOizY9pNB0yN86EuIMts9ip6rE
+	EgTZySVCEEyebtQA7Mw3iQSIzg2qOypLIkGPnccPaQl+Ydz5JKSwu/mcrKjDw2/X7zeLaj
+	x1MAyCj/3eIyAO/tDgaHKqU8oyCs50Lu4=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe;
+	s=smtpapi; bh=/28VZhp9JuyayY8T+Z16Ov+19CsFGq1ZQhVDT1C4RhE=;
+	b=lYmm/q3/vVlZwJbnNX3oQlbhkuGxcOywXb7vHJ/nYJV7vwXYijSta4n+qHhUMuN0jSO0
+	Yo9ufx4+glVyRpkyGP1XDtVbs0AefkgbRljeolJLQVpY3MEIQ2keGFnEmAOLDj+omiTXPv
+	QmGpFxtldeVQUVwsgJD0+88gXgHsNgsTs=
+Received: by filterdrecv-69bbc5c8d-cxhzm with SMTP id filterdrecv-69bbc5c8d-cxhzm-1-60F2FFBB-7F
+        2021-07-17 16:05:15.970950649 +0000 UTC m=+76628.100941011
+Received: from OTQyODM4OQ (unknown)
+	by ismtpd0063p1las1.sendgrid.net (SG)
+	with HTTP
+	id exmylGAJTXymYD50LCeBaQ
+	Sat, 17 Jul 2021 16:05:14.830 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=18d8df5268f993efe6202df56cb8544845cfb42cb752695d6225a22fc2eb
+Date: Sat, 17 Jul 2021 16:05:34 +0000 (UTC)
+From: KMS Tools & Equipment <flyer@kmstools.com>
+Mime-Version: 1.0
+Message-ID: <exmylGAJTXymYD50LCeBaQ@ismtpd0063p1las1.sendgrid.net>
+Subject: Hurry, Our 3 Day Sale Ends Today! Shop Now!!
+Reply-To: noreply@kmstools.com
+X-Feedback-ID: 9428389:SG
+X-SG-EID: 
+ =?us-ascii?Q?gFWn36wO=2FlZeqFM8PE=2Flwltz0jvAOo=2Ft1BNoRuzGKIu03ckRlQUSU6S3JMK6qC?=
+ =?us-ascii?Q?fojNtZxkj1Xxc6dKUa2osiQiVrzjV7sCnYCci=2FZ?=
+ =?us-ascii?Q?769=2FLqUzUEK6UFOsIzQgZ=2FIKq5T6cF+wLeOLMs9?=
+ =?us-ascii?Q?PjDQSFAxsJUUGNtzNkfSb9xm2lmMKH=2FNiM8tfH1?=
+ =?us-ascii?Q?9Pr+Bd8CcUkRKRHo=2FZpZCEXShtvtWoZUbwIpXSW?=
+ =?us-ascii?Q?y=2FgUgKbijE7CneW17fyv2YrGl6msOyjyydxaGSx?=
+ =?us-ascii?Q?fMcofgN8Xn+baq7e1EilA=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FKHgAsE=2FCUk5eZaRe5Ltr?=
+ =?us-ascii?Q?cbQL2K8q50q7i6GkJfOR87kGBMiR94YxWCtbcgF?=
+ =?us-ascii?Q?FUo40ynIh2KmM1G=2FC4qj7gOvTrU6f=2FjL7nQEHme?=
+ =?us-ascii?Q?5O+GS2RTTRo=2FUOPfvLPhbpJelQ8tMpo=3D?=
+To: JOSEFKRETZ93@GMAIL.COM
+X-Entity-ID: 4i7tk8oOHnkuweh8Mazosg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em3412=2Ekmstools=2Ecom=3Fsubject=3Dhttp=3A=2F=2Furl8909?=
+ =?us-ascii?Q?=2Ekmstools=2Ecom=2Fasm=2Funsubscribe=2F*q*user=5Fi?=
+ =?us-ascii?Q?d=3D9428389*a*data=3DC5c04fXGCiFhTnvMbK0WLP?=
+ =?us-ascii?Q?FKI1SF37NN6hkyglDksuY9KdRT7lN99arFUlAQO?=
+ =?us-ascii?Q?hDrjXTSmjnGfMgb=5FISv5SW0N78XJ9G45RhsIDCr?=
+ =?us-ascii?Q?Txe97SAhSre8inx17M-d5iVV-aY39pGM5hh17Dr?=
+ =?us-ascii?Q?Hk2z-NgWjUP2AC=5FczfX8lPkTOY5A3BLl4=5Fno50b?=
+ =?us-ascii?Q?ldK=5FIJMUn=5FYCLL5vvpw1YF=5FQpTbXTe7ndN40fZf?=
+ =?us-ascii?Q?X8oya0XP2ScIji7IcEyiuWTvVckr0wA=5FIC1m4cN?=
+ =?us-ascii?Q?jtX1xuyZi02qowE=5Fq8F9X6rAqN4CHYZDKRHv3=5Fl?=
+ =?us-ascii?Q?xu=5F9xup1eyRRlXr-jnSzKuuEte3CAOmoa0YFnPI?=
+ =?us-ascii?Q?o=5FNmH-i9xi0RsmDSjTZkDw1aM94O2aSYuVkoHW9?=
+ =?us-ascii?Q?MTweAgHQq85suUrl9SSl8PfkJ-xHJzwoQK8=5FU-s?=
+ =?us-ascii?Q?e0uKoD0UKAfDFxYxgb559ai49E5cpV3fINp9lqC?=
+ =?us-ascii?Q?iEG-rvz3WdIvBA8dJMSkBqtf2fMkZOG6SpjeIy=5F?=
+ =?us-ascii?Q?KKzHr8aj07UiXeQPgV3uYwxp2y04DIWOoSX99ke?=
+ =?us-ascii?Q?CoUdFvy3ykUNR9=5FIGJICR99K3Q=3D=3E?=
+
+--18d8df5268f993efe6202df56cb8544845cfb42cb752695d6225a22fc2eb
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=iso-8859-1
+Mime-Version: 1.0
+
+http://url8909.kmstools.com/ls/click?upn=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCT=
+mgrCTTKZMSXBMCv9YsCKmSa7-2FpMBSU7d2pQg9UCkZsFAPpkEzecXEYEzOFp6KJJmivF9xcsVE=
+jV-2Fk2qKITTWk44bzf1oM0xYsLLx-2FYrp1nvV6UdweVmPD82SPMztQi6dTxJs2b9rfRxvM-3D=
+twfq_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2Fwcn=
+WLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh=
+-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHn=
+pEx0k1WSHH3y6AZMBM3iLXnZ3FcOiKf563eXE8NNJVQMrL7Wr57NMkEuatRz8MT5zwMqA3FVqF3=
+MN4mrJnf-2FcYsF0SuiDONIOQKhR-2BZrP1YefIEJGvu3J6GoUvJtnsAprWkMrPgouP85qGSq1j=
+VTe-2FR6ONe3mlv9vMhpQtR7jJp3KH6f
+
+
+
+
+
+
+
+
+
+
+
+=20
+ $=20
+
+=20
+
+
+
+
+
+
+
+=20
+ $=20
+
+=20
+
+
+
+
+
+
+
+=20
+ $=20
+
+=20
+
+
+
+http://url8909.kmstools.com/ls/click?upn=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCT=
+mgrCTTKZMSXBNyGl4xaLZHSPevNyApATD-2B0xcwd3Y0I311O-2BKnUrR5YHJYLj86-2FD-2FDK=
+KcBtYSX-2BiLFt5x9eigFmmo0UQy9992MM3IVHR88oCdQN8JYCtEKGdsJ3p9LsGJZZIkMuAhuiz=
+k-3DZX2z_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2=
+FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtq=
+JDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbei=
+WoHnpEx0k1mDa5PS0DwB52oep2LRd1V9UenMC-2FxoKO3ugJpa1J0H8TbP4VJk9Jn-2B6oEgrVW=
+bdX6f47Dqb72UtkXSI3d9vADcH1vv4d33RZkgdu5X9pmQ8mU5LMqkVV6xAvjcrAt-2BbMv3dwku=
+7stqLRY0dmWvp622496HHk2hZKluOKMo5O4n
+
+http://url8909.kmstools.com/ls/click?upn=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCT=
+mgrCTTKZMSXBOI48TQEsdSsPoiyE30xKcF053qSLBA80MPoVIvcxSzmaDhntYI7Jmd0TJ1MMjsi=
+msj3j8Ew3Dx3o654JbxmFPLOsGnrBU21cs4ar7Ee37mQHo2w6Wwfztzd0qwCt5C2Bo-3D-IVC_Z=
+9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZ=
+OpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBF=
+hKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0k-=
+2FHkRxr-2FkQ-2B9Jv6T4RnWRb2O-2FoUNVVbU6dqzonL5SJstFwzYXYmNNr-2BfH-2Bpkv-2Bs=
+S7YOb-2FoKS8ooXuij7T5-2BfOh2RCvWioG2OoAoSjoMoAwCoGjoaKbk5JIuShMfF8yrrpPi7ng=
+xxx3j7Z7SlrOYcNdA-2ByUdbhVISgF-2Ffsqnc-2B2RO
+
+KMS Tools &=A0Equipment
+
+1-888-386-8075=A0 =A0=A0kmstools.com http://url8909.kmstools.com/ls/click?u=
+pn=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBMZZI-2FdCUT7eTeJszlAro5AHw=
+lAbu9XUQO3M7PIPIuiapdZIs3kpi0Qe6uR9s-2BRrTi0LrQqCPZVbcUxKYDm8OWxOVl8S8is7WF=
+r-2F23fwzkGAtsZDttF9kIXCDs3W3oQWgE-3D9aui_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2Bx=
+oqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO=
+93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouB=
+O8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0kwxs2FwakVgDeCjfua5ipmsqbDlXI0CE13=
+BavDDpENrQgXelSWmlGlgIRd515g6k7HNuY4ItpXJW5xCdA9axMoAsspas1-2Bdzk8vLuPMYy2-=
+2B4TD6MKPVnvHzLA1IzrqHMlhnW9PAYBdLjO7wmlLanrRkUMUsLwk6rReXMQ5L47rbp
+
+http://url8909.kmstools.com/ls/click?upn=3DGYoT0NsE1729GTyOEbPvBGGjIhoe48-2=
+FwrGvvIg249Pp4uB7JKFdBtubya83CZkrXxRb7fhexsXW3t22AVDIQaARDXI5kUiELfw1SVi1lQ=
+ZHU0KjXgDvw9X0vFVpMEjW7-2Bq2qmxwSe6WotQMKqYtQ0lWg820p2ivT0FhMvf0RJnk-3Dh156=
+_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJ=
+iZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2Fq=
+BFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0=
+k1jq-2F8hUWJ8ZFz1QEt4d49-2FBsTlOB6MKQYEAteddWfx7eI9-2F2ibW6QEjQBYLFBOY0bByJ=
+QRdSRNNcR-2BFM2cU9m-2FVdyBoetlF0fdqw70RfM-2Bbfc41A8Hqh0K-2Br2tf0pJEhQ3lv2Un=
+rUoXBXTvJ0TJivhBY-2BDcQcY9THiuTvyiQtiR
+
+http://url8909.kmstools.com/ls/click?upn=3DGYoT0NsE1729GTyOEbPvBI2BGbYyNw-2=
+BhDXkR9aSwna8Qh2lTNCBWai9W-2FgRLkGjQZr2DIjBFRvHJBfTGv6eaVu4Yg9w-2FMIDIgj8z8=
+UfF308YThuDjA81Zxi8Ze9-2FkZuex3JfIeLIwQpiZoPoH3fb1H4A7F7-2Bn7eIjHMACzstltI-=
+3Dv-pk_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2Fw=
+cnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJD=
+Dh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWo=
+HnpEx0kzGG5JvAK2Ml72DIknoshZg1vg-2FCJx-2FTaVDycXKfQ4nj-2BrWLvoqX3SteZCnCjx3=
+DBUn3ViaCBs1RlIUgUX2NY36njaJuMqVo6vyQMfgMsOoUyJJH5-2FSyrXyZgDEpsd5docn6uCd-=
+2F3CD8bkzs43vvV1a-2FPP4X2q0kJ5k5kyZv2JdW
+
+http://url8909.kmstools.com/ls/click?upn=3DGYoT0NsE1729GTyOEbPvBMIHGp4wpt4s=
+fyHzNy3HN2WIVRHDwt2jNraHhT8mah4JtPHat2cD44SDAzFoPZTcwIpgnZJuNESBdlDOc5namyB=
+DaOq-2BFl9nzVLclE7kzu-2BbktQ-2BkEMPneDXk8xlSUAC45oajc4cVsfKxTTIWzcPY7A-3DxK=
+Lv_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWL=
+BJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2=
+FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpE=
+x0k7mR0TpEwqV7ZT7huXAhMcJAC8xGc65-2F-2BDGbxFYc3clJhhbcZznYb7mwPwCu28ZOyxi9d=
+NIPUaYBHzT0xm-2FV8uw3I53i46ZL2zJexFYkALRQFLP9wqlBRyVE4qFbJ6WR1A3-2FD5n3ZUpK=
+gqhwYbMSmMxH-2BvRE-2B2kinWULht1EWP2u
+
+HeadOffice: KMS Tools & Equipment
+
+110 Woolridge Street, Coquitlam, BC V3C1V5=20
+
+Unsubscribe http://url8909.kmstools.com/asm/?user_id=3D9428389&data=3Dtg7T6=
+hrOmd-JfDynoWa4vIo3Bc06zfFRxx59xYfNb_HoZz_s-VxUDqRB6XD1AmzppT5wdjXTgoyl8QRV=
+RFQHXDjMHYQUk3N-sy99oKs4KDmly_AE1Grl1gs-K4SlweiNliCMwhZyosKJKzPugEmF5YDinvr=
+TKtyMQ3UK71TY3ksr9qT2k3m7M9cw8B7sG28Nnq_axa53dnCoMTT81OONFbuG8xFpXGgUtv_nI9=
+D7bdg4tIHmefNO8PanZKzGNjDeCfd23S0uJcsG0HujZbnZy_E9dUhEELYM-OhqoMm_asqB5gFsE=
+uVLUgZD1e4EoTSQUOOIWGkTApzv94HvZADyYSUOlwMO0Tt2qTi9QRGVSsVjPCdCxsOTW-0Q6hxc=
+2jpsCBR4s7952m1A8IZDM7VU8mzXTimHnbGSXUjv74fpcrIRkNr_OZ1VUOigsh7vOGeYjjiP3iL=
+Am3PrSHMKQqg7kxrX28588VByLphHHYGqvCJC2EiJQAqDo1L7iXmYAhA9Wj1oyF4GRVMwRUcFKu=
+oSEuE0BFeG0jdbhMXN7gEosj8=3D
+
+Copyright =A9 2019. All rights reserved. Prices Subject to Change
+--18d8df5268f993efe6202df56cb8544845cfb42cb752695d6225a22fc2eb
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html data-editor-version=3D"2" class=3D"sg-campaigns" xmlns=3D"http://www.=
+w3.org/1999/xhtml">
+  <head>
+  <meta name=3D"color-scheme" content=3D"only">
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+" />
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1, minimum-scale=3D1, maximum-scale=3D1" /><!--[if !mso]><!-->
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3DEdge" /><!--<![end=
+if]-->
+   =20
+    <!--[if (gte mso 9)|(IE)]>
+    <xml>
+    <o:OfficeDocumentSettings>
+    <o:AllowPNG/>
+    <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+    <!--[if (gte mso 9)|(IE)]>
+    <style type=3D"text/css">
+      body {width: 600px;margin: 0 auto;}
+      table {border-collapse: collapse;}
+      table, td {mso-table-lspace: 0pt;mso-table-rspace: 0pt;}
+      img {-ms-interpolation-mode: bicubic;}
+    </style>
+    <![endif]-->
+   =20
+   =20
+
+    <style type=3D"text/css">
+      body, p, div {
+        font-family: arial;
+        font-size: 14px;
+      }
+      body {
+        color: #000000;
+      }
+      body a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+      p { margin: 0; padding: 0; }
+      table.wrapper {
+        width:100% !important;
+        table-layout: fixed;
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+      img.max-width {
+        max-width: 100% !important;
+      }
+      .column.of-2 {
+        width: 50%;
+      }
+      .column.of-3 {
+        width: 33.333%;
+      }
+      .column.of-4 {
+        width: 25%;
+      }
+     =20
+      .body, .darkmode, .darkmode div { /* With class body on the body tag,=
+ and all elements represented here that have a background color */
+    background-image: linear-gradient(#ffffff,#ffffff) !important;
+    }
+    .darkmode p { /* Add other selectors for other text elements */
+        -webkit-text-fill-color: #000000 !important;
+    }
+   =20
+    :root {
+    color-scheme: light;
+    }
+                             =20
+      @media screen and (max-width:480px) {
+        .preheader .rightColumnContent,
+        .footer .rightColumnContent {
+            text-align: left !important;
+        }
+        .preheader .rightColumnContent div,
+        .preheader .rightColumnContent span,
+        .footer .rightColumnContent div,
+        .footer .rightColumnContent span {
+          text-align: left !important;
+        }
+        .preheader .rightColumnContent,
+        .preheader .leftColumnContent {
+          font-size: 80% !important;
+          padding: 5px 0;
+        }
+        table.wrapper-mobile {
+          width: 100% !important;
+          table-layout: fixed;
+        }
+        img.max-width {
+          height: auto !important;
+          max-width: 480px !important;
+        }
+        a.bulletproof-button {
+          display: block !important;
+          width: auto !important;
+          font-size: 80%;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+        .columns {
+          width: 100% !important;
+        }
+        .column {
+          display: block !important;
+          width: 100% !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+        }
+      }
+    </style>
+    <!--user entered Head Start-->
+   =20
+     <!--End Head user entered-->
+  </head>
+  <body>
+
+    <center class=3D"wrapper" data-link-color=3D"#ffffff" data-body-style=
+=3D"font-size: 14px; font-family: arial; color: #000000; background-color: =
+#ffffff;">
+      <div class=3D"webkit">
+        <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"10=
+0%" class=3D"wrapper" bgcolor=3D"#ffffff">
+          <tr>
+            <td valign=3D"top" bgcolor=3D"#ffffff" width=3D"100%">
+              <table width=3D"100%" role=3D"content-container" class=3D"out=
+er" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                <tr>
+                  <td width=3D"100%">
+                    <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0">
+                      <tr>
+                        <td>
+                          <!--[if mso]>
+                          <center>
+                          <table><tr><td width=3D"600">
+                          <![endif]-->
+                          <table width=3D"100%" cellpadding=3D"0" cellspaci=
+ng=3D"0" border=3D"0" style=3D"width: 100%; max-width:600px;" align=3D"cent=
+er">
+                            <tr>
+                              <td role=3D"modules-container" style=3D"paddi=
+ng: 0px 0px 0px 0px; color: #000000; text-align: left;" bgcolor=3D"#003878"=
+ width=3D"100%" align=3D"left">
+                               =20
+    <table class=3D"module preheader preheader-hide" role=3D"module" data-t=
+ype=3D"preheader" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%"
+           style=3D"display: none !important; mso-hide: all; visibility: hi=
+dden; opacity: 0; color: transparent; height: 0; width: 0;">
+      <tr>
+        <td role=3D"module-content">
+          <p></p>
+        </td>
+      </tr>
+    </table>
+ =20
+    <table class=3D"wrapper" role=3D"module" data-type=3D"image" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-layout=
+: fixed;">
+      <tr>
+        <td style=3D"font-size:6px;line-height:10px;padding:0px 0px 0px 0px=
+;" valign=3D"top" align=3D"center">
+          <a href=3D"http://url8909.kmstools.com/ls/click?upn=3DGYoT0NsE172=
+9GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBMCv9YsCKmSa7-2FpMBSU7d2pQg9UCkZsFAPpkEzecX=
+EYEzOFp6KJJmivF9xcsVEjV-2Fk2qKITTWk44bzf1oM0xYsLLx-2FYrp1nvV6UdweVmPD82SPMz=
+tQi6dTxJs2b9rfRxvM-3DEc5g_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZC=
+iRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWb=
+cAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplX=
+lEpEwZIcZOZqQAbeiWoHnpEx0kxzB6DT7kRScCNB2hsyBsUfdtEtn9yy-2FKDx3S8ISUB5uzAcE=
+pfzgsWeh5fiRhaPODp22v3XZwf1sIL97fP0Klv1u969crxke2E-2F7jerkshuY8eT5JkwITvpvu=
+0QGpNKe7LuyXxkNDbseViz2Pw45f51-2Ba9HzYlq6-2FDDM3OCmo2F2"><img class=3D"max-=
+width" border=3D"0" style=3D"display:block;color:#000000;text-decoration:no=
+ne;font-family:Helvetica, arial, sans-serif;font-size:16px;max-width:100% !=
+important;width:100%;height:auto !important;" src=3D"https://www.kmstools.c=
+om/assets/takeover/Target-Emails/Generic/Generic-3DAY-JULY21-Today.png" alt=
+=3D"Hurry Our 3 Day Sale Ends Today! Shop Now!" width=3D"600"></a>
+        </td>
+      </tr>
+    </table>
+   =20
+   =20
+<!--
+  <div> <a href=3D""><h1 style=3D"text-align: center;color:white"><strong>C=
+lick here to take a survey on our product emails.&nbsp; Let us know what yo=
+u think!</strong></h1>
+
+  </div>
+-->
+<div >
+
+  <table align=3D"center" border=3D"0" cellspacing=3D"0" width=3D"100%" hei=
+ght=3D "100%" class=3D"blueTable" bgcolor=3D"#FFFFFF" style =3D"max-width:6=
+00px">
+            <tbody>
+              <tr>
+                <td>
+                    <div align=3D"center" style=3D"height:30px" >
+                    <span style=3D"color: red;font-size: 17px;font-weight: =
+bold">Flyer Sale</span><br>
+                    </div>
+               =20
+               =20
+                  <div align=3D"center" style=3D"height:200px" >
+                    <img class=3D"center  autowidth  fullwidth" width =3D "=
+200"  height =3D "200" align=3D"center" border=3D"0" src=3D"https://www.kms=
+tools.com/images/large/C/CH-VT6395_LRG.jpg" alt=3D"Image" title=3D"Image" s=
+tyle=3D"display:block;" >
+                  </div>
+
+                  <div>
+                    <div style=3D"" >
+                        <p style =3D "font-size: 16px; line-height: 21px; t=
+ext-align: center;">
+
+                          <span >Campbell Hausfeld 3.7 HP 60 Gallon Air Com=
+pressor</span><br>
+                   =20
+                          <span><a style=3D"font-size: 12px; color: gray;te=
+xt-decoration: line-through;" title=3D"" href=3D"http://url8909.kmstools.co=
+m/ls/click?upn=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBPTyzcwSLhyPu4K=
+wGCBi-2FkUHeuUraZz9DFfFHaYLm0WUAe9Nom-2Fzcl9Jo6QSAN07nHlAMd8PFf2aRe5EPzIzEE=
+bGpfDEpmQtZHxUAVJTQeveYNwxEBz0e5GFjAxpF3ftLRoBXDQHQGQo-2FpY1pe9K-2Bsvji7EJN=
+782eW95xF7qiEPxNlom-2F0wrbkd-2Bvzzm4B3trk-3DAXuc_Z9FS5904EYnM6KIFjyqB1R0wNb=
+XJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPi=
+ZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOf=
+rKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0k2g1U1J9LC5TtPc0CUtQ2tzlDS7=
+zANiabPbATNFQOG8vIoDtzmPF0N79Hxe-2FtJ0GegN-2BemxLVkH5nKQaDiYCGJGaOKhjLqDIkM=
+vrZKEMbB34Zv9EroKbNJ2iWPYuapJokzrP2tc0B-2BXtvkC48FKYZ9aP9Eda54pLtpo8pp-2FMK=
+uzl" target=3D"">999.99</a>
+                            <a style=3D"color: red;font-size: 20px;font-wei=
+ght: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DG=
+YoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBPTyzcwSLhyPu4KwGCBi-2FkUHeuUraZz=
+9DFfFHaYLm0WUAe9Nom-2Fzcl9Jo6QSAN07nHlAMd8PFf2aRe5EPzIzEEbGpfDEpmQtZHxUAVJT=
+QeveYNwxEBz0e5GFjAxpF3ftLRoBXDQHQGQo-2FpY1pe9K-2Bsvji7EJN782eW95xF7qiEPxNlo=
+m-2F0wrbkd-2Bvzzm4B3trk-3DwNKl_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4=
+YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOq=
+dKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJs=
+xxplXlEpEwZIcZOZqQAbeiWoHnpEx0kxyJO2yvr8YQ7gey18gbGHaHLeDHkd4piJe5swceKtVUL=
+NMInwgbvB11Lfvh5B9Bd6h7IHNZmC30FAGNjsJOFskoYyskMO-2B-2FGtK54qYDonPKU9viaPLA=
+ZJ9GHvFJPmKnACeazprJrtRwU2rz2Q-2BCLgo5-2F8LmhYzFbR63rtHMvjZo" target=3D"">$=
+799.95</a></span><br>
+                          <a style=3D"color: red;font-size: 20px;font-weigh=
+t: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DGYo=
+T0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBPTyzcwSLhyPu4KwGCBi-2FkUHeuUraZz9D=
+FfFHaYLm0WUAe9Nom-2Fzcl9Jo6QSAN07nHFf8DoIGXnlGC77h7-2FqnoXiS7KVbPPEhzJmafRx=
+eeBjUwRXXpFJ7uiLZBUTXRU7BfRQD5-2F0kTTLsLayb6V2Nc-2BIPhBsxpjRhsKe9ULY7PNkpuL=
+ruFNODo-2FMjbAfFKE4s0-3D0KDD_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YU=
+mZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdK=
+cWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxx=
+plXlEpEwZIcZOZqQAbeiWoHnpEx0kzHBtXtl-2Bp23Caqj-2FwZBUaYYyuro9NWRtgJ31Srszse=
+7rPaqVc8J-2B5ASX634sZs-2BoGhmnkHs8Q9ztgu6voXS8L5mGdkiFbPJPj2OLRpKGp9WIRWLoy=
+rV5N2sWGxukOLRi8078w3JS48wmwlZ2gTntcU49Hhke6oMLnKLH-2FH90ByJ" target=3D"">
+                            SAVE $200.00  </a>
+                    </div><br/>
+                    <div align=3D"center" >
+                        <div >=20
+                        <a href=3D"http://url8909.kmstools.com/ls/click?upn=
+=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBPTyzcwSLhyPu4KwGCBi-2FkUHeuU=
+raZz9DFfFHaYLm0WUAe9Nom-2Fzcl9Jo6QSAN07nHFf8DoIGXnlGC77h7-2FqnoX2Vp5fM6Qp4E=
+fO2LYpnAYgEY4CgQg0X4kfIFuz2ouBDM0AYMemQrqs4Ry-2Btoud9bn4EFU3cQG-2FSQlVVmDJ6=
+yzCoXK3G1iCmdhIN36AI0S0Nk-3D5Gda_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAt=
+U4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAm=
+OqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQ=
+JsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0kwVll5Z3-2FQ64zYZhDI0nA9K-2F1c5IYfpclh91-2F=
+PIBnMVfr3FTz1RBH3kvSWFIpGNeRK2Z52iJFzZOP6CuptHFCSSTAnv8DBo6kZzA3E9AIm2d73xT=
+iXzgkET0K1YFfDJDTuT39T8M1mRB-2F42hOz5pHjlFygQa2REFLHwBQUF9AtBw"> <img class=
+=3D"center  autowidth  fullwidth" align=3D"center" border=3D"0" src=3D"http=
+s://marketing-image-production.s3.amazonaws.com/uploads/c13dbf5ca380adf6e73=
+1180203c785003dd6f0fb97ade42692769088ea7f3cb3a7b76d66cd8d79acb8d9529b272735=
+3effeeb5ab9a15d160ad553326f19e573a.png" title=3D"ShopNow"  style=3D"display=
+:block"> </a><br>
+                        </div>
+                      </div>
+
+                  </div>
+                </td>
+                <td>
+                    <div align=3D"center" style=3D"height:30px" >
+                    <span style=3D"color: red;font-size: 17px;font-weight: =
+bold">Flyer Sale</span><br>
+                    </div>
+               =20
+               =20
+                  <div align=3D"center" style=3D"height:200px" >
+                    <img class=3D"center  autowidth  fullwidth" width =3D "=
+200"  height =3D "200" align=3D"center" border=3D"0" src=3D"https://www.kms=
+tools.com/images/large/D/DEW-DW840_LRG.jpg" alt=3D"Image" title=3D"Image" s=
+tyle=3D"display:block;" >
+                  </div>
+
+                  <div>
+                    <div style=3D"" >
+                        <p style =3D "font-size: 16px; line-height: 21px; t=
+ext-align: center;">
+
+                          <span >DeWalt 7&quot; Angle Grinder</span><br>
+                   =20
+                          <span><a style=3D"color: red;font-size: 17px;font=
+-weight: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=
+=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBN10EAGKE5tuPKnMhR1CSdBUBsUex=
+lrAfeRnzIbCidAZNr6nZ8Y-2FYWGmyg74otmU5ayIBAX-2B-2FCnza4VsjTO8nad4lVRtFw-2Fp=
+gcBh2fuCdfETQeaDy8TLTvVLT5n189RKb0PUX8W-2BBLLLQ5CzxajT9PTLa-2Bbc0e6tNEUYONr=
+LXoGRA-3D-3D1m67_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nq=
+nn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5a=
+vS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZ=
+OZqQAbeiWoHnpEx0k2o-2FdwTcvsc5uMIuL8Gp3tPHxuHi8O1ISOThGEsHWaQJ0CO-2B7Rs-2BH=
+s0nEpKm99cvqXAUad1bRRWCsIHAoeCqW5AEO06t77qjoMBcQ6r-2BK10-2Bw9RXieZLvFL0K0Hn=
+Z1ANtYsq9iyUK8q0R3BQ7tAZ98AlgJIr9HW9JVE2Y96khIZW" target=3D"">MAP</a>
+                            <a style=3D"color: red;font-size: 20px;font-wei=
+ght: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DG=
+YoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBN10EAGKE5tuPKnMhR1CSdBUBsUexlrAf=
+eRnzIbCidAZLDGu3DZGtv3BiLrADuXfV3-2FRQM8qzakRdJjOCqsHu7W4uaSPcH1C0JBJrRQW0R=
+ESVJmtAn4Sm4X26v1aprDdsoAahVdtlxAckwDigv9ogjZ-2BwWTk3LosKpy-2FhO6kdAzdw-3D-=
+3DoyyD_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2Fw=
+cnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJD=
+Dh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWo=
+HnpEx0k6r2gDTCNyKbdI5JlX354laddyGdSGAJRLpNJAOYhn-2FqA-2FVJRC-2F-2FPhElyYBIU=
+ABXzkKu4s1qdHiOc-2BWU4QmudlNP-2BH41-2FhVfgeefQlxMTUTVdxaUrtqz-2B4I4Hrq1rJW1=
+RPCUy0Og3O-2BpqZuNT0GASrs0NCSX6m-2BatLAxNUsiS0Ja" target=3D"">$169</a></spa=
+n><br>
+                          <a style=3D"color: red;font-size: 20px;font-weigh=
+t: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DGYo=
+T0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBN10EAGKE5tuPKnMhR1CSdBUBsUexlrAfeR=
+nzIbCidAZNr6nZ8Y-2FYWGmyg74otmU5ayIBAX-2B-2FCnza4VsjTO8nad4lVRtFw-2FpgcBh2f=
+uCdfETQeaDy8TLTvVLT5n189RKb0PUX8W-2BBLLLQ5CzxajT9PTLa-2Bbc0e6tNEUYONrLXoGRA=
+-3D-3D2kyw_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ=
+-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXC=
+tqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAb=
+eiWoHnpEx0k6mt5ULK6sSC8p81ygD-2BJln1612uKCcnXbCqEaNzUmPmp11nMBF4AFzpDp-2B-2=
+FA-2FRs3gFLCY7YcC0qVyepP8GJvQhN1EXk33Ivtm70rQsArfaH65EkU8rnhwWbYU5eqxEDRXay=
+XZpyCdFcpUT4fPGFHzhHbGDAbYKnVbBhB0rlJ0xr" target=3D"">
+                              </a>
+                    </div><br/>
+                    <div align=3D"center" >
+                        <div >=20
+                        <a href=3D"http://url8909.kmstools.com/ls/click?upn=
+=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBN10EAGKE5tuPKnMhR1CSdBUBsUex=
+lrAfeRnzIbCidAZNr6nZ8Y-2FYWGmyg74otmU5ayIBAX-2B-2FCnza4VsjTO8nad4lVRtFw-2Fp=
+gcBh2fuCdfETQeaDy8TLTvVLT5n189RKb0PUX8W-2BBLLLQ5CzxajT9PTLa-2Bbc0e6tNEUYONr=
+LXoGRA-3D-3DOZyj_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nq=
+nn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5a=
+vS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZ=
+OZqQAbeiWoHnpEx0kxcH3bTyLivslAWqfBUvcGTBlFAVk7KIvaQ1NnqSndtZqp2QtRi7r0NAAHr=
+qnA8gnr0Yi5kvFEHhuR421TRv4uDYjWes-2FGsl18INBX3OPXWanWA2tKaXGlgD2D97pOb0ha6M=
+j96MEO1Kr-2FNEtA-2ByL-2FDciRWrJsTJgOU-2FUNb7YnuI"> <img class=3D"center  au=
+towidth  fullwidth" align=3D"center" border=3D"0" src=3D"https://marketing-=
+image-production.s3.amazonaws.com/uploads/c13dbf5ca380adf6e731180203c785003=
+dd6f0fb97ade42692769088ea7f3cb3a7b76d66cd8d79acb8d9529b2727353effeeb5ab9a15=
+d160ad553326f19e573a.png" title=3D"ShopNow"  style=3D"display:block"> </a><=
+br>
+                        </div>
+                      </div>
+
+                  </div>
+                </td>
+                <td>
+                    <div align=3D"center" style=3D"height:30px" >
+                    <span style=3D"color: red;font-size: 17px;font-weight: =
+bold">Flyer Sale</span><br>
+                    </div>
+               =20
+               =20
+                  <div align=3D"center" style=3D"height:200px" >
+                    <img class=3D"center  autowidth  fullwidth" width =3D "=
+200"  height =3D "200" align=3D"center" border=3D"0" src=3D"https://www.kms=
+tools.com/images/large/D/DEW-DW088K_LRG.jpg" alt=3D"Image" title=3D"Image" =
+style=3D"display:block;" >
+                  </div>
+
+                  <div>
+                    <div style=3D"" >
+                        <p style =3D "font-size: 16px; line-height: 21px; t=
+ext-align: center;">
+
+                          <span >DeWalt Red Self-Leveling Cross-Line Laser<=
+/span><br>
+                   =20
+                          <span><a style=3D"font-size: 12px; color: gray;te=
+xt-decoration: line-through;" title=3D"" href=3D"http://url8909.kmstools.co=
+m/ls/click?upn=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBMnNkY7gmKdiyCY=
+eidvVtaXxopdQ-2BZam82A7jn7xjutljtL3a4QO-2BQEko8sLNOKnWX3WqaLq7DBuutw668-2B1=
+6TbSt8Zp0JSXMFZAqClcXy1AQlEjWOewfUS9nIW0JKDLkVPKg9I-2FQ3zUM0Ie9nFRvnoZnUaFg=
+6d4DKXyOXkSjiphrL63FlbIxxcQ0CtVPv3QUs-3DlNlI_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-=
+2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M=
+3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSN=
+ouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0k1knHNPtbkS-2B-2BG4Wi56mf5JDmHG=
+lLyMYwURVwAqjcBuz2TfJ7o-2BDgcEp-2B5V6jOtRO7dWd49Dqnt9mlGsvXIWUTc10n7ODsHqz5=
+mWrkwDXExtFGkW6yyzB67eohL8eHaaefS-2BtI-2FQvym-2Femqrgyrmzj54uei0FXkZ5vqGeiZ=
+h7YSt" target=3D"">189.99</a>
+                            <a style=3D"color: red;font-size: 20px;font-wei=
+ght: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DG=
+YoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBMnNkY7gmKdiyCYeidvVtaXxopdQ-2BZa=
+m82A7jn7xjutljtL3a4QO-2BQEko8sLNOKnWX3WqaLq7DBuutw668-2B16TbSt8Zp0JSXMFZAqC=
+lcXy1AQlEjWOewfUS9nIW0JKDLkVPKg9I-2FQ3zUM0Ie9nFRvnoZnUaFg6d4DKXyOXkSjiphrL6=
+3FlbIxxcQ0CtVPv3QUs-3DZn2j_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZ=
+CiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcW=
+bcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxpl=
+XlEpEwZIcZOZqQAbeiWoHnpEx0k3ypl2payCbwUGQBfVvZGlHKgL-2B4mZaoKrof6W2cURUaVLc=
+zhTC-2FpOx9WicOhEvviqHyZIVAF6xDjIq5VmUugb6NyUPOT-2FQxva3jOCkQcNQ989CMTMXBfb=
+AWNqk2OfDsD-2BEGxGNHCRnlaaT0C72KDWeFd4nkKXxJTix9-2B2O3ZLNo" target=3D"">$14=
+9.95</a></span><br>
+                          <a style=3D"color: red;font-size: 20px;font-weigh=
+t: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DGYo=
+T0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBMnNkY7gmKdiyCYeidvVtaXxopdQ-2BZam8=
+2A7jn7xjutljtL3a4QO-2BQEko8sLNOKnWXjaOnMO3CQKhYCqHedj3Fr74ycBHbFtx5ZwkYZHan=
+inetBbF41aEveF6hZ69OFy-2BLFeDnlKCRLtwTPJ9G-2FROQxH6ROWHvkbgj2LBl2NwLuTdK5EU=
+-2BqnLI-2BTcirNJ0zJF4-3DWYfl_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YU=
+mZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdK=
+cWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxx=
+plXlEpEwZIcZOZqQAbeiWoHnpEx0k1g6y7Rjy5VSkyZQaz-2FdfgOMtVRqyw3Yq1QPO6VESBy5e=
+-2BTY8FjduzBlhYHJvp4Q9QQfaaLCpGpBGOfRewvXmF09rFkYI-2Fiiki0TdMC4Tc7qJzfQ0ABT=
+MlylvHT9epsVSNIWB8vfBtVLDAxxRUncGtwAmpQPmNOkmaBaa0fgp5DP" target=3D"">
+                            SAVE $40.00  </a>
+                    </div><br/>
+                    <div align=3D"center" >
+                        <div >=20
+                        <a href=3D"http://url8909.kmstools.com/ls/click?upn=
+=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBMnNkY7gmKdiyCYeidvVtaXxopdQ-=
+2BZam82A7jn7xjutljtL3a4QO-2BQEko8sLNOKnWX3WqaLq7DBuutw668-2B16TbSt8Zp0JSXMF=
+ZAqClcXy1AQlEjWOewfUS9nIW0JKDLkVPKg9I-2FQ3zUM0Ie9nFRvnoZnUaFg6d4DKXyOXkSjip=
+hrL63FlbIxxcQ0CtVPv3QUs-3DMLeO_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4=
+YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOq=
+dKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJs=
+xxplXlEpEwZIcZOZqQAbeiWoHnpEx0k4MSha5oyjYuFYBTI2VDyfzlH6As8MWiuIaHhIC-2BxQ0=
+-2BYAPofR-2Bjb2hmErUu-2B1cERDNSwgKZO5iQ3GWLQsW3osLmZbzB6NU8GZlDP87QBx8NQl-2=
+FtYexrB0lm-2FTPcxjXU01pOUZe63vE10cV5HIAw1y4V3h2lwUYP6dePmIE0nF86"> <img cla=
+ss=3D"center  autowidth  fullwidth" align=3D"center" border=3D"0" src=3D"ht=
+tps://marketing-image-production.s3.amazonaws.com/uploads/c13dbf5ca380adf6e=
+731180203c785003dd6f0fb97ade42692769088ea7f3cb3a7b76d66cd8d79acb8d9529b2727=
+353effeeb5ab9a15d160ad553326f19e573a.png" title=3D"ShopNow"  style=3D"displ=
+ay:block"> </a><br>
+                        </div>
+                      </div>
+
+                  </div>
+                </td>
+               =20
+              </tr>
+              <tr>
+              <tr>
+                <td>
+                    <div align=3D"center" style=3D"height:30px" >
+                    <span style=3D"color: red;font-size: 17px;font-weight: =
+bold">Flyer Sale</span><br>
+                    </div>
+               =20
+               =20
+                  <div align=3D"center" style=3D"height:200px" >
+                    <img class=3D"center  autowidth  fullwidth" width =3D "=
+200"  height =3D "200" align=3D"center" border=3D"0" src=3D"https://www.kms=
+tools.com/images/large/B/BE-1400WAWY_LRG.jpg" alt=3D"Image" title=3D"Image"=
+ style=3D"display:block;" >
+                  </div>
+
+                  <div>
+                    <div style=3D"" >
+                        <p style =3D "font-size: 16px; line-height: 21px; t=
+ext-align: center;">
+
+                          <span >BE 14&quot; Whirl-A-Way Flat Surface Clean=
+er</span><br>
+                   =20
+                          <span><a style=3D"font-size: 12px; color: gray;te=
+xt-decoration: line-through;" title=3D"" href=3D"http://url8909.kmstools.co=
+m/ls/click?upn=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBNSH-2B7W8lfaIt=
+MPpWaCVio7gZ9qUSF7t2h2cNtWj0F4WF8xvOzc7tfemdWR89xmUQ9sn0oastH-2BaElvbUhoPEK=
+mVJZm-2Blxm-2F9kvduHIxXUv7AO59JrYBWggR1uhhBNU7Ts7600fCNuAI6JkjPQTP5jDiWs6AT=
+xn8iBv6MWnLZbnUfgQtWYucTwvkfYdcxnBDVk-3DZGPM_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-=
+2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M=
+3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSN=
+ouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0k88ww9QQ4Cy3t-2Fj5aqhPAiPVnAYNA=
+zkMp-2Ft-2B5nDfJyrrQUuzvE51QzTzqjzqqCCK7mSVvlW5MVwbyUMe4ThvrkiKupfPLPmrK49b=
+S0YR64Mlak631I8wEPw3JDGSoCnjTTbmhgIsTTijoY8bv-2FxlqkpmtIe5cISIX8x0mjcQkl-2F=
+-2B" target=3D"">169.99</a>
+                            <a style=3D"color: red;font-size: 20px;font-wei=
+ght: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DG=
+YoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBNSH-2B7W8lfaItMPpWaCVio7gZ9qUSF7=
+t2h2cNtWj0F4WF8xvOzc7tfemdWR89xmUQ9sn0oastH-2BaElvbUhoPEKmVJZm-2Blxm-2F9kvd=
+uHIxXUv7AO59JrYBWggR1uhhBNU7Ts7600fCNuAI6JkjPQTP5jDiWs6ATxn8iBv6MWnLZbnUfgQ=
+tWYucTwvkfYdcxnBDVk-3Dcca5_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZ=
+CiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcW=
+bcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxpl=
+XlEpEwZIcZOZqQAbeiWoHnpEx0ky9XO87enAvteWcBkjM8-2Bq2VoPvuIq3-2BpqXwFbHxQQZzG=
+DUhlsVhCw86Ngl8dKVY6PNiEOCQRPPmZvEHVyBVP19zRWOm3kFf9-2B1EDXpyZXsluOrlETViC0=
+IlXl8rIfNpYQmKLJ38vUicOpJMtrtAPpH4ZnNytcm8QvCwWhqVYZ-2F1" target=3D"">$139.=
+95</a></span><br>
+                          <a style=3D"color: red;font-size: 20px;font-weigh=
+t: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DGYo=
+T0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBNSH-2B7W8lfaItMPpWaCVio7gZ9qUSF7t2=
+h2cNtWj0F4WF8xvOzc7tfemdWR89xmUQ9sn0oastH-2BaElvbUhoPEKmVJZm-2Blxm-2F9kvduH=
+IxXUv7AO59JrYBWggR1uhhBNU7Ts7600fCNuAI6JkjPQTP5jDiWs6ATxn8iBv6MWnLZbnUfgQtW=
+YucTwvkfYdcxnBDVk-3Dl2vy_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCi=
+RWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbc=
+AH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXl=
+EpEwZIcZOZqQAbeiWoHnpEx0kyu7vKCFAPGxPPHH7o4-2FlJqzfnBJpajx7GS8yymrYqCmRkLTw=
+Xu27XsUv-2F7KJDmyHLNUBv0elRfIUG6gWFzvG9heMDsITx6eJfDQ7aOHwcj8yvBQSeiZlYKpOb=
+-2BWGYGjMnjl5jegU-2BBrCnCgh4wvox-2B9353YHXHIyaiMQRHWGNE1" target=3D"">
+                            SAVE $30.00  </a>
+                    </div><br/>
+                    <div align=3D"center" >
+                        <div >=20
+                        <a href=3D"http://url8909.kmstools.com/ls/click?upn=
+=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBNSH-2B7W8lfaItMPpWaCVio7gZ9q=
+USF7t2h2cNtWj0F4WF8xvOzc7tfemdWR89xmUQ-2BgVa9o5HT2ZNZmFxatufphx1HQ8VpL-2BNX=
+bAu1m7Kj0ihEpnWg6QDhsesAtLtt5BRpXuvEgvjNbVRZwlcGLMMnixrsAfXbGyTFQL-2BgMTbkO=
+6A12hIVQ7dsRAArHfl8oeeY-3DJD4i_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4=
+YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOq=
+dKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJs=
+xxplXlEpEwZIcZOZqQAbeiWoHnpEx0k9QZaiZYroqZgVZ5NJQ5xgKYLQn6Jx5vmvUUOhJRfE8GT=
+YqxNVqwRnE7Xzf2sRS-2F-2Bk-2BIucEbBS76-2Be9CzPZxbk3j5zKcNrJG8ojMSxif7uCdXg5-=
+2B0h7LR2a1XBs3LoLfkFYENHfObPub-2B0tXAP7GpTCiFZueXXTKAKq16ERX7jfs"> <img cla=
+ss=3D"center  autowidth  fullwidth" align=3D"center" border=3D"0" src=3D"ht=
+tps://marketing-image-production.s3.amazonaws.com/uploads/c13dbf5ca380adf6e=
+731180203c785003dd6f0fb97ade42692769088ea7f3cb3a7b76d66cd8d79acb8d9529b2727=
+353effeeb5ab9a15d160ad553326f19e573a.png" title=3D"ShopNow"  style=3D"displ=
+ay:block"> </a><br>
+                        </div>
+                      </div>
+
+                  </div>
+                </td>
+                <td>
+                    <div align=3D"center" style=3D"height:30px" >
+                    <span style=3D"color: red;font-size: 17px;font-weight: =
+bold">Flyer Sale</span><br>
+                    </div>
+               =20
+               =20
+                  <div align=3D"center" style=3D"height:200px" >
+                    <img class=3D"center  autowidth  fullwidth" width =3D "=
+200"  height =3D "200" align=3D"center" border=3D"0" src=3D"https://www.kms=
+tools.com/images/large/M/MAG-WEK9000_LRG.jpg" alt=3D"Image" title=3D"Image"=
+ style=3D"display:block;" >
+                  </div>
+
+                  <div>
+                    <div style=3D"" >
+                        <p style =3D "font-size: 16px; line-height: 21px; t=
+ext-align: center;">
+
+                          <span >Magnum Upright Welder &amp; Cylinder Cart<=
+/span><br>
+                   =20
+                          <span><a style=3D"font-size: 12px; color: gray;te=
+xt-decoration: line-through;" title=3D"" href=3D"http://url8909.kmstools.co=
+m/ls/click?upn=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBMkt1YY3RH80KMd=
+AynjcIpyVRHVQWoHiY7XcBKX0lE5uImH27O8oSzkPSh59u-2ByJR0-2FR78GhN7bTODD2HRADDw=
+zwR0p7t3-2BYN6ljbjEvYJboKPXOsAWmXeqKqXSZzXn5X24CT7Bk50-2F3iGYuhdI1V8T56PDz2=
+0GEjhORj53GmHq3Q-3D-3DP9Dy_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZ=
+CiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcW=
+bcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxpl=
+XlEpEwZIcZOZqQAbeiWoHnpEx0k3GOv0vkEFAtQv3m2FNeom9nCbn-2FSQ-2FljpxECraTpjE5C=
+kKXoTPeBwns6llxfbRWXWW31azzqYv2ltQXivoIPVDGYLs9f5Dh5gfQanPN6gxmHQi5zMH0xvld=
+IWKbagTvdAuV4FQbrZ4TFEDabxRqT6VWIBvvEYPPufg8QNptxo2G" target=3D"">129.99</a=
+>
+                            <a style=3D"color: red;font-size: 20px;font-wei=
+ght: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DG=
+YoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBMkt1YY3RH80KMdAynjcIpyVRHVQWoHiY=
+7XcBKX0lE5uImH27O8oSzkPSh59u-2ByJR0-2FR78GhN7bTODD2HRADDwzwR0p7t3-2BYN6ljbj=
+EvYJboKPXOsAWmXeqKqXSZzXn5X24CT7Bk50-2F3iGYuhdI1V8T56PDz20GEjhORj53GmHq3Q-3=
+D-3D9zdJ_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2=
+FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtq=
+JDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbei=
+WoHnpEx0k0Spzy1Kl18aU-2FrHM35jmZkElr-2BTuOq3BtIrjOIh-2BWNT3jG15uiPIoEGOGDMm=
+Pfnwz13yvgFrpmE5cnH0ciHYeFg-2F3f39y6cUxG3OPtJIxkjTbUX19VecKQZ8RTtQ1rqslzZoh=
+24ZiAIHIn5TZ6t2ou4uT1o5WnFcBCPDOMpv3rz" target=3D"">$79.95</a></span><br>
+                          <a style=3D"color: red;font-size: 20px;font-weigh=
+t: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DGYo=
+T0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBMkt1YY3RH80KMdAynjcIpyVRHVQWoHiY7X=
+cBKX0lE5uImH27O8oSzkPSh59u-2ByJR0p63q8KhY5Bp0IGkF2bDIJg3OYVUlas0lG5QL5H24HX=
+-2BZNAldv-2Fi7QFgyAGjHg45xLe1d03k5wDo5xhpnpI7ME8qhBZPJrwHqSjz6V8GLRXg-3D-3D=
+RKQE_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2Fwcn=
+WLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh=
+-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHn=
+pEx0k-2BCNCmoH-2BQxB313LDDwcxVqlv8DIOQxAdYtNjWmhzxbVn5tGB1ftys6QEJ3HnZkW91Q=
+EJvllqis5e5lD-2Fqrjf1SakB86vyfKVqLs3AAmB-2FmXGmARsVdxeTC1mwxA066fBPgiVBKQ9K=
+4980V7EZlKTmFYylnhXZqmP4o0v-2F9-2FQehS" target=3D"">
+                            SAVE $50.00  </a>
+                    </div><br/>
+                    <div align=3D"center" >
+                        <div >=20
+                        <a href=3D"http://url8909.kmstools.com/ls/click?upn=
+=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBMkt1YY3RH80KMdAynjcIpyVRHVQW=
+oHiY7XcBKX0lE5uImH27O8oSzkPSh59u-2ByJR0-2FR78GhN7bTODD2HRADDwzwR0p7t3-2BYN6=
+ljbjEvYJboKPXOsAWmXeqKqXSZzXn5X24CT7Bk50-2F3iGYuhdI1V8T56PDz20GEjhORj53GmHq=
+3Q-3D-3D1Kig_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2=
+BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9i=
+XCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQ=
+AbeiWoHnpEx0k5opepwnBu-2FmA2nbGThNvgks38myaDjVVEUEeGyJFPlkzsvkjHBVzX1WyGO-2=
+BisFUsNb7oQxrVr7AKE2GCC9qCx5Szq0BwFiFhmts94-2FE5eHvSbVYDQEvvAGaFMZKDQP5N1TS=
+jbq29-2FRQlzuvvKec-2BW0VjD7dAP89-2ByoR9naFEBM1"> <img class=3D"center  auto=
+width  fullwidth" align=3D"center" border=3D"0" src=3D"https://marketing-im=
+age-production.s3.amazonaws.com/uploads/c13dbf5ca380adf6e731180203c785003dd=
+6f0fb97ade42692769088ea7f3cb3a7b76d66cd8d79acb8d9529b2727353effeeb5ab9a15d1=
+60ad553326f19e573a.png" title=3D"ShopNow"  style=3D"display:block"> </a><br=
+>
+                        </div>
+                      </div>
+
+                  </div>
+                </td>
+                <td>
+                    <div align=3D"center" style=3D"height:30px" >
+                    <span style=3D"color: red;font-size: 17px;font-weight: =
+bold">Flyer Sale</span><br>
+                    </div>
+               =20
+               =20
+                  <div align=3D"center" style=3D"height:200px" >
+                    <img class=3D"center  autowidth  fullwidth" width =3D "=
+200"  height =3D "200" align=3D"center" border=3D"0" src=3D"https://www.kms=
+tools.com/images/large/F/FEA-6306_LRG.jpg" alt=3D"Image" title=3D"Image" st=
+yle=3D"display:block;" >
+                  </div>
+
+                  <div>
+                    <div style=3D"" >
+                        <p style =3D "font-size: 16px; line-height: 21px; t=
+ext-align: center;">
+
+                          <span >Featherlite 6&apos; Fibreglass Step Ladder=
+</span><br>
+                   =20
+                          <span><a style=3D"font-size: 12px; color: gray;te=
+xt-decoration: line-through;" title=3D"" href=3D"http://url8909.kmstools.co=
+m/ls/click?upn=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBPsF6WafynCkCdE=
+IPGLFFDGWFe7trU8uElT9L-2F0RBXjXKUO5DG6e9k26bgufwc3QJFKlA018fubS6TdD-2BiPWXx=
+BHmRVMggWOz64cVzUQg32uRVKQQZNojhO0roneZtqVDyKaaB5G6nw2Gq9Yl212hS4EYvTsOfxDU=
+AsUogQaBk8bvbXbcRoWHQpDLlwYB1X09E-3D1eMm_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2Bxo=
+qzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO9=
+3cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO=
+8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0k-2FjdAY369elUh1RbFRPn7lX50wtuTrn-2=
+FXRLuC7WfeXkoMFculOnin3Ld-2Fj48MZ6AUrkjmv9LxiMWeBc3Msxx4OUznv-2BxXaZlaYZYIY=
+2npYYZUUrmE1m0rVkBo25NzMzLVPv5XenwvnjtORP-2BzPi22gAq-2F0htN5y2q9kslO3C0mrU"=
+ target=3D"">214.99</a>
+                            <a style=3D"color: red;font-size: 20px;font-wei=
+ght: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DG=
+YoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBPsF6WafynCkCdEIPGLFFDGWFe7trU8uE=
+lT9L-2F0RBXjXKUO5DG6e9k26bgufwc3QJHRfeK6G75vdFsaK3pkvmvRke17t3ZnWuts8KVhvNW=
+TVlr-2BdYcy7b6K-2FOcn-2FwTulhtPL-2F5IlcGtK5Dlu67-2Ber1FAa69k4SWm-2FATDEj1sL=
+B7dN422L1YabjRocXmqiDb3CU-3Diti8_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAt=
+U4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAm=
+OqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQ=
+JsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0k027Dny2bsgkhWnOupsBokRA5CRt6BENKgPiZdilEk7=
+FoW1LFFp4zBYIv4tSJ4GrGL45h1wxy0-2B3EPmU7nvXsUnO3TUGTV4sYCVJ1TDfduryl-2Fhcez=
+gvE4fe4P2VjY0zI0SMrZ-2FxmgsYrDuNOT2txvmVj8gjoD0EUm3fC8Fjvh-2Fo" target=3D""=
+>$79.95</a></span><br>
+                          <a style=3D"color: red;font-size: 20px;font-weigh=
+t: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DGYo=
+T0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBPsF6WafynCkCdEIPGLFFDGWFe7trU8uElT=
+9L-2F0RBXjXKUO5DG6e9k26bgufwc3QJHRfeK6G75vdFsaK3pkvmvRke17t3ZnWuts8KVhvNWTV=
+lr-2BdYcy7b6K-2FOcn-2FwTulhtPL-2F5IlcGtK5Dlu67-2Ber1FAa69k4SWm-2FATDEj1sLB7=
+dN422L1YabjRocXmqiDb3CU-3DyYie_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4=
+YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOq=
+dKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJs=
+xxplXlEpEwZIcZOZqQAbeiWoHnpEx0k5sjZK8RuTBcG1diPDcoovyChGj-2BocpFsriQR5A9JYw=
+sEF3Dbqhby1TYU2qBD58fokGyKQBi-2FnWitO7RPFiWHqa2RTqBZcJY1ZA2sdBku45Ys-2BkWCe=
+1f0RcHX9kdGAH2JzJnBKtz3IicJhDlSppLyf2JxmV18Ja-2B7OKtWjPv0-2B6b" target=3D""=
+>
+                            SAVE $135.00  </a>
+                    </div><br/>
+                    <div align=3D"center" >
+                        <div >=20
+                        <a href=3D"http://url8909.kmstools.com/ls/click?upn=
+=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBPsF6WafynCkCdEIPGLFFDGWFe7tr=
+U8uElT9L-2F0RBXjXKUO5DG6e9k26bgufwc3QJFKlA018fubS6TdD-2BiPWXxBHmRVMggWOz64c=
+VzUQg32uRVKQQZNojhO0roneZtqVDyKaaB5G6nw2Gq9Yl212hS4EYvTsOfxDUAsUogQaBk8bvbX=
+bcRoWHQpDLlwYB1X09E-3DWmhZ_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZ=
+CiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcW=
+bcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxpl=
+XlEpEwZIcZOZqQAbeiWoHnpEx0k3zwD-2BvBsWdJOb0sXtGffVrDgFT1MK6GymbKomNHDcIXxZA=
+vEhLDLND6HSguOG-2BUhMUs-2BL-2BqTzIXUYRKRtDoRq5bUAHNwWmizUWeNtKxPah-2B4ciNH1=
+OsMYCLe00zqyadBbLlIJDIy4T133UTFRNSQdCp6l-2BvIN-2BHpNC4k73VITV9"> <img class=
+=3D"center  autowidth  fullwidth" align=3D"center" border=3D"0" src=3D"http=
+s://marketing-image-production.s3.amazonaws.com/uploads/c13dbf5ca380adf6e73=
+1180203c785003dd6f0fb97ade42692769088ea7f3cb3a7b76d66cd8d79acb8d9529b272735=
+3effeeb5ab9a15d160ad553326f19e573a.png" title=3D"ShopNow"  style=3D"display=
+:block"> </a><br>
+                        </div>
+                      </div>
+
+                  </div>
+                </td>
+               =20
+              </tr>
+              <tr>
+              <tr>
+                <td>
+                    <div align=3D"center" style=3D"height:30px" >
+                    <span style=3D"color: red;font-size: 17px;font-weight: =
+bold">Flyer Sale</span><br>
+                    </div>
+               =20
+               =20
+                  <div align=3D"center" style=3D"height:200px" >
+                    <img class=3D"center  autowidth  fullwidth" width =3D "=
+200"  height =3D "200" align=3D"center" border=3D"0" src=3D"https://www.kms=
+tools.com/images/large/F/FEA-3702_LRG.jpg" alt=3D"Image" title=3D"Image" st=
+yle=3D"display:block;" >
+                  </div>
+
+                  <div>
+                    <div style=3D"" >
+                        <p style =3D "font-size: 16px; line-height: 21px; t=
+ext-align: center;">
+
+                          <span >Featherlite 2&apos; Heavy-Duty Aluminum Sa=
+whorse</span><br>
+                   =20
+                          <span><a style=3D"font-size: 12px; color: gray;te=
+xt-decoration: line-through;" title=3D"" href=3D"http://url8909.kmstools.co=
+m/ls/click?upn=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBNq3nPwlObdUQ-2=
+FZ6qIHOI3Zzf2416iSbqwOCHD-2B774cprVOgIwhs31LgXI0qlFQGSLl5JuW712IbBJzDK7t9c2=
+VeJrQGSLqH-2Bb23ZhMR6QdqF-2FKxGU-2Fjes2XnncW9xHSgaPHoUCzWN6onwJKxOx6bA32h0i=
+-2B4paEmUnNpC8vDlFRie22mtOBueZRU2o1ZuLDAo-3D7GFp_Z9FS5904EYnM6KIFjyqB1R0wNb=
+XJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPi=
+ZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOf=
+rKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0k-2Bc1PaKJ-2F6J-2BVdm-2FcDz=
+OAyFlb-2FSPv1RlWVehq-2B7jyzfotX63I0yOHY4eCQW2wD5sTJFuEheRwQpeRyw5XOKFB6XOEP=
+xRIfLwA2aMseAQ5Ucolge7vICU0Igrvdowsbyeh6D-2BJvPdfSApZkbQeIlRaL6Hw9lOG0ZAHbx=
+tNjEtmJu9" target=3D"">90.99</a>
+                            <a style=3D"color: red;font-size: 20px;font-wei=
+ght: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DG=
+YoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBNq3nPwlObdUQ-2FZ6qIHOI3Zzf2416iS=
+bqwOCHD-2B774cprVOgIwhs31LgXI0qlFQGSLIcNd19OjHXDA-2FFZjvmu47RCKm6bGhVEA3WwZ=
+URZcfLNpBbTBfI-2BczAtL0rNHgVa-2BvzEN02lfs0wx0iSY2yOcKEr9eS-2BxSSKvfIK74PDFn=
+6ziMhoTrm79KVuVVY-2Fsv3ME-3DVorO_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAt=
+U4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAm=
+OqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQ=
+JsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0k-2F6HHNlqEDpXpkvsmO0f7ypejHe5qqRfh4WqS5tdy=
+yl1DFDgf8JCBroOF3yZ40PojLB4HbGeXI3-2BivdKrM17AbsA-2BvFGjg1xNUfdPk2elZaNSozu=
+eN0VPUMwAZqs-2FBRpABmV45IdDoE7KbPMLf5P99NuWamuqMaiL9DdZ0yoP-2FPt" target=3D=
+"">$69.95</a></span><br>
+                          <a style=3D"color: red;font-size: 20px;font-weigh=
+t: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DGYo=
+T0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBNq3nPwlObdUQ-2FZ6qIHOI3Zzf2416iSbq=
+wOCHD-2B774cprVOgIwhs31LgXI0qlFQGSLl5JuW712IbBJzDK7t9c2VeJrQGSLqH-2Bb23ZhMR=
+6QdqF-2FKxGU-2Fjes2XnncW9xHSgaPHoUCzWN6onwJKxOx6bA32h0i-2B4paEmUnNpC8vDlFRi=
+e22mtOBueZRU2o1ZuLDAo-3DjCxD_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YU=
+mZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdK=
+cWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxx=
+plXlEpEwZIcZOZqQAbeiWoHnpEx0k5orEId7FNekG1G0pt-2BY-2ByjTRRBSw-2F-2FyNPus3-2=
+BZzzy9npYR8yZpfMQCYLTCkE2A-2BTfuWhHgEKRcWNk1JV6bBPs9CMlbaf0ONej-2B8bVeSS9O9=
+qhr98ACnbNgNgBwJQWZtPYbd0vOGr2apWsG5cHox-2FHjfwHf59w-2B3JCUdSY8AUKcx" targe=
+t=3D"">
+                            SAVE $21.00  </a>
+                    </div><br/>
+                    <div align=3D"center" >
+                        <div >=20
+                        <a href=3D"http://url8909.kmstools.com/ls/click?upn=
+=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBNq3nPwlObdUQ-2FZ6qIHOI3Zzf24=
+16iSbqwOCHD-2B774cprVOgIwhs31LgXI0qlFQGSIN8-2FRogJqpoVgr4ttdEwlx6NgcRTqARFH=
+NnG4h55RxEEBlO7ss83xwZiiZRE398YvLIvRPPC7i3Ei9uPiM3cZEFPzU2nOEgvGjP1c96inpjb=
+s-2BtY6Q5TP28mA3KuWCpjg-3DCkHG_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4=
+YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOq=
+dKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJs=
+xxplXlEpEwZIcZOZqQAbeiWoHnpEx0ky6xNKB-2FmSOlCRsxGaZHYmAfbFkxctq2Y6Hko06lmkP=
+Vhkt7YAt5ovdO-2BEw1vP8KwKi0TJwOi5p8GYL4ZchxZ6oBBKBkGRNbSuxDTjqYmjoFtFS-2FwQ=
+4S7bqVP3Ej7r6iiAyGKAjnBHiS8wGeZ5dBClk3Rb-2FsU2xxtIyZTXw0IUci"> <img class=
+=3D"center  autowidth  fullwidth" align=3D"center" border=3D"0" src=3D"http=
+s://marketing-image-production.s3.amazonaws.com/uploads/c13dbf5ca380adf6e73=
+1180203c785003dd6f0fb97ade42692769088ea7f3cb3a7b76d66cd8d79acb8d9529b272735=
+3effeeb5ab9a15d160ad553326f19e573a.png" title=3D"ShopNow"  style=3D"display=
+:block"> </a><br>
+                        </div>
+                      </div>
+
+                  </div>
+                </td>
+                <td>
+                    <div align=3D"center" style=3D"height:30px" >
+                    <span style=3D"color: red;font-size: 17px;font-weight: =
+bold">Flyer Sale</span><br>
+                    </div>
+               =20
+               =20
+                  <div align=3D"center" style=3D"height:200px" >
+                    <img class=3D"center  autowidth  fullwidth" width =3D "=
+200"  height =3D "200" align=3D"center" border=3D"0" src=3D"https://www.kms=
+tools.com/images/large/M/MAG-WHA1BLU_LRG.jpg" alt=3D"Image" title=3D"Image"=
+ style=3D"display:block;" >
+                  </div>
+
+                  <div>
+                    <div style=3D"" >
+                        <p style =3D "font-size: 16px; line-height: 21px; t=
+ext-align: center;">
+
+                          <span >Magnum Auto-Darkening Welding Helmet(Blue)=
+</span><br>
+                   =20
+                          <span><a style=3D"font-size: 12px; color: gray;te=
+xt-decoration: line-through;" title=3D"" href=3D"http://url8909.kmstools.co=
+m/ls/click?upn=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBM6CjAwu-2FSqEu=
+TZ6z-2FHrFnTKjhHvoPi-2FGe55YgSx5DFokIFUVyDgycmKLr-2FeEnDjqpgICAQl5uXUrSZZtn=
+VHh8nvD9pY4Tu3264ir4Q93nM0fRnT6IelfVFnS8y3-2FrjSGedMsgAmO5cr6hez99zwuLMxj0y=
+IJECQqt8NQ9W9uI5-2BM5E1DthGaiFLE9pafnDwLI-3DvhdJ_Z9FS5904EYnM6KIFjyqB1R0wNb=
+XJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPi=
+ZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOf=
+rKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0kw8pxTqwI7lREbqPjiL23c-2B23=
+x1zS3nrZ7EvvjMgGU8dkOKM6MngAF4JOqxu7jnBzE7c1px5NCcq3vhjKRJgloScv6t1YUDizPuK=
+-2Bp0bSMfMaNnZQh9DnVJHckkpy-2Fithp44VkOQpVnpPLBEWGD9SjTVWveMtGX1raxKkW8AtWV=
+G" target=3D"">109.99</a>
+                            <a style=3D"color: red;font-size: 20px;font-wei=
+ght: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DG=
+YoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBM6CjAwu-2FSqEuTZ6z-2FHrFnTKjhHvo=
+Pi-2FGe55YgSx5DFokIFUVyDgycmKLr-2FeEnDjqpgICAQl5uXUrSZZtnVHh8nvD9pY4Tu3264i=
+r4Q93nM0fRnT6IelfVFnS8y3-2FrjSGedMsgAmO5cr6hez99zwuLMxj0yIJECQqt8NQ9W9uI5-2=
+BM5E1DthGaiFLE9pafnDwLI-3DmkTl_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4=
+YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOq=
+dKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJs=
+xxplXlEpEwZIcZOZqQAbeiWoHnpEx0kyPwBvCfyap0UNX-2BXkeKmAexo3WXrOiiQ8OP73AYl4m=
+fgBx8RN0rArn-2BdQRGUmukK6zOqXsVHagm-2Fu5bL7TALceoTm3xdPKzsvNvPmIIxAbYiB0Ife=
+G15v-2FcvMOrT2-2FXe0HL35I-2BLhGmo4c1Z-2B9bRVXrDOKf4r1IKarHt-2F7FdeK0" targe=
+t=3D"">$59.95</a></span><br>
+                          <a style=3D"color: red;font-size: 20px;font-weigh=
+t: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DGYo=
+T0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBM6CjAwu-2FSqEuTZ6z-2FHrFnTKjhHvoPi=
+-2FGe55YgSx5DFokIFUVyDgycmKLr-2FeEnDjqqjF0gca7e6Co477Lwsw2I7IMLZDJ0r-2F3jBY=
+k1mMV4arlBFei2V62T8lNczb13ntyfJd-2FFNiKTbj6HI9zc-2F0jWRBbKfwK0g3s7Url-2F4-2=
+F2stEWxkaF7CsQAUFGiMHSACrto-3DVgWz_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2F=
+AtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovL=
+AmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDF=
+SQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0kw5JtlyiZHzLhORw1bFrSftzR3BteLtXjxurhWern=
+K54PpDjQQpV4OEl73PhJBCyOYCa6W2U-2Bo5QUmPHS7wbz3PDqGBssW7b-2BPmQ88C51DKEzTk0=
+BckuJUs2l-2FZPqtiluuaki5NEbrQpwKAZm8fEXRfwscyC4L6II0UtqtU4wD0-2B" target=3D=
+"">
+                            SAVE $50.00  </a>
+                    </div><br/>
+                    <div align=3D"center" >
+                        <div >=20
+                        <a href=3D"http://url8909.kmstools.com/ls/click?upn=
+=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBM6CjAwu-2FSqEuTZ6z-2FHrFnTKj=
+hHvoPi-2FGe55YgSx5DFokIFUVyDgycmKLr-2FeEnDjqq4NzyY7AsQYiyLH-2FeXdRY-2Box0R7=
+m62yucyk3CZO2XkZoEqPx3aVzn-2B20YPXbXaBjzWxkzuGWpYCBW47IZXTz3q3LgevxtAmquTUp=
+suBQ1ArSMN1-2FvoLfCUU6ub4ahe2m0-3DjCmv_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2Bxoqz=
+F-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93c=
+NovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G=
+2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0k7cp1bsxNpX2wODQUwbd1Dq1DMKl-2B23mHor=
+n8pxgXmUpiCUMotYaId6G87CG0xCds-2FsPuXMThxomFzEkgBoq4UGg3aCMDR16Ptj7RNlcl-2F=
+PEWCyCIJfiVhRYX3HcmGBEce-2BbqT7kfsHcORPsaSq3ssVz0nden6o5Yy778-2BWW1icx"> <i=
+mg class=3D"center  autowidth  fullwidth" align=3D"center" border=3D"0" src=
+=3D"https://marketing-image-production.s3.amazonaws.com/uploads/c13dbf5ca38=
+0adf6e731180203c785003dd6f0fb97ade42692769088ea7f3cb3a7b76d66cd8d79acb8d952=
+9b2727353effeeb5ab9a15d160ad553326f19e573a.png" title=3D"ShopNow"  style=3D=
+"display:block"> </a><br>
+                        </div>
+                      </div>
+
+                  </div>
+                </td>
+                <td>
+                    <div align=3D"center" style=3D"height:30px" >
+                    <span style=3D"color: red;font-size: 17px;font-weight: =
+bold">Flyer Sale</span><br>
+                    </div>
+               =20
+               =20
+                  <div align=3D"center" style=3D"height:200px" >
+                    <img class=3D"center  autowidth  fullwidth" width =3D "=
+200"  height =3D "200" align=3D"center" border=3D"0" src=3D"https://www.kms=
+tools.com/images/large/N/NOL-N19150ES_LRG.jpg" alt=3D"Image" title=3D"Image=
+" style=3D"display:block;" >
+                  </div>
+
+                  <div>
+                    <div style=3D"" >
+                        <p style =3D "font-size: 16px; line-height: 21px; t=
+ext-align: center;">
+
+                          <span >Nortech 4&apos; Linkable LED Shop Light - =
+4,200 Lumens</span><br>
+                   =20
+                          <span><a style=3D"font-size: 12px; color: gray;te=
+xt-decoration: line-through;" title=3D"" href=3D"http://url8909.kmstools.co=
+m/ls/click?upn=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBMVx3AWJZZREfEo=
+GIIa2xWNE81N7rHOdTllGQHR9TjnP34tlI8RGbEJGZ4YSNo3cfsKeCLZx-2F7soK530xCDxrIAi=
+aPCmZ5GMgQYv9H-2BQ2Z8IEEqEmP5oz1KdcqksyohSWsDRdFl5O7UZPV2p6BfeE2O8JBilFw2d2=
+IgfpbuZK0853NqsGhOb8Np-2FrKfrvS1DFYvsS-2F8ugRVYEDG4Cr4lkneVGwU_Z9FS5904EYnM=
+6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBt=
+gFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJOR=
+Qatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0kzvfAy1hf98at=
+634IV-2BsYyKJsOtDAvdVz0-2BPTzx3VmtCE2a7I23wExm5wtTeS1zebhv9jOFVfDoma5BbIG0Y=
+wMzRkrKNfSGkQLJRMfJ-2FesYwWBvYhcM-2FEwj-2Bp4uCrKU8A8a9GthmclNjWX1D995g-2BM9=
+h6ISWCXEhIi5tkRwbfYEw" target=3D"">69.99</a>
+                            <a style=3D"color: red;font-size: 20px;font-wei=
+ght: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DG=
+YoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBMVx3AWJZZREfEoGIIa2xWNE81N7rHOdT=
+llGQHR9TjnP34tlI8RGbEJGZ4YSNo3cfsKeCLZx-2F7soK530xCDxrIANv5gKCRx3BHfCoUEfry=
+8BZuEu5nlG1kuY1Z9zr-2B6KxXSuFGqOv4pLdTYBtZmtpeO-2FQFK-2BKRlSMT3FevnHdUo9Zgh=
+AK5ZM1D3Uk6-2BSgpMfCrekGQlIqrPju2IEJDcxO97SwVk_Z9FS5904EYnM6KIFjyqB1R0wNbXJ=
+X-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ=
+5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrK=
+SNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0k3hMMk6pn1rxlSw8TCCT9Fdpwvwp8=
+8oPWBDm5TpM59-2FSAF-2FDbaZ-2Fg0rc8gKvMHx-2F8O-2FGB7dVQCMNDJaGiIfChazAt1Bc-2=
+F9cZ9ngcd9Eaa0AR5gU9X8AWMzo1OTfMiyGtMomWEgh2ulAHvD8bEUAtK2GXdZu-2BgjbLOrVtE=
+S79eWKx" target=3D"">$34.95</a></span><br>
+                          <a style=3D"color: red;font-size: 20px;font-weigh=
+t: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DGYo=
+T0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBMVx3AWJZZREfEoGIIa2xWNE81N7rHOdTll=
+GQHR9TjnP34tlI8RGbEJGZ4YSNo3cfsKeCLZx-2F7soK530xCDxrIAiaPCmZ5GMgQYv9H-2BQ2Z=
+8IEEqEmP5oz1KdcqksyohSWsDRdFl5O7UZPV2p6BfeE2O8JBilFw2d2IgfpbuZK0853NqsGhOb8=
+Np-2FrKfrvS1DFYvsS-2F8ugRVYEDG4Cr4lkneUF_g_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2B=
+xoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3D=
+O93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNou=
+BO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0k4tSzvyDYocQR6-2FVKOuYGkH3CualgSd=
+mA3-2BYKszlOdhm7ldG3406h2NSeMPJaFnp-2FK7am4a-2FSs3m30Fn-2BKXQN-2FBonP7YjHaT=
+z47CeYW-2B5jV5kpp1-2BCURBBQJtoQELIPuwTGltzh2BPqqyTBaI3H4R1IeO5V1iAfBXaDQty4=
+FyZ1J" target=3D"">
+                            SAVE $35.00  </a>
+                    </div><br/>
+                    <div align=3D"center" >
+                        <div >=20
+                        <a href=3D"http://url8909.kmstools.com/ls/click?upn=
+=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBMVx3AWJZZREfEoGIIa2xWNE81N7r=
+HOdTllGQHR9TjnP34tlI8RGbEJGZ4YSNo3cfsKeCLZx-2F7soK530xCDxrIAvwlWBEgEi-2BTWP=
+TEcXzddOsYyxpzX1d8pMoTeJ7J9RofbS-2FmZIGCMw-2B0ZSPKTNGWYcCemCQvpS5Q7uYhuzAaj=
+Pik4n6f7snqLzdr-2BLwWTizrzkeONijrRCjVAJ90dl5rcIXSD_Z9FS5904EYnM6KIFjyqB1R0w=
+NbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqj=
+PiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2Fm=
+OfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0k5azLS1roA-2FiP6hFc-2FoOW=
+BRHHaQD-2FGamWui7Kay5wWNBl0AV3RSluae-2BAVe3-2B9EP77g4XWQgP6Pi8g12bZxawrR0az=
+iq7TbcJyHq6T4qCg53AmmUI-2FhevrGS4gpGbDeHcK3jqkErVRofo6LU4-2BtSANxw-2FSHDiC0=
+MIsz4qCHKKaPQ"> <img class=3D"center  autowidth  fullwidth" align=3D"center=
+" border=3D"0" src=3D"https://marketing-image-production.s3.amazonaws.com/u=
+ploads/c13dbf5ca380adf6e731180203c785003dd6f0fb97ade42692769088ea7f3cb3a7b7=
+6d66cd8d79acb8d9529b2727353effeeb5ab9a15d160ad553326f19e573a.png" title=3D"=
+ShopNow"  style=3D"display:block"> </a><br>
+                        </div>
+                      </div>
+
+                  </div>
+                </td>
+               =20
+              </tr>
+              <tr>
+              <tr>
+                <td>
+                    <div align=3D"center" style=3D"height:30px" >
+                    <span style=3D"color: red;font-size: 17px;font-weight: =
+bold">Flyer Sale</span><br>
+                    </div>
+               =20
+               =20
+                  <div align=3D"center" style=3D"height:200px" >
+                    <img class=3D"center  autowidth  fullwidth" width =3D "=
+162"  height =3D "200" align=3D"center" border=3D"0" src=3D"https://www.kms=
+tools.com/images/large/U/UVEX-S8500_LRG.jpg" alt=3D"Image" title=3D"Image" =
+style=3D"display:block;" >
+                  </div>
+
+                  <div>
+                    <div style=3D"" >
+                        <p style =3D "font-size: 16px; line-height: 21px; t=
+ext-align: center;">
+
+                          <span >Uvex Bionic Face Shield w/Clear Visor</spa=
+n><br>
+                   =20
+                          <span><a style=3D"font-size: 12px; color: gray;te=
+xt-decoration: line-through;" title=3D"" href=3D"http://url8909.kmstools.co=
+m/ls/click?upn=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBPDzsIWVe2AHr9f=
+G49ScHnUx6BJ-2F-2F7xw-2BzfZ2QimutuKSx9avkEi7gEg5e1iGgqR6RjYvGPC73Bt5DE7XlS7=
+5uzta4EA4Z9-2FsHKbmm17e1sARa-2BkfxLpT3-2F1UBNjPYbDcEf-2FkuJVdNOQG-2BfHczQ-2=
+FoSohjKyWuO30Miget4gswIfUw-3D-3DAFiM_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-=
+2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNo=
+vLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2M=
+DFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0k0Fopwr42OqwdY3O41HQfjbAfzvDlfmQsPwggkK=
+YWDquYNDxCQeFHX9SSijd70yqHFiEg4Ie7axy-2FDM7um0LuOifDJ3i1s3BhaluzCiJAmAzzeT1=
+-2FCeCm-2BDz9Du-2FpN3QEBFhx9GddxXnDXNTWJKQYPn-2FXf1njbXWAoshPi7AGuGR" targe=
+t=3D"">44.99</a>
+                            <a style=3D"color: red;font-size: 20px;font-wei=
+ght: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DG=
+YoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBPDzsIWVe2AHr9fG49ScHnUx6BJ-2F-2F=
+7xw-2BzfZ2QimutuKSx9avkEi7gEg5e1iGgqR6RjYvGPC73Bt5DE7XlS75uzta4EA4Z9-2FsHKb=
+mm17e1sARa-2BkfxLpT3-2F1UBNjPYbDcEf-2FkuJVdNOQG-2BfHczQ-2FoSohjKyWuO30Miget=
+4gswIfUw-3D-3DYRZH_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56=
+Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW=
+5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZI=
+cZOZqQAbeiWoHnpEx0k2C1-2F8r6fiaPiCP-2BJ-2FKdYMeE9K3UgEprYj0yYVAD8Wcyt7sFUxz=
+XQ29S2-2BqUsqUT92f-2FloZTuHbEYTlKgKrCXg-2BENhcYcfpCY1MkYOLnuAv5NN2DoWijQ8HK=
+iLK7i2NgMT2zYXc9nrDSKTLK9-2F2eiQQAmx-2B6Wxj2jMejiFjTSsOU" target=3D"">$29.9=
+5</a></span><br>
+                          <a style=3D"color: red;font-size: 20px;font-weigh=
+t: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DGYo=
+T0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBPDzsIWVe2AHr9fG49ScHnUx6BJ-2F-2F7x=
+w-2BzfZ2QimutuKSx9avkEi7gEg5e1iGgqR6Rohg5CmvGINo-2FMqlbTywDRgerfWMiQ44PeUlf=
+kcteeayvWIjRWzIUuOdl2quQNtWAw3SPt4A6CGbe-2FPTPioWeOSpnboFpy0zsdesSxEJugmw-3=
+D-3D93HS_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2=
+FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtq=
+JDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbei=
+WoHnpEx0k6DQIFbQnchuGVILrHFLZ-2FVWeGvnp93Z1794rBMY4RQALXayadkS0MnLsLrfPtdkI=
+LhY-2BBzj-2BFDKllPtkBEgN3AlJ8XSntwwU1zgB3e3-2BGSSIUSCEq1cryCqCtp-2BJ-2FH0yc=
+lqRnKzgWoO-2BEvZ0ItMxeGLujFYUg2lf0wl4cFRguqW" target=3D"">
+                            SAVE $15.00  </a>
+                    </div><br/>
+                    <div align=3D"center" >
+                        <div >=20
+                        <a href=3D"http://url8909.kmstools.com/ls/click?upn=
+=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBPDzsIWVe2AHr9fG49ScHnUx6BJ-2=
+F-2F7xw-2BzfZ2QimutuKSx9avkEi7gEg5e1iGgqR6RjYvGPC73Bt5DE7XlS75uzta4EA4Z9-2F=
+sHKbmm17e1sARa-2BkfxLpT3-2F1UBNjPYbDcEf-2FkuJVdNOQG-2BfHczQ-2FoSohjKyWuO30M=
+iget4gswIfUw-3D-3D_kJY_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRW=
+Vd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH=
+55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEp=
+EwZIcZOZqQAbeiWoHnpEx0k6jsv4DkkzrkHmC082t7-2F8SzDuYLKEPWzoTrhdUIoXriqP5CENE=
+bTy-2F8U0f8WNZaRyXGpTzBosobdU7yrpnAhjGllLMKNXQ2jA-2Fk5-2BcSg3RHg2ygPVSXEfov=
+pVPH1jPf7CaSKlSgw9wOKNZj-2FDuQ9yFFE7ZcKn3o3l00B5WMul9f"> <img class=3D"cent=
+er  autowidth  fullwidth" align=3D"center" border=3D"0" src=3D"https://mark=
+eting-image-production.s3.amazonaws.com/uploads/c13dbf5ca380adf6e731180203c=
+785003dd6f0fb97ade42692769088ea7f3cb3a7b76d66cd8d79acb8d9529b2727353effeeb5=
+ab9a15d160ad553326f19e573a.png" title=3D"ShopNow"  style=3D"display:block">=
+ </a><br>
+                        </div>
+                      </div>
+
+                  </div>
+                </td>
+                <td>
+                    <div align=3D"center" style=3D"height:30px" >
+                    <span style=3D"color: red;font-size: 17px;font-weight: =
+bold">Flyer Sale</span><br>
+                    </div>
+               =20
+               =20
+                  <div align=3D"center" style=3D"height:200px" >
+                    <img class=3D"center  autowidth  fullwidth" width =3D "=
+200"  height =3D "200" align=3D"center" border=3D"0" src=3D"https://www.kms=
+tools.com/images/large/B/BES-PC342_LRG.jpg" alt=3D"Image" title=3D"Image" s=
+tyle=3D"display:block;" >
+                  </div>
+
+                  <div>
+                    <div style=3D"" >
+                        <p style =3D "font-size: 16px; line-height: 21px; t=
+ext-align: center;">
+
+                          <span >Bessey 3/4&quot; Pipe Clamp Fixture</span>=
+<br>
+                   =20
+                          <span><a style=3D"font-size: 12px; color: gray;te=
+xt-decoration: line-through;" title=3D"" href=3D"http://url8909.kmstools.co=
+m/ls/click?upn=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBN-2BqOpJ8I9-2B=
+FgOZWZlbnVNJ1uxkK0u7Qj0oSeR9QdfWY85rFBOm8bUjsNZTEo94pMBTHaqzrxYghiVCxrwiP7h=
+OP-2Bpt7GPY3pWBZQSqWCRPafPg5uLJzvTniGtcyDa08tYG6LLHQvHbBqsIjew6sEsxnoMneSZc=
+qWq9eui6W35M9Q-3D-3DZ-yA_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCi=
+RWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbc=
+AH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXl=
+EpEwZIcZOZqQAbeiWoHnpEx0kzBeE9D-2F9ctGJqTUS9K6Lg2sRxjAyX8gecgGQ5Qf9ip40xV9-=
+2BtVuFdM86wZltqeRSV0sFtICNy9c-2FpTozlV9AMWN8engWFN8RvZ06Jsc2fja-2BcpqbF3VpG=
+ZyqeTHdt0xYuHKukH5Z-2FouTBFVbCJntLIJgaKAmm1ZLqJa2YZzqy88" target=3D"">21.99=
+</a>
+                            <a style=3D"color: red;font-size: 20px;font-wei=
+ght: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DG=
+YoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBN-2BqOpJ8I9-2BFgOZWZlbnVNJ1uxkK0=
+u7Qj0oSeR9QdfWY85rFBOm8bUjsNZTEo94pMBTHaqzrxYghiVCxrwiP7hOP-2Bpt7GPY3pWBZQS=
+qWCRPafPg5uLJzvTniGtcyDa08tYG6LLHQvHbBqsIjew6sEsxnoMneSZcqWq9eui6W35M9Q-3D-=
+3DLRNa_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2Fw=
+cnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJD=
+Dh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWo=
+HnpEx0kx-2FAqqNV6T2zRPOwD0oObVwA9Zl5Raq889krxKMx0wtv0i-2F8nvdF0aoAwYdKV1dsg=
+v1zPguwC5v-2BGES1gDgolZ03uGQxqGJ6fh5TPLKIfnz-2BoQ1o4lVI3Y1eqxlmC58nz-2B3pcX=
+R6odU-2F6IQ-2BmLvODJogRipRvgXiSGG88TrTzOws" target=3D"">$20</a></span><br>
+                          <a style=3D"color: red;font-size: 20px;font-weigh=
+t: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DGYo=
+T0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBN-2BqOpJ8I9-2BFgOZWZlbnVNJ1uxkK0u7=
+Qj0oSeR9QdfWY85rFBOm8bUjsNZTEo94pMAOHuCiE9UMx-2F8KO6ynE2i-2Ba5NBPqP8DTD28z6=
+oSNorWszISUOYD93MDPLX2kyV-2BYhjImbU5LU86kNUXD8pbjuXWXXp-2FS0RQiOJyuMB7lCBqg=
+-3D-3D8hAc_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ=
+-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXC=
+tqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAb=
+eiWoHnpEx0k99KYARg1asdNmG4W0nREynlGEdaYHT8pFeOuEOrOK5p-2F3OPo6mnwJ3fXJjsOwR=
+99xKVi6NrSLfvfV9DhnKKuZYuSP-2BQCxl1ERzJl1Akfi-2BqxxCX33mxFF7XTrZfrcxYb-2FVZ=
+q-2BakToJRqujxxUoH4k13ZxWrw-2FhPhsb0FKZGms3T" target=3D"">
+                              </a>
+                    </div><br/>
+                    <div align=3D"center" >
+                        <div >=20
+                        <a href=3D"http://url8909.kmstools.com/ls/click?upn=
+=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBN-2BqOpJ8I9-2BFgOZWZlbnVNJ1u=
+xkK0u7Qj0oSeR9QdfWY85rFBOm8bUjsNZTEo94pMCVvBlL57VnvoojpVlDAz0rmqJYsOIAhr-2B=
+eNZfDT85ajeh8Tc-2BoKdXJHjpaHpOZIL8JwuhWwWkJaNqU256huebvFgdyFyiq2N8eHPqc66eW=
+Sw-3D-3DPZFc_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2=
+BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9i=
+XCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQ=
+AbeiWoHnpEx0k7W6OiJFbYzEyk6ULbNFgV0DJLaA9rTtWK9ZzY2fMY7NNtw1sOSuqpuMkabEdX2=
+VtauHPRChvb66Bz1u2hb8gLAdrn1SeTckCOh6ZaYa0coc5yXSMV2ahwP-2F4Zeq8s8RNhj5mpu-=
+2FsGGPvHd-2FmRm0RIDgEK7KeouD0Yadn83aheGt"> <img class=3D"center  autowidth =
+ fullwidth" align=3D"center" border=3D"0" src=3D"https://marketing-image-pr=
+oduction.s3.amazonaws.com/uploads/c13dbf5ca380adf6e731180203c785003dd6f0fb9=
+7ade42692769088ea7f3cb3a7b76d66cd8d79acb8d9529b2727353effeeb5ab9a15d160ad55=
+3326f19e573a.png" title=3D"ShopNow"  style=3D"display:block"> </a><br>
+                        </div>
+                      </div>
+
+                  </div>
+                </td>
+                <td>
+                    <div align=3D"center" style=3D"height:30px" >
+                    <span style=3D"color: red;font-size: 17px;font-weight: =
+bold">Flyer Sale</span><br>
+                    </div>
+               =20
+               =20
+                  <div align=3D"center" style=3D"height:200px" >
+                    <img class=3D"center  autowidth  fullwidth" width =3D "=
+200"  height =3D "200" align=3D"center" border=3D"0" src=3D"https://www.kms=
+tools.com/images/large/W/WG-2756R_LRG.jpg" alt=3D"Image" title=3D"Image" st=
+yle=3D"display:block;" >
+                  </div>
+
+                  <div>
+                    <div style=3D"" >
+                        <p style =3D "font-size: 16px; line-height: 21px; t=
+ext-align: center;">
+
+                          <span >Watson Pipeliner Welding Gloves</span><br>
+                   =20
+                          <span><a style=3D"font-size: 12px; color: gray;te=
+xt-decoration: line-through;" title=3D"" href=3D"http://url8909.kmstools.co=
+m/ls/click?upn=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBNyvX8ykG9XZRhZ=
+-2Fi11XEMbgYEiqlba4EjSobrB3cm4xXUWLME5q2-2BoRyEtCdw4ElXvW-2Fe8zT0oP6eRP-2Fs=
+vrleY5Q6at247SDrKzvlwCWsa-2FpaTws9DiLcl5C9fDswCZc7wdzky5PfZuMecaUOPYHVaSmx3=
+3YvtX4-2Fcix7axWFNUw-3D-3DWDEK_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4=
+YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOq=
+dKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJs=
+xxplXlEpEwZIcZOZqQAbeiWoHnpEx0k6RUPlEFsgJKLBr-2Ffbrjo0lRiywhuBHavWhAlGt3OMN=
+Lho152qT8etm8QK-2FLSlnJYZ2uqZVxLHmlcIPjgTnzAYCmqc3Y7KYuPju2ykcuDLOxfb-2BdCV=
+mfSgWO2otiA1a-2FwdPQE3abL9bJb5HO3wMeUPH0tQd81dWCHp19t6OrQdsI" target=3D"">8=
+.99</a>
+                            <a style=3D"color: red;font-size: 20px;font-wei=
+ght: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DG=
+YoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBNyvX8ykG9XZRhZ-2Fi11XEMbgYEiqlba=
+4EjSobrB3cm4xTOe3Jnb0Vjv7s5EhEF3uJoWvy7pUHtq7foG3k6nY8gF5gB-2Ban606GfWIDPvW=
+AW8aawOq7JyBRbzlG0kIeL23IbggdpT0fDs2-2FdxeL0OvqJ5gMyiJCWApLzeBN2M-2FNfxNg-3=
+D-3DLykZ_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2=
+FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtq=
+JDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbei=
+WoHnpEx0k1jC9vumWHmY28CJguuQ01aYFThZHeFY6SRiloZj4ekN2fr2QW0H94ZY4zUrqw-2BRu=
+uu-2FlwH8urlJCAFGvleUY-2B37i4MeEGA0hFdVedFKHNTbQRNTfpaJbdg90wkx6H6ztTHLm39a=
+kYCLPV2bDUy0fbJj2IkL8wNKu7BHxEDn3Wre" target=3D"">$5.95</a></span><br>
+                          <a style=3D"color: red;font-size: 20px;font-weigh=
+t: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DGYo=
+T0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBNyvX8ykG9XZRhZ-2Fi11XEMbgYEiqlba4E=
+jSobrB3cm4xXUWLME5q2-2BoRyEtCdw4ElXvW-2Fe8zT0oP6eRP-2FsvrleY5Q6at247SDrKzvl=
+wCWsa-2FpaTws9DiLcl5C9fDswCZc7wdzky5PfZuMecaUOPYHVaSmx33YvtX4-2Fcix7axWFNUw=
+-3D-3DX7Xs_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ=
+-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXC=
+tqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAb=
+eiWoHnpEx0kyrrDUAJ6IDt33baQ-2FR8N0cGUtvLhjOIGrIsbl-2BH1jabBL9DG1WicvGD3OY1n=
+jkBt-2FTG5sx4cOJmY6oPlyt1YhejiTebC4cLmShCG-2B1spI30i1KV4iO94WDMIlG0Pgp15NoU=
+PFDqEWC0orWCmzzkvk0cIDpPntjjPJdVjVuL7pdk" target=3D"">
+                            SAVE 34%  </a>
+                    </div><br/>
+                    <div align=3D"center" >
+                        <div >=20
+                        <a href=3D"http://url8909.kmstools.com/ls/click?upn=
+=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBNyvX8ykG9XZRhZ-2Fi11XEMbgYEi=
+qlba4EjSobrB3cm4xWjlqKr7la2MDq8DczTZp9yThKFqV6ZuZhbWCHDzfDh6eFuiD4ozJsQdriP=
+KKw8ZzSOGvk3STNXK6fl3FEClYysJXPr2L-2BJ-2F9T8uROQij-2FCVfvhFLMp5WHMoe1iAMFx8=
+zA-3D-3DsK11_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2=
+BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9i=
+XCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQ=
+AbeiWoHnpEx0k4tK55O3CISJAnywscLJCuTZHNVTSTEnt9B2RCE4LohKI9IqDR5GZxh6WZgjoG7=
+0QnbcSfZpDm-2BnULidcoD3Ug9oGuICQiwcvfz7imC1vtn7SUb0Zl5pcGFPNJSJ9ZJb9u4raZT-=
+2FaBoQt-2BnT-2Ff89R-2Fu4JzREWilO0hNAauJuXPVc"> <img class=3D"center  autowi=
+dth  fullwidth" align=3D"center" border=3D"0" src=3D"https://marketing-imag=
+e-production.s3.amazonaws.com/uploads/c13dbf5ca380adf6e731180203c785003dd6f=
+0fb97ade42692769088ea7f3cb3a7b76d66cd8d79acb8d9529b2727353effeeb5ab9a15d160=
+ad553326f19e573a.png" title=3D"ShopNow"  style=3D"display:block"> </a><br>
+                        </div>
+                      </div>
+
+                  </div>
+                </td>
+               =20
+              </tr>
+              <tr>
+              <tr>
+                <td>
+                    <div align=3D"center" style=3D"height:30px" >
+                    <span style=3D"color: red;font-size: 17px;font-weight: =
+bold">Flyer Sale</span><br>
+                    </div>
+               =20
+               =20
+                  <div align=3D"center" style=3D"height:200px" >
+                    <img class=3D"center  autowidth  fullwidth" width =3D "=
+200"  height =3D "200" align=3D"center" border=3D"0" src=3D"https://www.kms=
+tools.com/images/large/K/KLI-321660_LRG.jpg" alt=3D"Image" title=3D"Image" =
+style=3D"display:block;" >
+                  </div>
+
+                  <div>
+                    <div style=3D"" >
+                        <p style =3D "font-size: 16px; line-height: 21px; t=
+ext-align: center;">
+
+                          <span >Klingspor SMT325 5&quot; Flap Discs - 40 G=
+rit</span><br>
+                   =20
+                          <span><a style=3D"font-size: 12px; color: gray;te=
+xt-decoration: line-through;" title=3D"" href=3D"http://url8909.kmstools.co=
+m/ls/click?upn=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBOpB676jsEszvw-=
+2BqHP7fN8ExBZkTBFjJOuzzWdOwg7RN8pEiYkMVrGj1bh54Ds3CwkcwCL2CUSryWGkQ8UCcctzl=
+m6XoqR7nNDnTgD-2Fh-2BrX-2Bk5ftPJqhFEuS2cuprwyZhsLlER8n9-2BsMuKaavWDo7LqDurF=
+ixmZBlOrP5HcIiqx3h5OfkG0JyHVJqwNN3PuM0w-3Dn8Y4_Z9FS5904EYnM6KIFjyqB1R0wNbXJ=
+X-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ=
+5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrK=
+SNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0k8cqxVseVf9ppBslg7wBrv3x1XlmP=
+-2F-2FXkMxhyggFK4k6851PSnWq6bnbiH9CaHrFIoZLozv28WlkovlozOcXo7ITbd33yDQQ9SSY=
+44hitUIZo-2FOYj6SI8XVHIl1gANOTFrjJZWixrH6MIIuCkYFTWT63wjwxnPFewJtnrBk-2BCHS=
+r" target=3D"">7.99</a>
+                            <a style=3D"color: red;font-size: 20px;font-wei=
+ght: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DG=
+YoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBOpB676jsEszvw-2BqHP7fN8ExBZkTBFj=
+JOuzzWdOwg7RN8pEiYkMVrGj1bh54Ds3CwkcwCL2CUSryWGkQ8UCcctzlm6XoqR7nNDnTgD-2Fh=
+-2BrX-2Bk5ftPJqhFEuS2cuprwyZhsLlER8n9-2BsMuKaavWDo7LqDurFixmZBlOrP5HcIiqx3h=
+5OfkG0JyHVJqwNN3PuM0w-3DCP2x_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YU=
+mZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdK=
+cWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxx=
+plXlEpEwZIcZOZqQAbeiWoHnpEx0k-2Bqw5GihCU7da3XbaN0XdsUIl-2B5f0alMyM-2FgYuflB=
+LVzS1ucvHNApvfc-2Bn5k-2FhqIBhOnlUDjc6Y-2FnsZ5WrF4YNGpNQ-2FzT7lXU9CLMG28CrgF=
+sWPrlmvAmD-2F0DQNIRCX-2BGeqgPgTUAKpDEr7Xj8Tg8Q-2F1XFn0NOfEkQ8fi-2BEYn4nR" t=
+arget=3D"">$3.95</a></span><br>
+                          <a style=3D"color: red;font-size: 20px;font-weigh=
+t: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DGYo=
+T0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBOpB676jsEszvw-2BqHP7fN8ExBZkTBFjJO=
+uzzWdOwg7RN8pEiYkMVrGj1bh54Ds3CwkcwCL2CUSryWGkQ8UCcctzlm6XoqR7nNDnTgD-2Fh-2=
+BrX-2Bk5ftPJqhFEuS2cuprwyZhsLlER8n9-2BsMuKaavWDo7LqDurFixmZBlOrP5HcIiqx3h5O=
+fkG0JyHVJqwNN3PuM0w-3D36Z__Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZ=
+CiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcW=
+bcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxpl=
+XlEpEwZIcZOZqQAbeiWoHnpEx0k162yQruT8Jh0b7MRtHMLC-2FnZjprSrhbusBfCBfsWqzJuQ-=
+2BGTHr-2F3muHBp53V9M5SxXM-2FU7CO93ZVtCH-2B7CiB3A3M6lqD-2F56o3q7g-2BG0lMqtcL=
+lGmKNQ8aOISCzAI-2B3EALkygzo3zP17Af4Qk4SwEJUWXk-2Fyap-2BIzHqQW1cvKmaV" targe=
+t=3D"">
+                            SAVE 51%  </a>
+                    </div><br/>
+                    <div align=3D"center" >
+                        <div >=20
+                        <a href=3D"http://url8909.kmstools.com/ls/click?upn=
+=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBOpB676jsEszvw-2BqHP7fN8ExBZk=
+TBFjJOuzzWdOwg7RN8pEiYkMVrGj1bh54Ds3CwmFlaMrvaFe802yVKb8RYrWyE85VxZx7oWw3DQ=
+hIFpaGkTVQUa3c0l8o4R-2BWp-2F-2BZ8j6aaub43n0pn-2FDakhHjcpmBwoUZer-2BwcVlt0WX=
+y3Ea3zI3Ls9b3-2BpqQar2igk9-2FQs-3DL2EW_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2Bxoqz=
+F-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93c=
+NovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G=
+2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0k4T-2BTSitgDA1XP-2BqEsvvGfsrLpwjFwx4H=
+8CZs8Zu-2FtTOVfwy-2F-2FVizJdR06oZVX-2FFR1hzmb-2BQ7qIJF-2BgPANFu-2FVsm0jZ6eC=
+xg40vwCThS2-2FOa892zf7H-2FwRwEAV2wEpM5tDMqiuf6QL1ZvzeR79qAu-2F5L0yaIZ1G9LYo=
+svyziR3G8"> <img class=3D"center  autowidth  fullwidth" align=3D"center" bo=
+rder=3D"0" src=3D"https://marketing-image-production.s3.amazonaws.com/uploa=
+ds/c13dbf5ca380adf6e731180203c785003dd6f0fb97ade42692769088ea7f3cb3a7b76d66=
+cd8d79acb8d9529b2727353effeeb5ab9a15d160ad553326f19e573a.png" title=3D"Shop=
+Now"  style=3D"display:block"> </a><br>
+                        </div>
+                      </div>
+
+                  </div>
+                </td>
+                <td>
+                    <div align=3D"center" style=3D"height:30px" >
+                    <span style=3D"color: red;font-size: 17px;font-weight: =
+bold">Super Special</span><br>
+                    </div>
+               =20
+               =20
+                  <div align=3D"center" style=3D"height:200px" >
+                    <img class=3D"center  autowidth  fullwidth" width =3D "=
+200"  height =3D "106" align=3D"center" border=3D"0" src=3D"https://www.kms=
+tools.com/images/large/M/MILW-289120_LRG.jpg" alt=3D"Image" title=3D"Image"=
+ style=3D"display:block;" >
+                  </div>
+
+                  <div>
+                    <div style=3D"" >
+                        <p style =3D "font-size: 16px; line-height: 21px; t=
+ext-align: center;">
+
+                          <span >Milwaukee M18/M12 18 Volt/12 Volt Cordless=
+ Wireless Jobs...</span><br>
+                   =20
+                          <span><a style=3D"color: red;font-size: 17px;font=
+-weight: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=
+=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBM-2Bf6m4hrMUOTdqmkMU6RdaPVCg=
+xpDYw-2BB64tuD5Ab8gJGPEOYMJO2IVJF0OjgrRO8yeb95DmZZ5ATOUoz2Jmo9Za3GXaEA9xhtx=
+r-2BN0mIHl7wRahGBDrHaPX2EQOPT1cvxsvcAYD8751tCFlq1siM0APrtuAeg0fcSanrrb-2Bcu=
+fUzpsyXDcyXOhxy9pT7c8PW3cSvO3UM4nqmaagRoF9EMDgfOZrovuewMb8RGn9IPLQ-3D-3DEqQ=
+n_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLB=
+JiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2F=
+qBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx=
+0k7zHQNlnJNTw-2FxDjIYL6HBzcZLsw1NJtTHdboVxnh5dIjMGGBCbpCAIbQvb7kLxzc49KofQj=
+RluovUisH3Nyh3LSROYFIWBSzVLB7H8MMj82l-2BT-2BFQTfyB7BfA5CIIluv6czu3rC4zUyJV2=
+p-2BOWQ4-2B5LVnPjOtRUJziFHWFoT00X" target=3D"">MAP</a>
+                            <a style=3D"color: red;font-size: 20px;font-wei=
+ght: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DG=
+YoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBM-2Bf6m4hrMUOTdqmkMU6RdaPVCgxpDY=
+w-2BB64tuD5Ab8gJGPEOYMJO2IVJF0OjgrRO8yeb95DmZZ5ATOUoz2Jmo9Za3GXaEA9xhtxr-2B=
+N0mIHl6TjA-2FAMRvPqoWRddru-2BQKkmkk08M-2B8ka2egrpYZXpoJ5d15OBxNBhOFca58sX3V=
+nVWAgbzQSDSYTycyszvx5sAKxB79-2BxdXnWz7r0Sep3tkr8zIWsWW29Q8a6B4PkuYhA-3D-3DB=
+Mua_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnW=
+LBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-=
+2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnp=
+Ex0k0B1VC-2FLgYta9Tr8gtG6x6PTKQIa6m-2BZtNmR0quffMYJnB9mBU-2BiHfn71Q6vRuyNem=
+ZldjVHqognB48wOYBcHpH0DR2O0OelykYxdSlE-2FIls1aSqkWrGGm-2BafRoIwNOIIi0eKTd85=
+lmGMx9iLXhWBmJuCE-2FelHs1pVcMQKyFhTkZ" target=3D"">$199</a></span><br>
+                          <a style=3D"color: red;font-size: 20px;font-weigh=
+t: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DGYo=
+T0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBM-2Bf6m4hrMUOTdqmkMU6RdaPVCgxpDYw-=
+2BB64tuD5Ab8gJGPEOYMJO2IVJF0OjgrRO8yeb95DmZZ5ATOUoz2Jmo9Za3GXaEA9xhtxr-2BN0=
+mIHl3ESMP0qPuH1sZz4W41Y0AVdzzT2YKs0iuUgL2TKS1w1yNtSiWqt0uUDP3s2LGmEUKKIc2ui=
+VR6XB4YWM4oZUzSRGO1vO4smaHMQLM-2FJiOVOqdjNKr1WdU3WQcjB8MV4WA-3D-3DHTau_Z9FS=
+5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpx=
+N87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk=
+3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0k36K0=
+9wG-2B19u1yilYnVoAqpU6I3TpujkpZf9PE1FPjqVZzx0evNEyS4kYV0NLIwL2gn6zabIXkqQT8=
+eFci8MKsOrSCY6jMUlZVW000cRjvo9P7Q7h8RFSgpkaDA2Eu30E54G0ecgEXt53qqC4FqnIW4nO=
+bxWpJfpFbaJRsckkkYj" target=3D"">
+                              </a>
+                    </div><br/>
+                    <div align=3D"center" >
+                        <div >=20
+                        <a href=3D"http://url8909.kmstools.com/ls/click?upn=
+=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBM-2Bf6m4hrMUOTdqmkMU6RdaPVCg=
+xpDYw-2BB64tuD5Ab8gJGPEOYMJO2IVJF0OjgrRO8yeb95DmZZ5ATOUoz2Jmo9Za3GXaEA9xhtx=
+r-2BN0mIHl3ESMP0qPuH1sZz4W41Y0AVdzzT2YKs0iuUgL2TKS1w1yNtSiWqt0uUDP3s2LGmEUK=
+KIc2uiVR6XB4YWM4oZUzSRGO1vO4smaHMQLM-2FJiOVOqdjNKr1WdU3WQcjB8MV4WA-3D-3DtpI=
+Q_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLB=
+JiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2F=
+qBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx=
+0k-2F6c9jLSLf0m3w6DgyEsO7e-2BZzRYuJ27jaHILoo-2FsFdNr-2FXOCxuIoV7ukozbuaYWqU=
+7NeW81Qe9IaPppHb2YfUKX25NRJ-2FSKJefJPYBcUd41gMass3MeBH4BBK-2BIL8Ml1f14Iap-2=
+BKXRVfAH1nXP8A22Rj1dU3SVviwOnTmhrPUjo"> <img class=3D"center  autowidth  fu=
+llwidth" align=3D"center" border=3D"0" src=3D"https://marketing-image-produ=
+ction.s3.amazonaws.com/uploads/c13dbf5ca380adf6e731180203c785003dd6f0fb97ad=
+e42692769088ea7f3cb3a7b76d66cd8d79acb8d9529b2727353effeeb5ab9a15d160ad55332=
+6f19e573a.png" title=3D"ShopNow"  style=3D"display:block"> </a><br>
+                        </div>
+                      </div>
+
+                  </div>
+                </td>
+                <td>
+                    <div align=3D"center" style=3D"height:30px" >
+                    <span style=3D"color: red;font-size: 17px;font-weight: =
+bold">Super Special</span><br>
+                    </div>
+               =20
+               =20
+                  <div align=3D"center" style=3D"height:200px" >
+                    <img class=3D"center  autowidth  fullwidth" width =3D "=
+200"  height =3D "200" align=3D"center" border=3D"0" src=3D"https://www.kms=
+tools.com/images/large/K/KLI-317820_LRG.jpg" alt=3D"Image" title=3D"Image" =
+style=3D"display:block;" >
+                  </div>
+
+                  <div>
+                    <div style=3D"" >
+                        <p style =3D "font-size: 16px; line-height: 21px; t=
+ext-align: center;">
+
+                          <span >Klingspor Edge Special 5&quot; Cut-Off Whe=
+el</span><br>
+                   =20
+                          <span><a style=3D"font-size: 12px; color: gray;te=
+xt-decoration: line-through;" title=3D"" href=3D"http://url8909.kmstools.co=
+m/ls/click?upn=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBOFVIF6Dg8VOT4W=
+-2F6EurUq3NCvMyVZ7sfUKYqlV5b4L49tommEz-2F-2B-2B8tqUqSKzoRls44xTHsI03vLR2MBU=
+rZaYaRF23qFMeRA21tagrWDX-2Bd9ZEUVh-2BDxoDCsksfu2hp8VIjmJYJ7x8rZwgfx1eWFGQV7=
+-2B0wJ-2BJO2f-2F9r-2F6MQnZ0rTSCyaAeFI3EG-2FfqYZLSuw-3Da4FV_Z9FS5904EYnM6KIF=
+jyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMj=
+mqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatg=
+w2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0kxVY56NOo5lx9vozz=
+DLkO9v6lQNvMFmn34LlJxpfftECTcEmwFV0WS354zn5cvLlBv7RvNr8cxQEP8-2F6jXkv4GKvi0=
+kwsQT74RTQIV5MZxqRvo-2FZh1V3SbO5Xp3ipq22nKHEO-2FhIP0I-2Fxmtyl-2FV-2BffxCStw=
+SD-2BoWTPZ5XJm48O4E" target=3D"">5.49</a>
+                            <a style=3D"color: red;font-size: 20px;font-wei=
+ght: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DG=
+YoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBOFVIF6Dg8VOT4W-2F6EurUq3NCvMyVZ7=
+sfUKYqlV5b4L49tommEz-2F-2B-2B8tqUqSKzoRlsfLKoF4vMYCwqfV-2FctP6jIgReWxIciI92=
+Tuu01RxanE5xtoJPkzo-2FJRfKWDT5SgeC25kov0i7SPxGSpvT4bCZm0tU52Nch60lTJCkgay3f=
+A029aUNvWZSFDvPVEgFPFlk-3DC4pg_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4=
+YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOq=
+dKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJs=
+xxplXlEpEwZIcZOZqQAbeiWoHnpEx0k-2BzXVE00waeTtR3qUoGYaJO3-2FkpnYz-2Fq58pgVF6=
+Jay4aZHp0cAVJsq-2BbdP9Vj3yoko90OedUAt4OkkRujSQeimEQUWMYgTKRQhbXwzqevhUPzqKN=
+YnBG-2Fxz9xoC9cCzcm5ZHIyfmRO3-2BGfrh2Q2EIQZJD5C7pnTeQ6JsybUWoWVC" target=3D=
+"">$3.95</a></span><br>
+                          <a style=3D"color: red;font-size: 20px;font-weigh=
+t: bold;" title=3D"" href=3D"http://url8909.kmstools.com/ls/click?upn=3DGYo=
+T0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBOFVIF6Dg8VOT4W-2F6EurUq3NCvMyVZ7sf=
+UKYqlV5b4L49tommEz-2F-2B-2B8tqUqSKzoRlsfLKoF4vMYCwqfV-2FctP6jIgReWxIciI92Tu=
+u01RxanE5xtoJPkzo-2FJRfKWDT5SgeC25kov0i7SPxGSpvT4bCZm0tU52Nch60lTJCkgay3fA0=
+29aUNvWZSFDvPVEgFPFlk-3D4huC_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YU=
+mZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdK=
+cWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxx=
+plXlEpEwZIcZOZqQAbeiWoHnpEx0k53lipS8XlIaLZxuik6jTdwoGnXsr-2FL-2BMVdgiPutJeb=
+FpCHdk44YrIdB28JhBMdQLCwTS7NJi7QHsKTK6NVv9SGCCjE-2FT2iKVdsUcs0xJJqj2jIeRPLd=
+O8UgLU2nF7Bm-2B-2BfftcR9Xwd71Juw5PowQ1qJbhZ-2BILeeYm675nQV7zYu" target=3D""=
+>
+                            SAVE 28%  </a>
+                    </div><br/>
+                    <div align=3D"center" >
+                        <div >=20
+                        <a href=3D"http://url8909.kmstools.com/ls/click?upn=
+=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBOFVIF6Dg8VOT4W-2F6EurUq3NCvM=
+yVZ7sfUKYqlV5b4L49tommEz-2F-2B-2B8tqUqSKzoRls44xTHsI03vLR2MBUrZaYaRF23qFMeR=
+A21tagrWDX-2Bd9ZEUVh-2BDxoDCsksfu2hp8VIjmJYJ7x8rZwgfx1eWFGQV7-2B0wJ-2BJO2f-=
+2F9r-2F6MQnZ0rTSCyaAeFI3EG-2FfqYZLSuw-3DFLQm_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-=
+2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M=
+3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSN=
+ouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0k46DUflGUF7lQtExLis9aK2VDT9dHRa=
+fH4zIp74d3R04TmRA-2FfBs87Ivm30kC-2BA8BdZ2IWmUuHaLzFCUAf6Uz89SrgsbEQeWUAhFxF=
+n4NONGAtmSIWF6W-2F9sw2C6H1-2FgTRsoTuGdmqUXP-2FzS8oj4FzOni7pr8biwysmU4pCkmU1=
+I"> <img class=3D"center  autowidth  fullwidth" align=3D"center" border=3D"=
+0" src=3D"https://marketing-image-production.s3.amazonaws.com/uploads/c13db=
+f5ca380adf6e731180203c785003dd6f0fb97ade42692769088ea7f3cb3a7b76d66cd8d79ac=
+b8d9529b2727353effeeb5ab9a15d160ad553326f19e573a.png" title=3D"ShopNow"  st=
+yle=3D"display:block"> </a><br>
+                        </div>
+                      </div>
+
+                  </div>
+                </td>
+               =20
+              </tr>
+              <tr>
+       =20
+   =20
+</table>
+
+
+
+<a href=3D"http://url8909.kmstools.com/ls/click?upn=3DGYoT0NsE1729GTyOEbPvB=
+PA-2BGR2gCTmgrCTTKZMSXBOqJMK-2B28N5PEJgOEmM3R0ge9J3XzwBn-2Fixwvp6bKdpsyp9y8=
+gaNCNWy1LQuYfJIifcqPw9lP3FvwhLxF9rSKLxTwrhS3mnRAshGE2FhXGIihh-2FFbcI5QMQJGQ=
+JNFbX2OWNRmSoQ-2Bj-2Fbq3x5M633IlQBKt7ycP4bnA07JE-2BPqcmEw-3D-3D_bHP_Z9FS590=
+4EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87=
+ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9=
+fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0k43rGWdL=
+VCaf3dEPn6J8YUrryD00pG6VELPWAISf1EjyFKERp8GLHh25tieDTJDnZ3qkLfZlbdeFzm6eEig=
+G3YzwEeJlmOjwKiCp59h7RkcWLHkFtP6WNveXvotlwK-2B8fOF-2F-2BXO8YtUDccjGqVHbX3r5=
+nNB2rnKigGyHlwtgUJSB"> <img width=3D"100%" src=3D"" title=3D"" > </a>
+
+<a href=3D""> <img width=3D"100%" src=3D"https://marketing-image-production=
+.s3.amazonaws.com/uploads/c59eca7b2aa500e049090f62c38b7b14f09315141dc77d30f=
+69ea9e519d66aa982401d94d6cca96ccaccef032b894765fe5d4770291224d8be78a0bbd88d=
+f222.png" title=3D""> </a><br>
+</div>
+
+
+
+    <table class=3D"wrapper" role=3D"module" data-type=3D"image" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-layout=
+: fixed;">
+      <tr>
+        <td style=3D"font-size:6px;line-height:10px;padding:0px 0px 0px 0px=
+;" valign=3D"top" align=3D"center">
+          <img class=3D"max-width" border=3D"0" style=3D"display:block;colo=
+r:#000000;text-decoration:none;font-family:Helvetica, arial, sans-serif;fon=
+t-size:16px;max-width:100% !important;width:100%;height:auto !important;" s=
+rc=3D"https://marketing-image-production.s3.amazonaws.com/uploads/b6f425ab4=
+8db67954f29322c65554fe0b1aa4f7a9976654501071cd3a4b87bfe61ed1687bd85ef82bdaa=
+6d47c0802ee756c6c48f0ef5f14c90eeb17379f43f13.png" alt=3D"" width=3D"600">
+        </td>
+      </tr>
+    </table>
+
+
+   =20
+ =20
+    <table class=3D"wrapper" role=3D"module" data-type=3D"image" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-layout=
+: fixed;">
+      <tr>
+        <td style=3D"font-size:6px;line-height:10px;padding:0px 0px 0px 0px=
+;" valign=3D"top" align=3D"center">
+
+        </td>
+      </tr>
+    </table>
+     =20
+  =20
+ =20
+    <table class=3D"module"
+           role=3D"module"
+           data-type=3D"spacer"
+           border=3D"0"
+           cellpadding=3D"0"
+           cellspacing=3D"0"
+           width=3D"100%"
+           style=3D"table-layout: fixed;">
+      <tr>
+        <td style=3D"padding:0px 0px 10px 0px;"
+            role=3D"module-content"
+            bgcolor=3D"">
+        </td>
+      </tr>
+    </table>
+   =20
+   =20
+   =20
+    <table class=3D"wrapper" role=3D"module" data-type=3D"image" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-layout=
+: fixed;">
+      <tr>
+        <td style=3D"font-size:6px;line-height:10px;padding:0px 0px 0px 0px=
+;" valign=3D"top" align=3D"center">
+          <a href=3D"http://url8909.kmstools.com/ls/click?upn=3DGYoT0NsE172=
+9GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBObKKQTIITGQWSeB5zK8RpIns-2Bn1DTtIkT8qERMZa=
+a1hSW6f22jU5rKB3pAf7NabZuBrj1l-2FOLyz-2BVqcx19MsM8zxNcZRJ1JZ3uFlj7yXZuYemAv=
+-2FL5ao6CQyViYZb-2BQls-3DuAyj_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4Y=
+UmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqd=
+KcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsx=
+xplXlEpEwZIcZOZqQAbeiWoHnpEx0k4LMcDCk5ui8b4e5HV1AHjhqoTdjgDBxlQjtoO-2BBnNXB=
+ccIYAFE-2BriJ0go1UjYQQwEH7PDx-2Fs-2B-2B-2Bdn-2BFBiro51hi2-2FXeN0KeIb8BxGt3-=
+2BUbuKgZ1VGY27V9yLSiModxKTn50gRECzSxG-2Bh6EzufIdponeiF54tRl08thK7uO9NNU"><i=
+mg class=3D"max-width" border=3D"0" style=3D"display:block;color:#000000;te=
+xt-decoration:none;font-family:Helvetica, arial, sans-serif;font-size:16px;=
+max-width:100% !important;width:100%;height:auto !important;" src=3D"https:=
+//marketing-image-production.s3.amazonaws.com/uploads/4dbbe1f4999f4999a14eb=
+4a3785ea96df13f85c03a080a8343368b70434338c83fdaaf624b58dfca1dae223c7aefe09e=
+07ed8c29e9f283ef905a5b6cd4ca2cde.png" alt=3D"KMS Tools and Equipment" width=
+=3D"600"></a>
+         =20
+         =20
+        </td>
+       =20
+       =20
+      </tr>
+     =20
+     =20
+    </table>
+   =20
+   =20
+
+ =20
+   =20
+    <table class=3D"module" role=3D"module" data-type=3D"text" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-layout: =
+fixed;">
+
+      <tr>
+     =20
+     =20
+        <td style=3D"padding:10px 0px 10px 0px;line-height:22px;text-align:=
+inherit;"
+            height=3D"100%"
+            valign=3D"top"
+            bgcolor=3D"">
+            <div style=3D"text-align: center;"><span style=3D"font-size:18p=
+x;"><strong><span style=3D"color:#FFFFFF;">KMS Tools &amp;&nbsp;Equipment</=
+span></strong></span></div>
+           =20
+<div style=3D"text-align: center;"><span style=3D"font-size:14px;"><strong>=
+<span style=3D"color:#FFFFFF;">1-888-386-8075&nbsp; &nbsp;&nbsp;<a href=3D"=
+http://url8909.kmstools.com/ls/click?upn=3DGYoT0NsE1729GTyOEbPvBPA-2BGR2gCT=
+mgrCTTKZMSXBOI48TQEsdSsPoiyE30xKcF053qSLBA80MPoVIvcxSzmaDhntYI7Jmd0TJ1MMjsi=
+msj3j8Ew3Dx3o654JbxmFPLOsGnrBU21cs4ar7Ee37mQHo2w6Wwfztzd0qwCt5C2Bo-3Dfkm9_Z=
+9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZ=
+OpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBF=
+hKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0k5=
+mkoPSL4xT7qRT5qDvCOCKbvpIs3dEgrt87mrI9Z6bxsCuUTXQURYZzYJeLPBlQggzccaRi1QGYA=
+wtNxi-2BNSOmCDaccDj9mYQMl2vBr16HbEMwq2JousXurp-2FE5CVIGjz23HLMgzzgXfjLJbUXq=
+izok4CP5jxh2EAJL3rBz-2BKc9">kmstools.com</a></span></strong></span></div>
+        </td>
+      </tr>
+    </table>
+   =20
+   =20
+
+    <table class=3D"module" role=3D"module" data-type=3D"social" align=3D"c=
+enter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"table-layout: fixed;">
+      <tbody>
+        <tr>
+       =20
+          <td valign=3D"top" style=3D"padding:0px 0px 0px 0px;font-size:6px=
+;line-height:10px;">
+            <table align=3D"center">
+              <tbody>
+                <tr>
+                  <td style=3D"padding: 0px 5px;">
+        <a role=3D"social-icon-link"  href=3D"http://url8909.kmstools.com/l=
+s/click?upn=3DGYoT0NsE1729GTyOEbPvBGGjIhoe48-2FwrGvvIg249PpawyDzTlo40I-2Bo-=
+2B5-2BVBglSBebE-2F0yfgfi0VFsau-2FCNuJrQYQlmmQTmU9O1nTpB8piZu7xbXoL5EXKF5uJ8=
+g5xFmBC7b05dyZ78BpSvbBNVVAa9foewYP-2BTipKPTia1fJw-3DefTk_Z9FS5904EYnM6KIFjy=
+qB1R0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmq=
+cetNqjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2=
+mu-2FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0k0bI3FwxVXN200w0SyT=
+-2BoPdsMnz0pjYDvGF9F2PGXYWd3lDPiXRl2gTCpQz1XNvx-2Bn6VtINu-2BtyZCo-2BTbQxe-2=
+F-2BXzC1cBUjcAZaPl2hxdVhEB9FyUp9lGNRvG50krcKyB2g-2FX6gT-2BgnIPOz07XKIGvIlew=
+XOSczZul5fG6Al2cfIJ" target=3D"_blank" alt=3D"Facebook"
+          data-nolink=3D"false"
+          title=3D"Facebook "
+          style=3D"-webkit-border-radius:4px;-moz-border-radius:4px;border-=
+radius:4px;display:inline-block;background-color:#3B579D;">
+          <img role=3D"social-icon" alt=3D"Facebook" title=3D"Facebook "
+            height=3D"30"
+            width=3D"30"
+            style=3D"height: 30px, width: 30px"
+            src=3D"https://marketing-image-production.s3.amazonaws.com/soci=
+al/white/facebook.png" />
+        </a>
+       =20
+      </td>
+                  <td style=3D"padding: 0px 5px;">
+        <a role=3D"social-icon-link"  href=3D"http://url8909.kmstools.com/l=
+s/click?upn=3DGYoT0NsE1729GTyOEbPvBI2BGbYyNw-2BhDXkR9aSwna8Qh2lTNCBWai9W-2F=
+gRLkGjQZr2DIjBFRvHJBfTGv6eaVu4Yg9w-2FMIDIgj8z8UfF308YThuDjA81Zxi8Ze9-2FkZue=
+x3JfIeLIwQpiZoPoH3fb1H4A7F7-2Bn7eIjHMACzstltI-3DMlzt_Z9FS5904EYnM6KIFjyqB1R=
+0wNbXJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetN=
+qjPiZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2=
+FmOfrKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0k9OupaZxjRjD-2BLNlK4BHW=
+8Y4J7fS2T6lMaY7o3dBdnvSddAFXwXOeoZEyxdom2BTOz-2BXRk8Yx1MR8yNq6i-2BiQvclBvoB=
+SjL-2FTxS4sYWcS7-2Fop-2Fgjngpe-2Fh-2BRgAIYUeJ9o0gpTvCDcev1eC8VL80rlkq1bY9zx=
+WkcOh-2BoOS34-2FQuB" target=3D"_blank" alt=3D"Twitter"
+          data-nolink=3D"false"
+          title=3D"Twitter "
+          style=3D"-webkit-border-radius:4px;-moz-border-radius:4px;border-=
+radius:4px;display:inline-block;background-color:#7AC4F7;">
+          <img role=3D"social-icon" alt=3D"Twitter" title=3D"Twitter "
+            height=3D"30"
+            width=3D"30"
+            style=3D"height: 30px, width: 30px"
+            src=3D"https://marketing-image-production.s3.amazonaws.com/soci=
+al/white/twitter.png" />
+        </a>
+      </td>
+                  <td style=3D"padding: 0px 5px;">
+        <a role=3D"social-icon-link"  href=3D"http://url8909.kmstools.com/l=
+s/click?upn=3DGYoT0NsE1729GTyOEbPvBMIHGp4wpt4sfyHzNy3HN2WIVRHDwt2jNraHhT8ma=
+h4JtPHat2cD44SDAzFoPZTcwIpgnZJuNESBdlDOc5namyBDaOq-2BFl9nzVLclE7kzu-2BbktQ-=
+2BkEMPneDXk8xlSUAC45oajc4cVsfKxTTIWzcPY7A-3D8yKt_Z9FS5904EYnM6KIFjyqB1R0wNb=
+XJX-2BxoqzF-2FAtU4YUmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPi=
+ZJ5M3DO93cNovLAmOqdKcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOf=
+rKSNouBO8G2MDFSQJsxxplXlEpEwZIcZOZqQAbeiWoHnpEx0kyBtpwJovVQpIodDj8nc6rS6b-2=
+BLmNUcPic-2BwM3XBpBCHZNBc0atIc7kP2SGy0pBi82-2B52q7n-2BFDYt1Qq116dsYIKvyH41f=
+SlCPOhqt7pX7CGnbGn72ZgsU-2Bcyo8t7urvgw3txUdnTHj3pd07qobmaTslEHN7Y2eSNWGGcSH=
+q44CY" target=3D"_blank" alt=3D"Instagram"
+          data-nolink=3D"false"
+          title=3D"Instagram "
+          style=3D"-webkit-border-radius:4px;-moz-border-radius:4px;border-=
+radius:4px;display:inline-block;background-color:#7F4B30;">
+          <img role=3D"social-icon" alt=3D"Instagram" title=3D"Instagram "
+            height=3D"30"
+            width=3D"30"
+            style=3D"height: 30px, width: 30px"
+            src=3D"https://marketing-image-production.s3.amazonaws.com/soci=
+al/white/instagram.png" />
+        </a>
+      </td>
+                 =20
+                 =20
+                 =20
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+   =20
+   =20
+   =20
+   =20
+     <div style=3D"text-align: center;"><span style=3D"color: rgb(255, 255,=
+ 255); font-family: arial; font-size: 12px; font-style: normal; font-varian=
+t-ligatures: normal; font-variant-caps: normal; font-weight: 400; text-alig=
+n: center;">Prices good until 2021-07-31</span></div>=20
+ =20
+  <div style=3D"text-align: center;"><span style=3D"color: rgb(255, 255, 25=
+5); font-family: arial; font-size: 12px; font-style: normal; font-variant-l=
+igatures: normal; font-variant-caps: normal; font-weight: 400; text-align: =
+center;">ATT: You may not see this email accurately in "Dark Mode"</span></=
+div>=20
+ =20
+  <div style=3D"text-align: center;"><span style=3D"color: rgb(255, 255, 25=
+5); font-family: arial; font-size: 12px; font-style: normal; font-variant-l=
+igatures: normal; font-variant-caps: normal; font-weight: 400; text-align: =
+center;">3-day sale are on select items and are as advertised in each month=
+ly flyer.</span></div>
+ =20
+    <div style=3D"text-align: center;"><span style=3D"color: rgb(255, 255, =
+255); font-family: arial; font-size: 12px; font-style: normal; font-variant=
+-ligatures: normal; font-variant-caps: normal; font-weight: 400; text-align=
+: center;">*Price match applies to all tools and equipment KMS carries!  We=
+ will  match or beat any competitor prices for products sold and located in=
+ Canada only and in Canadian prices. Does not apply to shipping, coupons, i=
+nstant rebates or mail in rebates. Price match applies for 30 days from rec=
+eipt original date of purchase.</span></div>
+ =20
+   =20
+  <div data-role=3D"module-unsubscribe" class=3D"module unsubscribe-css__un=
+subscribe___2CDlR" role=3D"module" data-type=3D"unsubscribe" style=3D"color=
+:#ffffff;font-size:12px;line-height:20px;padding:6px 16px 0px 16px;text-ali=
+gn:center"><div class=3D"Unsubscribe--addressLine"><p class=3D"Unsubscribe-=
+-senderName" style=3D"font-family:Arial,Helvetica, sans-serif;font-size:12p=
+x;line-height:20px">HeadOffice: KMS Tools & Equipment</p><p style=3D"font-f=
+amily:Arial,Helvetica, sans-serif;font-size:12px;line-height:20px"><span cl=
+ass=3D"Unsubscribe--senderAddress">110 Woolridge Street</span>, <span class=
+=3D"Unsubscribe--senderCity">Coquitlam</span>, <span class=3D"Unsubscribe--=
+senderState">BC</span> <span class=3D"Unsubscribe--senderZip">V3C1V5</span>=
+ </p></div><p style=3D"font-family:Arial,Helvetica, sans-serif;font-size:12=
+px;line-height:20px"><a class=3D"Unsubscribe--unsubscribePreferences" style=
+ =3D "color:white" href=3D"http://url8909.kmstools.com/asm/?user_id=3D94283=
+89&amp;data=3Dtg7T6hrOmd-JfDynoWa4vIo3Bc06zfFRxx59xYfNb_HoZz_s-VxUDqRB6XD1A=
+mzppT5wdjXTgoyl8QRVRFQHXDjMHYQUk3N-sy99oKs4KDmly_AE1Grl1gs-K4SlweiNliCMwhZy=
+osKJKzPugEmF5YDinvrTKtyMQ3UK71TY3ksr9qT2k3m7M9cw8B7sG28Nnq_axa53dnCoMTT81OO=
+NFbuG8xFpXGgUtv_nI9D7bdg4tIHmefNO8PanZKzGNjDeCfd23S0uJcsG0HujZbnZy_E9dUhEEL=
+YM-OhqoMm_asqB5gFsEuVLUgZD1e4EoTSQUOOIWGkTApzv94HvZADyYSUOlwMO0Tt2qTi9QRGVS=
+sVjPCdCxsOTW-0Q6hxc2jpsCBR4s7952m1A8IZDM7VU8mzXTimHnbGSXUjv74fpcrIRkNr_OZ1V=
+UOigsh7vOGeYjjiP3iLAm3PrSHMKQqg7kxrX28588VByLphHHYGqvCJC2EiJQAqDo1L7iXmYAhA=
+9Wj1oyF4GRVMwRUcFKuoSEuE0BFeG0jdbhMXN7gEosj8=3D">Unsubscribe</a></p></div>
+    <table class=3D"module" role=3D"module" data-type=3D"text" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-layout: =
+fixed;">
+      <tr>
+        <td style=3D"padding:0px 0px 010px 0px;line-height:22px;text-align:=
+inherit;"
+            height=3D"100%"
+            valign=3D"top"
+            bgcolor=3D"">
+           =20
+             </table>
+              <a href=3D"http://url8909.kmstools.com/ls/click?upn=3DGYoT0Ns=
+E1729GTyOEbPvBPA-2BGR2gCTmgrCTTKZMSXBMZZI-2FdCUT7eTeJszlAro5AHwlAbu9XUQO3M7=
+PIPIuiapdZIs3kpi0Qe6uR9s-2BRrTi0LrQqCPZVbcUxKYDm8OWxOVl8S8is7WFr-2F23fwzkGA=
+tsZDttF9kIXCDs3W3oQWgE-3D0gRY_Z9FS5904EYnM6KIFjyqB1R0wNbXJX-2BxoqzF-2FAtU4Y=
+UmZCiRWVd56Nqnn-2BQ-2FwcnWLBJiZOpxN87ceEBtgFMjmqcetNqjPiZJ5M3DO93cNovLAmOqd=
+KcWbcAH55KW5avS9iXCtqJDDh-2FqBFhKk3A9fBJORQatgw2mu-2FmOfrKSNouBO8G2MDFSQJsx=
+xplXlEpEwZIcZOZqQAbeiWoHnpEx0kwC6D2xgAlNKpp3hwgZ1K0Uhor9evb-2Fy7urE3esE-2Fi=
+wR7v0T2RSryo2LaEqJgyYojPejb2ZgJM18YNMxYvf9JLN5SkePJ-2FY0VVYCgoDPkcHF3JMbvB2=
+-2FhcGZ6fsXtVI0QmGN863XcTExWTOBJfx3O5HeOdCEwcyabgvtFMqu-2Fvwm"><img class=
+=3D"max-width" border=3D"0" style=3D"display:block;color:#000000;text-decor=
+ation:none;font-family:Helvetica, arial, sans-serif;font-size:16px;max-widt=
+h:100% !important;width:100%;height:auto !important;" src=3D"https://www.km=
+stools.com/assets/takeover/Target-Emails/Generic/2021FreeShipping_OfficialS=
+tuff.png" alt=3D"KMS Tools and Equipment" width=3D"600"></a>
+        </td>
+       =20
+            <div style=3D"text-align: center;"><span style=3D"color: rgb(25=
+5, 255, 255); font-family: arial; font-size: 10px; font-style: normal; font=
+-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; te=
+xt-align: center;">Copyright =A9 2020. All rights reserved.  Prices Subject=
+ to Change</span></div> =20
+           =20
+
+           =20
+        </td>
+      </tr>
+
+
+ =20
+                              </td>
+                            </tr>
+                          </table>
+                          <!--[if mso]>
+                          </td></tr></table>
+                          </center>
+                          <![endif]-->
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </center>
+  <img src=3D"http://url8909.kmstools.com/wf/open?upn=3DTZsaVWh02-2B7ZuLupg=
+9KLXAvfR-2BbsahC3uaLxjdHsevb-2F2Shk4OvLSK1SYeM-2FehkWhaJJ03mLTjUrrFbMitwRvM=
+jiF5B3ti2Gf5TaKB-2BNBIAZKz9IPPTZSNmaCXiSYnyoOhBLZcAqR8OOKY1C65GFnKXOHN3H4ow=
+ZF87SI5qmFRC5-2FdK1aLKkzt-2F9Uhx7EymLFOh1-2FC9bllp5WsQrepkt37P6HQ6V2qtiuseu=
+KWIWYV31UacR5KtsAN7aov6XDMyECfoxCkL0QwWuqwPDX6cLZoo5jlv8GqlD9GdtjlCXVBmwVVf=
+1Bz0CQ-2FeGHYVXD9IU7Yqy8X0XZBzwR3vtHProJFD9UQSVHSBgG4t5HIhStFpoh-2Bq6VfUEz-=
+2BFSjAYdEVlB" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"heigh=
+t:1px !important;width:1px !important;border-width:0 !important;margin-top:=
+0 !important;margin-bottom:0 !important;margin-right:0 !important;margin-le=
+ft:0 !important;padding-top:0 !important;padding-bottom:0 !important;paddin=
+g-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--18d8df5268f993efe6202df56cb8544845cfb42cb752695d6225a22fc2eb--

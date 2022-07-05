@@ -1,0 +1,62 @@
+ customer Joan
+{227SBlairStVirden,Illinois(IL),62690}
+(CTCreditCard8763467854)
+[ @juice$ $3.49 #12]
+[ @juggeranautswimsuit$ $22.97 #555]
+[ @xst-shirt$ $0.67 #25]
+[ @xltrackpants$ $1200 #1]
+ customer Dave
+{28320ECo11thStWellton,Arizona(AZ),85356}
+(CTCreditCard8763467854)
+[ @juice$ $3.49 #12]
+[ @salami$ $12 #1333]
+[ @juggeranautswimsuit$ $22.97 #555]
+ customer Dave
+{28320ECo11thStWellton,Arizona(AZ),85356}
+(CTCreditCard8763467854)
+[ @juice$ $3.49 #12]
+[ @salami$ $12 #1333]
+[ @juggeranautswimsuit$ $22.97 #555]
+ customer Bethany
+{44Downingst,StLouis,Louisiana71074}
+(Visa23456765409/22101)
+[ @apple$ $0.67 #25]
+[ @laptop$ $1200 #1]
+[ @earphones$ $22.97 #3]
+ customer Matt
+{460JennileahLnSanMarcos,California(CA),92069}
+(Mastercard7654356786)
+[ @xst-shirt$ $0.67 #25]
+[ @xltrackpants$ $1200 #1]
+[ @veryfinearmanisuit$ $22.97 #3]
+ customer Anthony
+{6526RidgeRdHiram,Georgia(GA),30141}
+(ChaseYoDreams567434567)
+[ @apple$ $0.67 #25]
+[ @laptop$ $1200 #1]
+[ @earphones$ $22.97 #3]
+[ @juice$ $3.49 #12]
+[ @salami$ $12 #1333]
+[ @juggeranautswimsuit$ $22.97 #555]
+[ @xst-shirt$ $0.67 #25]
+[ @xltrackpants$ $1200 #1]
+[ @veryfinearmanisuit$ $22.97 #3]
+[ @apple$ $0.67 #25]
+[ @laptop$ $1200 #1]
+[ @earphones$ $22.97 #3]
+ customer John
+{848GandolfWayEureka,Missouri(MO),63025}
+(CTCreditCard8763467854)
+[ @juggeranautswimsuit$ $22.97 #555]
+[ @xst-shirt$ $0.67 #25]
+[ @xltrackpants$ $1200 #1]
+[ @laptop$ $1200 #1]
+[ @earphones$ $22.97 #3]
+ customer Heather
+{865N11thStLaramie,Wyoming(WY),82072}
+(CTCreditCard8763467854)
+[ @juice$ $3.49 #12]
+[ @laptop$ $1200 #1]
+[ @juggeranautswimsuit$ $22.97 #555]
+[ @xst-shirt$ $0.67 #25]
+[ @xltrackpants$ $1200 #1]

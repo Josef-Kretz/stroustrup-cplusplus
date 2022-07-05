@@ -1,0 +1,10 @@
+Carrots 1001 4.01
+Laptop 1337 1500.67
+Pineapple 1009 5.36
+Apples 9001 0.53
+Banana 848484 1.67
+Computer 6554 897.55
+Earphones 4223 10.97
+Zebra 5663 1200.98
+Antelope 1223 900
+WaveGenerator 200893 55.43

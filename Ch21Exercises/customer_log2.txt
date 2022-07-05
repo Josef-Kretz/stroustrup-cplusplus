@@ -1,0 +1,37 @@
+ customer Dave
+{ 28320 E Co 11th St
+Wellton, Arizona(AZ), 85356 }
+( CTCredit Card 8763467854 )
+[ @ juice $3.49 #12 ]
+[ @salami $12.00 #1333 ]
+[ @juggeranaut swimsuit $22.97 #555 ]
+
+ customer Heather
+{ 865 N 11th St
+Laramie, Wyoming(WY), 82072 }
+( CTCredit Card 8763467854 )
+[ @ juice $3.49 #12 ]
+[ @laptop $1200 #1 ]
+[ @juggeranaut swimsuit $22.97 #555 ]
+[ @ xs t-shirt $0.67 #25 ]
+[ @xl track pants $1200 #1 ]
+
+ customer Joan
+{ 227 S Blair St
+Virden, Illinois(IL), 62690 }
+( CTCredit Card 8763467854 )
+[ @ juice $3.49 #12 ]
+[ @juggeranaut swimsuit $22.97 #555 ]
+[ @ xs t-shirt $0.67 #25 ]
+[ @xl track pants $1200 #1 ]
+
+ customer John
+{ 848 Gandolf Way
+Eureka, Missouri(MO), 63025 }
+( CTCredit Card 8763467854 )
+[ @juggeranaut swimsuit $22.97 #555 ]
+[ @ xs t-shirt $0.67 #25 ]
+[ @xl track pants $1200 #1 ]
+[ @laptop $1200 #1 ]
+[ @earphones $22.97 #3 ]
+
