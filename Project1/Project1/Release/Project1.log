@@ -1,0 +1,11 @@
+﻿  fltk_test.cpp
+C:\Users\Josef\source\repos\Project1\Project1\fltk_test.cpp(7,29): error C3873: '0x201c': this character is not allowed as a first character of an identifier
+C:\Users\Josef\source\repos\Project1\Project1\fltk_test.cpp(7,39): error C3872: '0x201d': this character is not allowed in an identifier
+C:\Users\Josef\source\repos\Project1\Project1\fltk_test.cpp(7,29): error C2065: '“Window': undeclared identifier
+C:\Users\Josef\source\repos\Project1\Project1\fltk_test.cpp(7,39): error C2146: syntax error: missing ')' before identifier 'title”'
+C:\Users\Josef\source\repos\Project1\Project1\fltk_test.cpp(8,29): error C3873: '0x201c': this character is not allowed as a first character of an identifier
+C:\Users\Josef\source\repos\Project1\Project1\fltk_test.cpp(8,29): error C2065: '“Hey': undeclared identifier
+C:\Users\Josef\source\repos\Project1\Project1\fltk_test.cpp(8,37): error C2065: 'I': undeclared identifier
+C:\Users\Josef\source\repos\Project1\Project1\fltk_test.cpp(8,39): error C2146: syntax error: missing ')' before identifier 'mean'
+C:\Users\Josef\source\repos\Project1\Project1\fltk_test.cpp(8,58): error C3873: '0x201d': this character is not allowed as a first character of an identifier
+C:\Users\Josef\source\repos\Project1\Project1\fltk_test.cpp(9,2): error C2065: 'window': undeclared identifier
