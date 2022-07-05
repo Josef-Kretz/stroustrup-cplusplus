@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ch10Drill", "Ch10Drill\Ch10Drill.vcxproj", "{FF2951E3-8E9A-47B7-AE4C-8B680F8B2DE9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF2951E3-8E9A-47B7-AE4C-8B680F8B2DE9}.Debug|x64.ActiveCfg = Debug|x64
+		{FF2951E3-8E9A-47B7-AE4C-8B680F8B2DE9}.Debug|x64.Build.0 = Debug|x64
+		{FF2951E3-8E9A-47B7-AE4C-8B680F8B2DE9}.Debug|x86.ActiveCfg = Debug|Win32
+		{FF2951E3-8E9A-47B7-AE4C-8B680F8B2DE9}.Debug|x86.Build.0 = Debug|Win32
+		{FF2951E3-8E9A-47B7-AE4C-8B680F8B2DE9}.Release|x64.ActiveCfg = Release|x64
+		{FF2951E3-8E9A-47B7-AE4C-8B680F8B2DE9}.Release|x64.Build.0 = Release|x64
+		{FF2951E3-8E9A-47B7-AE4C-8B680F8B2DE9}.Release|x86.ActiveCfg = Release|Win32
+		{FF2951E3-8E9A-47B7-AE4C-8B680F8B2DE9}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {18805679-5094-4406-A9E8-DE7FCBFA5FD1}
+	EndGlobalSection
+EndGlobal
